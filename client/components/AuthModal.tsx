@@ -16,7 +16,7 @@ const loginSchema = z.object({
 });
 
 const registerSchema = z.object({
-  fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
+  fullName: z.string().min(2, "Họ tên phải c�� ít nhất 2 ký tự"),
   email: z.string().email("Email không hợp lệ"),
   password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
   confirmPassword: z.string(),
@@ -114,12 +114,15 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               <Shield className="h-6 w-6" />
               <div>
                 <h2 className="text-xl font-bold">
-                  {mode === "login" ? "Đăng Nhập" : "Đăng Ký"}
+                  {adminMode ? "Đăng Nhập Admin" : (mode === "login" ? "Đăng Nhập" : "Đăng Ký")}
                 </h2>
                 <p className="text-blue-100 text-sm">
-                  {mode === "login" 
-                    ? "Truy cập vào tài khoản của bạn" 
-                    : "Tạo tài khoản mới để bắt đầu"
+                  {adminMode
+                    ? "Truy cập trang quản trị hệ thống"
+                    : (mode === "login"
+                      ? "Truy cập vào tài khoản của bạn"
+                      : "Tạo tài khoản mới để bắt đầu"
+                    )
                   }
                 </p>
               </div>
