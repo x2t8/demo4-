@@ -43,38 +43,40 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              {/* Public routes */}
-              <Route path="/" element={<Index />} />
-              <Route path="/scam-types" element={<ScamTypes />} />
-              <Route path="/digital-ethics" element={<DigitalEthics />} />
-              <Route path="/ai-safety" element={<AISafety />} />
-              <Route path="/digital-law" element={<DigitalLaw />} />
-              <Route path="/digital-skills" element={<DigitalSkills />} />
+        <AuthProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                {/* Public routes */}
+                <Route path="/" element={<Index />} />
+                <Route path="/scam-types" element={<ScamTypes />} />
+                <Route path="/digital-ethics" element={<DigitalEthics />} />
+                <Route path="/ai-safety" element={<AISafety />} />
+                <Route path="/digital-law" element={<DigitalLaw />} />
+                <Route path="/digital-skills" element={<DigitalSkills />} />
 
-              {/* Admin routes - Protected */}
-              <Route path="/admin" element={
-                <ProtectedRoute requireAdmin={true}>
-                  <AdminLayout />
-                </ProtectedRoute>
-              }>
-                <Route index element={<AdminDashboard />} />
-                <Route path="users" element={<AdminUsers />} />
-                <Route path="content" element={<AdminContent />} />
-                <Route path="reports" element={<AdminReports />} />
-                <Route path="security" element={<AdminDashboard />} />
-                <Route path="settings" element={<AdminDashboard />} />
-              </Route>
+                {/* Admin routes - Protected */}
+                <Route path="/admin" element={
+                  <ProtectedRoute requireAdmin={true}>
+                    <AdminLayout />
+                  </ProtectedRoute>
+                }>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="users" element={<AdminUsers />} />
+                  <Route path="content" element={<AdminContent />} />
+                  <Route path="reports" element={<AdminReports />} />
+                  <Route path="security" element={<AdminDashboard />} />
+                  <Route path="settings" element={<AdminDashboard />} />
+                </Route>
 
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </AuthProvider>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
