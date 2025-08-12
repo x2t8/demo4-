@@ -29,8 +29,10 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 import { CaringToastProvider } from "@/components/CaringToast";
 import ReportGuideModal from "@/components/ReportGuideModal";
 import FloatingActionButton from "@/components/FloatingActionButton";
-import Carousel3D from "@/components/Carousel3D";
 import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
+
+// Lazy load heavy 3D component for performance
+const Carousel3D = React.lazy(() => import("@/components/Carousel3D"));
 import { digitalModules } from "./IndexModules";
 
 export default function Index() {
@@ -313,7 +315,7 @@ export default function Index() {
                     </p>
                     <Button className="bg-green-600 hover:bg-green-700">
                       <Users className="h-4 w-4 mr-2" />
-                      Chia sẻ với người thân
+                      Chia s�� với người thân
                     </Button>
                   </div>
                 </div>
