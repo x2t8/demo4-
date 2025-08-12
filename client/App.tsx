@@ -37,16 +37,18 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/scam-types" element={<ScamTypes />} />
-            <Route path="/digital-ethics" element={<DigitalEthics />} />
-            <Route path="/ai-safety" element={<AISafety />} />
-            <Route path="/digital-law" element={<DigitalLaw />} />
-            <Route path="/digital-skills" element={<DigitalSkills />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/scam-types" element={<ScamTypes />} />
+              <Route path="/digital-ethics" element={<DigitalEthics />} />
+              <Route path="/ai-safety" element={<AISafety />} />
+              <Route path="/digital-law" element={<DigitalLaw />} />
+              <Route path="/digital-skills" element={<DigitalSkills />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
