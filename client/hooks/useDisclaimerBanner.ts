@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // Key for localStorage
-const DISCLAIMER_BANNER_KEY = 'disclaimer_banner_dismissed';
+const DISCLAIMER_BANNER_KEY = "disclaimer_banner_dismissed";
 
 export function useDisclaimerBanner() {
   const [isVisible, setIsVisible] = useState(true);
@@ -10,11 +10,11 @@ export function useDisclaimerBanner() {
   useEffect(() => {
     try {
       const dismissed = localStorage.getItem(DISCLAIMER_BANNER_KEY);
-      if (dismissed === 'true') {
+      if (dismissed === "true") {
         setIsVisible(false);
       }
     } catch (error) {
-      console.warn('Cannot access localStorage:', error);
+      console.warn("Cannot access localStorage:", error);
       // Continue with default visible state
     }
   }, []);
@@ -22,9 +22,9 @@ export function useDisclaimerBanner() {
   const dismissBanner = () => {
     setIsVisible(false);
     try {
-      localStorage.setItem(DISCLAIMER_BANNER_KEY, 'true');
+      localStorage.setItem(DISCLAIMER_BANNER_KEY, "true");
     } catch (error) {
-      console.warn('Cannot write to localStorage:', error);
+      console.warn("Cannot write to localStorage:", error);
       // UI still updates even if storage fails
     }
   };

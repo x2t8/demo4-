@@ -20,15 +20,17 @@ const adminLoginSchema = z.object({
   password: z.string().min(1, "Mật khẩu không được để trống"),
 });
 
-const registerSchema = z.object({
-  fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
-  email: z.string().email("Email không hợp lệ"),
-  password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
-  confirmPassword: z.string(),
-}).refine(data => data.password === data.confirmPassword, {
-  message: "Mật khẩu xác nhận không khớp",
-  path: ["confirmPassword"],
-});
+const registerSchema = z
+  .object({
+    fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
+    email: z.string().email("Email không hợp lệ"),
+    password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Mật khẩu xác nhận không khớp",
+    path: ["confirmPassword"],
+  });
 
 type LoginForm = z.infer<typeof loginSchema>;
 type RegisterForm = z.infer<typeof registerSchema>;
@@ -40,8 +42,15 @@ interface AuthModalProps {
   adminMode?: boolean;
 }
 
-export default function AuthModal({ isOpen, onClose, defaultMode = "login", adminMode = false }: AuthModalProps) {
-  const [mode, setMode] = useState<"login" | "register">(adminMode ? "login" : defaultMode);
+export default function AuthModal({
+  isOpen,
+  onClose,
+  defaultMode = "login",
+  adminMode = false,
+}: AuthModalProps) {
+  const [mode, setMode] = useState<"login" | "register">(
+    adminMode ? "login" : defaultMode,
+  );
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -61,7 +70,8 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
     setIsLoading(true);
     try {
       // Check if this is admin credentials
-      const isAdminCredentials = data.email === 'admin' && data.password === 'admin123';
+      const isAdminCredentials =
+        data.email === "admin" && data.password === "admin123";
 
       if (isAdminCredentials) {
         // Admin login
@@ -74,10 +84,12 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
         }
       } else if (adminMode) {
         // Admin mode but wrong credentials
-        alert("Tài khoản hoặc mật khẩu admin không đúng!\n\nThử: admin / admin123");
+        alert(
+          "Tài khoản hoặc mật khẩu admin không đúng!\n\nThử: admin / admin123",
+        );
       } else {
         // Regular user login - would connect to real API later
-        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+        await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API call
         alert("Đăng nhập người dùng thành công! (Mockup)");
         onClose();
       }
@@ -93,7 +105,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
     setIsLoading(true);
     // Mockup registration - replace with real API
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API call
       // Registration API call would be implemented here
       // Mock success
       alert("Đăng ký thành công! (Mockup)");
@@ -106,7 +118,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
   };
 
   const modalContent = (
-    <div className="fixed inset-0 z-modal flex items-center justify-center p-4" style={{ zIndex: 90 }}>
+    <div
+      className="fixed inset-0 z-modal flex items-center justify-center p-4"
+      style={{ zIndex: 90 }}
+    >
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -122,16 +137,18 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               <Shield className="h-6 w-6" />
               <div>
                 <h2 className="text-xl font-bold">
-                  {adminMode ? "Đăng Nhập Admin" : (mode === "login" ? "Đăng Nhập" : "Đăng Ký")}
+                  {adminMode
+                    ? "Đăng Nhập Admin"
+                    : mode === "login"
+                      ? "Đăng Nhập"
+                      : "Đăng Ký"}
                 </h2>
                 <p className="text-blue-100 text-sm">
                   {adminMode
                     ? "Truy cập trang quản trị hệ thống"
-                    : (mode === "login"
+                    : mode === "login"
                       ? "Truy cập vào tài khoản của bạn"
-                      : "Tạo tài khoản mới để bắt đầu"
-                    )
-                  }
+                      : "Tạo tài khoản mới để bắt đầu"}
                 </p>
               </div>
             </div>
@@ -147,9 +164,15 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
         {/* Form content */}
         <div className="p-6">
           {mode === "login" ? (
-            <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4">
+            <form
+              onSubmit={loginForm.handleSubmit(handleLogin)}
+              className="space-y-4"
+            >
               <div>
-                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="email"
+                  className="text-sm font-medium text-gray-700"
+                >
                   {adminMode ? "Tên đăng nhập" : "Email/Username"}
                 </Label>
                 <div className="relative mt-1">
@@ -157,7 +180,9 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                   <Input
                     id="email"
                     type="text"
-                    placeholder={adminMode ? "admin" : "email@example.com hoặc username"}
+                    placeholder={
+                      adminMode ? "admin" : "email@example.com hoặc username"
+                    }
                     className="pl-10"
                     {...loginForm.register("email")}
                   />
@@ -170,7 +195,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </div>
 
               <div>
-                <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="password"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Mật khẩu
                 </Label>
                 <div className="relative mt-1">
@@ -187,7 +215,11 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
                 {loginForm.formState.errors.password && (
@@ -200,9 +232,14 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               <div className="flex items-center justify-between">
                 <label className="flex items-center">
                   <input type="checkbox" className="rounded text-blue-600" />
-                  <span className="ml-2 text-sm text-gray-600">Ghi nhớ đăng nhập</span>
+                  <span className="ml-2 text-sm text-gray-600">
+                    Ghi nhớ đăng nhập
+                  </span>
                 </label>
-                <button type="button" className="text-sm text-blue-600 hover:text-blue-800">
+                <button
+                  type="button"
+                  className="text-sm text-blue-600 hover:text-blue-800"
+                >
                   Quên mật khẩu?
                 </button>
               </div>
@@ -216,9 +253,15 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </Button>
             </form>
           ) : (
-            <form onSubmit={registerForm.handleSubmit(handleRegister)} className="space-y-4">
+            <form
+              onSubmit={registerForm.handleSubmit(handleRegister)}
+              className="space-y-4"
+            >
               <div>
-                <Label htmlFor="fullName" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="fullName"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Họ và tên
                 </Label>
                 <div className="relative mt-1">
@@ -239,7 +282,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="email"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Email
                 </Label>
                 <div className="relative mt-1">
@@ -260,7 +306,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </div>
 
               <div>
-                <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="password"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Mật khẩu
                 </Label>
                 <div className="relative mt-1">
@@ -277,7 +326,11 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
                 {registerForm.formState.errors.password && (
@@ -288,7 +341,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </div>
 
               <div>
-                <Label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="confirmPassword"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Xác nhận mật khẩu
                 </Label>
                 <div className="relative mt-1">
@@ -305,7 +361,11 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
-                    {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {showConfirmPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
                 {registerForm.formState.errors.confirmPassword && (
@@ -316,14 +376,24 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
               </div>
 
               <div className="flex items-start">
-                <input type="checkbox" className="rounded text-blue-600 mt-1" required />
+                <input
+                  type="checkbox"
+                  className="rounded text-blue-600 mt-1"
+                  required
+                />
                 <span className="ml-2 text-xs text-gray-600">
                   Tôi đồng ý với{" "}
-                  <button type="button" className="text-blue-600 hover:text-blue-800 underline">
+                  <button
+                    type="button"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
                     Điều khoản sử dụng
                   </button>{" "}
                   và{" "}
-                  <button type="button" className="text-blue-600 hover:text-blue-800 underline">
+                  <button
+                    type="button"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
                     Chính sách bảo mật
                   </button>
                 </span>
@@ -346,7 +416,9 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                 {mode === "login" ? "Chưa có tài khoản?" : "Đã có tài khoản?"}
                 <button
                   type="button"
-                  onClick={() => setMode(mode === "login" ? "register" : "login")}
+                  onClick={() =>
+                    setMode(mode === "login" ? "register" : "login")
+                  }
                   className="ml-1 text-blue-600 hover:text-blue-800 font-medium"
                 >
                   {mode === "login" ? "Đăng ký ngay" : "Đăng nhập"}
@@ -358,10 +430,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
           {/* Mockup notice */}
           <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
             <p className="text-yellow-800 text-xs text-center">
-              <strong>Lưu ý:</strong> {adminMode
+              <strong>Lưu ý:</strong>{" "}
+              {adminMode
                 ? "Tài khoản admin demo: admin / admin123"
-                : "Đây là giao diện mockup để chuẩn bị cho hệ thống xác thực. Chức năng đăng ký/đăng nhập sẽ được tích hợp với backend trong tương lai."
-              }
+                : "Đây là giao diện mockup để chuẩn bị cho hệ thống xác thực. Chức năng đăng ký/đăng nhập sẽ được tích hợp với backend trong tương lai."}
             </p>
           </div>
         </div>

@@ -26,9 +26,9 @@ const useAdminAuth = () => {
     name: "Admin User",
     email: "admin@congdansoanoan.vn",
     role: "Super Admin",
-    avatar: "/api/placeholder/32/32"
+    avatar: "/api/placeholder/32/32",
   });
-  
+
   return { isAuthenticated, user };
 };
 
@@ -206,7 +206,9 @@ export default function AdminLayout() {
               <div className="h-6 w-6 bg-blue-600 rounded-full flex items-center justify-center">
                 <User className="h-3 w-3 text-white" />
               </div>
-              <span className="hidden sm:block text-sm font-medium">{user.name}</span>
+              <span className="hidden sm:block text-sm font-medium">
+                {user.name}
+              </span>
             </div>
           </div>
         </header>

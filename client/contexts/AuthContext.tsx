@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface User {
   id: string;
   username: string;
-  role: 'admin' | 'user';
+  role: "admin" | "user";
 }
 
 interface AuthContextType {
@@ -20,7 +26,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -36,55 +42,54 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // Khởi tạo auth state từ localStorage
   useEffect(() => {
     try {
-      const storedUser = localStorage.getItem('auth_user');
+      const storedUser = localStorage.getItem("auth_user");
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
     } catch (error) {
-      console.error('Error loading auth state:', error);
-      localStorage.removeItem('auth_user');
+      console.error("Error loading auth state:", error);
+      localStorage.removeItem("auth_user");
     } finally {
       setLoading(false);
     }
   }, []);
 
-  const login = async (username: string, password: string): Promise<boolean> => {
+  const login = async (
+    username: string,
+    password: string,
+  ): Promise<boolean> => {
     try {
       // Mock authentication - thay thế bằng API call thực sau này
-      if (username === 'admin' && password === 'admin123') {
+      if (username === "admin" && password === "admin123") {
         const adminUser: User = {
-          id: 'admin-1',
-          username: 'admin',
-          role: 'admin'
+          id: "admin-1",
+          username: "admin",
+          role: "admin",
         };
         setUser(adminUser);
-        localStorage.setItem('auth_user', JSON.stringify(adminUser));
+        localStorage.setItem("auth_user", JSON.stringify(adminUser));
         return true;
       }
       return false;
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
       return false;
     }
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('auth_user');
+    localStorage.removeItem("auth_user");
   };
 
   const value: AuthContextType = {
     user,
     isAuthenticated: !!user,
-    isAdmin: user?.role === 'admin',
+    isAdmin: user?.role === "admin",
     login,
     logout,
-    loading
+    loading,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

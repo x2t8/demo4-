@@ -14,7 +14,13 @@ import {
   ChevronDown,
   Edit,
 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -202,12 +208,18 @@ export default function AdminDashboard() {
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-32 bg-gray-200 rounded-lg animate-pulse" />
+            <div
+              key={i}
+              className="h-32 bg-gray-200 rounded-lg animate-pulse"
+            />
           ))}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {[...Array(2)].map((_, i) => (
-            <div key={i} className="h-96 bg-gray-200 rounded-lg animate-pulse" />
+            <div
+              key={i}
+              className="h-96 bg-gray-200 rounded-lg animate-pulse"
+            />
           ))}
         </div>
       </div>
@@ -253,7 +265,9 @@ export default function AdminDashboard() {
               <stat.icon className="h-5 w-5 text-gray-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+              <div className="text-2xl font-bold text-gray-900">
+                {stat.value}
+              </div>
               <div className="flex items-center text-xs">
                 {stat.changeType === "increase" ? (
                   <ChevronUp className="h-3 w-3 text-green-600" />
@@ -262,7 +276,9 @@ export default function AdminDashboard() {
                 )}
                 <span
                   className={`ml-1 ${
-                    stat.changeType === "increase" ? "text-green-600" : "text-red-600"
+                    stat.changeType === "increase"
+                      ? "text-green-600"
+                      : "text-red-600"
                   }`}
                 >
                   {stat.change}
@@ -291,7 +307,10 @@ export default function AdminDashboard() {
                   <span className="text-sm text-gray-600">{data.date}</span>
                   <div className="flex items-center space-x-4 flex-1 mx-4">
                     <div className="flex-1">
-                      <Progress value={(data.users / 250) * 100} className="h-2" />
+                      <Progress
+                        value={(data.users / 250) * 100}
+                        className="h-2"
+                      />
                     </div>
                     <span className="text-sm font-medium">{data.users}</span>
                   </div>
@@ -313,7 +332,9 @@ export default function AdminDashboard() {
             <div className="space-y-4">
               {mockRecentActivities.map((activity) => (
                 <div key={activity.id} className="flex items-start space-x-3">
-                  <div className={`p-2 rounded-full ${getActivityColor(activity.status)}`}>
+                  <div
+                    className={`p-2 rounded-full ${getActivityColor(activity.status)}`}
+                  >
                     {getActivityIcon(activity.type)}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -353,16 +374,17 @@ export default function AdminDashboard() {
             <TableBody>
               {mockTopContent.map((content) => (
                 <TableRow key={content.id}>
-                  <TableCell className="font-medium">
-                    {content.title}
-                  </TableCell>
+                  <TableCell className="font-medium">{content.title}</TableCell>
                   <TableCell>
                     <Badge variant="outline">{content.category}</Badge>
                   </TableCell>
                   <TableCell>{content.views.toLocaleString()}</TableCell>
                   <TableCell>
                     <div className="flex items-center space-x-2">
-                      <Progress value={content.engagement} className="w-16 h-2" />
+                      <Progress
+                        value={content.engagement}
+                        className="w-16 h-2"
+                      />
                       <span className="text-sm">{content.engagement}%</span>
                     </div>
                   </TableCell>
@@ -400,22 +422,24 @@ export default function AdminDashboard() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Thời gian phiên</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              Thời gian phiên
+            </CardTitle>
             <Clock className="h-5 w-5 text-blue-500" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
               {mockStats.avgSessionTime}
             </div>
-            <p className="text-xs text-gray-500">
-              Trung bình mỗi phiên
-            </p>
+            <p className="text-xs text-gray-500">Trung bình mỗi phiên</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Báo cáo đã xử lý</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              Báo cáo đã xử lý
+            </CardTitle>
             <TrendingUp className="h-5 w-5 text-purple-500" />
           </CardHeader>
           <CardContent>
@@ -423,7 +447,10 @@ export default function AdminDashboard() {
               {mockStats.resolvedReports}/{mockStats.scamReports}
             </div>
             <p className="text-xs text-gray-500">
-              {Math.round((mockStats.resolvedReports / mockStats.scamReports) * 100)}% hoàn thành
+              {Math.round(
+                (mockStats.resolvedReports / mockStats.scamReports) * 100,
+              )}
+              % hoàn thành
             </p>
           </CardContent>
         </Card>

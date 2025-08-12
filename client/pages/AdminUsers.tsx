@@ -16,7 +16,13 @@ import {
   Eye,
   Download,
 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -64,7 +70,7 @@ const mockUsers = [
   {
     id: 2,
     name: "Trần Thị B",
-    email: "tranthib@email.com", 
+    email: "tranthib@email.com",
     phone: "0987654321",
     role: "moderator",
     status: "active",
@@ -90,7 +96,7 @@ const mockUsers = [
     name: "Phạm Thị D",
     email: "phamthid@email.com",
     phone: "0147258369",
-    role: "user", 
+    role: "user",
     status: "pending",
     lastLogin: "Never",
     joinDate: "2024-01-14",
@@ -111,7 +117,7 @@ const mockUsers = [
   },
 ];
 
-type User = typeof mockUsers[0];
+type User = (typeof mockUsers)[0];
 type FilterType = "all" | "active" | "suspended" | "pending";
 type RoleType = "all" | "user" | "moderator" | "admin";
 
@@ -132,23 +138,24 @@ export default function AdminUsers() {
 
   // Filter users based on search and filters
   const filteredUsers = users.filter((user) => {
-    const matchesSearch = 
+    const matchesSearch =
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.phone.includes(searchQuery);
-    
-    const matchesStatus = statusFilter === "all" || user.status === statusFilter;
+
+    const matchesStatus =
+      statusFilter === "all" || user.status === statusFilter;
     const matchesRole = roleFilter === "all" || user.role === roleFilter;
-    
+
     return matchesSearch && matchesStatus && matchesRole;
   });
 
   const getUserStats = () => {
     return {
       total: users.length,
-      active: users.filter(u => u.status === "active").length,
-      suspended: users.filter(u => u.status === "suspended").length,
-      pending: users.filter(u => u.status === "pending").length,
+      active: users.filter((u) => u.status === "active").length,
+      suspended: users.filter((u) => u.status === "suspended").length,
+      pending: users.filter((u) => u.status === "pending").length,
     };
   };
 
@@ -159,7 +166,9 @@ export default function AdminUsers() {
       case "suspended":
         return <Badge className="bg-red-100 text-red-800">Đình chỉ</Badge>;
       case "pending":
-        return <Badge className="bg-yellow-100 text-yellow-800">Chờ duyệt</Badge>;
+        return (
+          <Badge className="bg-yellow-100 text-yellow-800">Chờ duyệt</Badge>
+        );
       default:
         return <Badge variant="secondary">{status}</Badge>;
     }
@@ -197,17 +206,19 @@ export default function AdminUsers() {
         setSelectedUser(user);
         break;
       case "suspend":
-        setUsers(prev => prev.map(u => 
-          u.id === user.id ? { ...u, status: "suspended" } : u
-        ));
+        setUsers((prev) =>
+          prev.map((u) =>
+            u.id === user.id ? { ...u, status: "suspended" } : u,
+          ),
+        );
         break;
       case "activate":
-        setUsers(prev => prev.map(u => 
-          u.id === user.id ? { ...u, status: "active" } : u
-        ));
+        setUsers((prev) =>
+          prev.map((u) => (u.id === user.id ? { ...u, status: "active" } : u)),
+        );
         break;
       case "delete":
-        setUsers(prev => prev.filter(u => u.id !== user.id));
+        setUsers((prev) => prev.filter((u) => u.id !== user.id));
         break;
     }
   };
@@ -219,7 +230,10 @@ export default function AdminUsers() {
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-24 bg-gray-200 rounded-lg animate-pulse" />
+            <div
+              key={i}
+              className="h-24 bg-gray-200 rounded-lg animate-pulse"
+            />
           ))}
         </div>
         <div className="h-96 bg-gray-200 rounded-lg animate-pulse" />
@@ -232,7 +246,9 @@ export default function AdminUsers() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Quản lý người dùng</h1>
+          <h1 className="text-2xl font-bold text-gray-900">
+            Quản lý người dùng
+          </h1>
           <p className="text-gray-600">
             Quản lý tài khoản và quyền hạn người dùng
           </p>
@@ -303,7 +319,9 @@ export default function AdminUsers() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Tổng người dùng</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              Tổng người dùng
+            </CardTitle>
             <Users className="h-4 w-4 text-gray-600" />
           </CardHeader>
           <CardContent>
@@ -313,11 +331,15 @@ export default function AdminUsers() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Đang hoạt động</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              Đang hoạt động
+            </CardTitle>
             <ShieldCheck className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">{stats.active}</div>
+            <div className="text-2xl font-bold text-green-600">
+              {stats.active}
+            </div>
           </CardContent>
         </Card>
 
@@ -327,7 +349,9 @@ export default function AdminUsers() {
             <Shield className="h-4 w-4 text-yellow-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
+            <div className="text-2xl font-bold text-yellow-600">
+              {stats.pending}
+            </div>
           </CardContent>
         </Card>
 
@@ -337,7 +361,9 @@ export default function AdminUsers() {
             <ShieldAlert className="h-4 w-4 text-red-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">{stats.suspended}</div>
+            <div className="text-2xl font-bold text-red-600">
+              {stats.suspended}
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -367,7 +393,10 @@ export default function AdminUsers() {
                 />
               </div>
             </div>
-            <Select value={statusFilter} onValueChange={(value: FilterType) => setStatusFilter(value)}>
+            <Select
+              value={statusFilter}
+              onValueChange={(value: FilterType) => setStatusFilter(value)}
+            >
               <SelectTrigger className="w-48">
                 <SelectValue placeholder="Trạng thái" />
               </SelectTrigger>
@@ -378,7 +407,10 @@ export default function AdminUsers() {
                 <SelectItem value="pending">Chờ duyệt</SelectItem>
               </SelectContent>
             </Select>
-            <Select value={roleFilter} onValueChange={(value: RoleType) => setRoleFilter(value)}>
+            <Select
+              value={roleFilter}
+              onValueChange={(value: RoleType) => setRoleFilter(value)}
+            >
               <SelectTrigger className="w-48">
                 <SelectValue placeholder="Vai trò" />
               </SelectTrigger>
@@ -416,7 +448,9 @@ export default function AdminUsers() {
                       </div>
                       <div>
                         <div className="font-medium">{user.name}</div>
-                        <div className="text-sm text-gray-500">{user.email}</div>
+                        <div className="text-sm text-gray-500">
+                          {user.email}
+                        </div>
                       </div>
                     </div>
                   </TableCell>
@@ -425,7 +459,9 @@ export default function AdminUsers() {
                   <TableCell>
                     <div className="flex items-center space-x-2">
                       {getRiskIcon(user.riskScore)}
-                      <span className="text-sm capitalize">{user.riskScore}</span>
+                      <span className="text-sm capitalize">
+                        {user.riskScore}
+                      </span>
                     </div>
                   </TableCell>
                   <TableCell className="text-sm text-gray-500">
@@ -435,9 +471,11 @@ export default function AdminUsers() {
                     <div className="flex items-center space-x-2">
                       <div className="text-sm">{user.completedModules}/6</div>
                       <div className="w-16 bg-gray-200 rounded-full h-2">
-                        <div 
+                        <div
                           className="bg-blue-600 h-2 rounded-full"
-                          style={{ width: `${(user.completedModules / 6) * 100}%` }}
+                          style={{
+                            width: `${(user.completedModules / 6) * 100}%`,
+                          }}
                         />
                       </div>
                     </div>

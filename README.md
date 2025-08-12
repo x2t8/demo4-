@@ -20,6 +20,7 @@
 ## ✨ Tính năng chính
 
 ### 🎯 **Core Features**
+
 - **📚 6 Modules học tập**: Nội dung được cấu trúc khoa học
 - **🎮 Quiz tương tác**: Đánh giá kiến thức thông qua bài test
 - **📱 Responsive Design**: Tối ưu cho mọi thiết bị
@@ -28,6 +29,7 @@
 - **🚨 Emergency Actions**: Nút hỗ trợ khẩn cấp
 
 ### 🛠️ **Technical Features**
+
 - **⚡ Lazy Loading**: Tối ưu hiệu suất tải trang
 - **📱 PWA Ready**: Có thể cài đặt như ứng dụng native
 - **🎨 Motion Design**: Animation mượt mà, professional
@@ -37,6 +39,7 @@
 ## 🚀 Bắt đầu nhanh
 
 ### Yêu cầu hệ thống
+
 - **Node.js** >= 18.0.0
 - **npm** >= 8.0.0 hoặc **yarn** >= 1.22.0
 
@@ -111,6 +114,7 @@ npm run format.fix     # Format code với Prettier
 ## 🎨 Tech Stack
 
 ### **Frontend**
+
 - **React 18** - Modern UI library với concurrent features
 - **TypeScript 5.5** - Type-safe JavaScript
 - **Vite 6.2** - Blazing fast build tool
@@ -124,6 +128,7 @@ npm run format.fix     # Format code với Prettier
 - **TanStack Query** - Server state management
 
 ### **Backend & Tools**
+
 - **Express** - Minimal web framework
 - **Vitest** - Fast unit testing
 - **ESLint + Prettier** - Code quality tools
@@ -132,30 +137,35 @@ npm run format.fix     # Format code với Prettier
 ## 🎯 Modules chi tiết
 
 ### 🔒 **An toàn số (ScamTypes)**
+
 - Nhận diện các loại lừa đảo phổ biến
 - Cách phòng tránh và xử lý khi gặp lừa đảo
 - Thống kê thực tế về tình hình lừa đảo tại Việt Nam
 - **Route**: `/scam-types`
 
 ### ⚖️ **Pháp luật số (DigitalLaw)**
+
 - Tìm hiểu luật pháp Việt Nam về không gian mạng
 - Quyền và nghĩa vụ của công dân trong môi trường số
 - Các quy định về bảo vệ dữ liệu cá nhân
 - **Route**: `/digital-law`
 
 ### 💡 **Đạo đức số (DigitalEthics)**
+
 - Nguyên tắc đạo đức trong không gian số
 - Cách giao tiếp văn minh trên mạng
 - Chống tin giả và thông tin sai lệch
 - **Route**: `/digital-ethics`
 
 ### 🤖 **AI an toàn (AISafety)**
+
 - Hiểu về trí tuệ nhân tạo và tác động
 - Cách sử dụng AI một cách có trách nhiệm
 - Nhận biết nội dung được tạo bởi AI
 - **Route**: `/ai-safety`
 
 ### 💻 **Kỹ năng số (DigitalSkills)**
+
 - Đánh giá và nâng cao kỹ năng số cá nhân
 - Công cụ và phần mềm hữu ích
 - Xu hướng công nghệ tương lai
@@ -164,24 +174,23 @@ npm run format.fix     # Format code với Prettier
 ## 🎨 Design System
 
 ### **Colors**
+
 ```css
 /* Primary Colors */
---primary: hsl(217 91% 60%)        /* Blue */
---secondary: hsl(142 71% 45%)      /* Green */
---accent: hsl(38 92% 50%)          /* Orange */
-
-/* Educational Theme */
---education-blue: hsl(217 91% 65%)
---education-green: hsl(142 76% 52%)
---education-purple: hsl(262 90% 65%)
+--primary: hsl(217 91% 60%) /* Blue */ --secondary: hsl(142 71% 45%) /* Green */
+  --accent: hsl(38 92% 50%) /* Orange */ /* Educational Theme */
+  --education-blue: hsl(217 91% 65%) --education-green: hsl(142 76% 52%)
+  --education-purple: hsl(262 90% 65%);
 ```
 
 ### **Typography**
+
 - **Font Stack**: Inter, SF Pro Display, System fonts
 - **Responsive Text**: `text-xl sm:text-2xl md:text-3xl lg:text-4xl`
 - **Vietnamese Support**: Full diacritics support
 
 ### **Animations**
+
 - **Entrance**: Fade in, slide up, scale in
 - **Interaction**: Hover lift, protective pulse
 - **Accessibility**: Respects `prefers-reduced-motion`
@@ -189,31 +198,37 @@ npm run format.fix     # Format code với Prettier
 ## 📱 Features đặc biệt
 
 ### **🧠 Caring Toast System**
+
 Hệ thống thông báo độc đáo mang tính chăm sóc:
+
 ```typescript
 // Auto-show caring messages
 const careMessages = [
   "💚 Bạn đang bảo vệ bản thân và gia đình khỏi lừa đảo",
   "🛡️ Kiến thức là vũ khí mạnh nhất chống lại kẻ xấu",
-  "❤️ Hãy chia sẻ kiến thức này với người thân yêu"
+  "❤️ Hãy chia sẻ kiến thức này với người thân yêu",
 ];
 ```
 
 ### **🎮 Interactive Quiz System**
+
 Đánh giá kiến thức với feedback real-time:
+
 - Progress tracking
 - Kết quả chi tiết
 - Recommendations based on score
 
 ### **🌙 Smart Theme System**
+
 ```typescript
 // Auto-detect system preference
 const [theme, setTheme] = useState<"light" | "dark">(
-  window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
 );
 ```
 
 ### **♿ Accessibility Features**
+
 - **Keyboard Navigation**: Full support
 - **Screen Reader**: ARIA labels và descriptions
 - **High Contrast**: Color accessibility compliant
@@ -222,6 +237,7 @@ const [theme, setTheme] = useState<"light" | "dark">(
 ## 🔧 Configuration
 
 ### **Environment Variables**
+
 ```bash
 # .env.local
 VITE_API_URL=http://localhost:3000/api
@@ -229,6 +245,7 @@ VITE_APP_NAME="Công Dân Số An Toàn"
 ```
 
 ### **Tailwind Config**
+
 ```typescript
 // Custom theme extensions
 theme: {
@@ -247,11 +264,13 @@ theme: {
 ## 🚀 Performance
 
 ### **Core Web Vitals**
+
 - **LCP**: < 2.5s (Lazy loading + code splitting)
 - **FID**: < 100ms (Optimized interactions)
 - **CLS**: < 0.1 (Stable layouts)
 
 ### **Optimizations**
+
 - **Code Splitting**: Route-based lazy loading
 - **Image Optimization**: SVG icons, minimal images
 - **Bundle Size**: Tree-shaking, minimal dependencies
@@ -271,6 +290,7 @@ npm run test:e2e
 ```
 
 ### **Testing Strategy**
+
 - **Unit Tests**: Vitest + React Testing Library
 - **Integration Tests**: Component interactions
 - **E2E Tests**: Playwright (planned)
@@ -279,17 +299,20 @@ npm run test:e2e
 ## 📦 Deployment
 
 ### **Build cho Production**
+
 ```bash
 npm run build
 npm run start
 ```
 
 ### **Deploy Options**
+
 - **Netlify**: Connect via MCP integration
 - **Vercel**: One-click deployment
 - **Self-hosted**: Docker container available
 
 ### **CI/CD Pipeline**
+
 ```yaml
 # .github/workflows/deploy.yml
 - name: Build and Test
@@ -303,6 +326,7 @@ npm run start
 ## 🤝 Contributing
 
 ### **Development Workflow**
+
 1. Fork the repository
 2. Create feature branch: `git checkout -b feature/amazing-feature`
 3. Commit changes: `git commit -m 'Add amazing feature'`
@@ -310,12 +334,14 @@ npm run start
 5. Open Pull Request
 
 ### **Code Standards**
+
 - **TypeScript**: Strict mode enabled
 - **ESLint**: Enforced rules
 - **Prettier**: Auto-formatting
 - **Conventional Commits**: Semantic versioning
 
 ### **PR Guidelines**
+
 - Include tests for new features
 - Update documentation
 - Follow accessibility standards

@@ -16,7 +16,13 @@ import {
   Globe,
   Lock,
 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -123,9 +129,15 @@ const mockContent = [
   },
 ];
 
-type Content = typeof mockContent[0];
+type Content = (typeof mockContent)[0];
 type StatusFilter = "all" | "published" | "draft" | "review";
-type CategoryFilter = "all" | "An toàn số" | "Kỹ năng số" | "Pháp luật số" | "Đạo đức số" | "AI an toàn";
+type CategoryFilter =
+  | "all"
+  | "An toàn số"
+  | "Kỹ năng số"
+  | "Pháp luật số"
+  | "Đạo đức số"
+  | "AI an toàn";
 
 export default function AdminContent() {
   const [content, setContent] = useState<Content[]>(mockContent);
@@ -144,36 +156,44 @@ export default function AdminContent() {
 
   // Filter content based on search and filters
   const filteredContent = content.filter((item) => {
-    const matchesSearch = 
+    const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.category.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesStatus = statusFilter === "all" || item.status === statusFilter;
-    const matchesCategory = categoryFilter === "all" || item.category === categoryFilter;
-    
+
+    const matchesStatus =
+      statusFilter === "all" || item.status === statusFilter;
+    const matchesCategory =
+      categoryFilter === "all" || item.category === categoryFilter;
+
     return matchesSearch && matchesStatus && matchesCategory;
   });
 
   const getContentStats = () => {
     return {
       total: content.length,
-      published: content.filter(c => c.status === "published").length,
-      draft: content.filter(c => c.status === "draft").length,
-      review: content.filter(c => c.status === "review").length,
+      published: content.filter((c) => c.status === "published").length,
+      draft: content.filter((c) => c.status === "draft").length,
+      review: content.filter((c) => c.status === "review").length,
       totalViews: content.reduce((sum, c) => sum + c.views, 0),
-      avgEngagement: Math.round(content.reduce((sum, c) => sum + c.engagement, 0) / content.length),
+      avgEngagement: Math.round(
+        content.reduce((sum, c) => sum + c.engagement, 0) / content.length,
+      ),
     };
   };
 
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "published":
-        return <Badge className="bg-green-100 text-green-800">Đã xuất bản</Badge>;
+        return (
+          <Badge className="bg-green-100 text-green-800">Đã xuất bản</Badge>
+        );
       case "draft":
         return <Badge className="bg-gray-100 text-gray-800">Bản nháp</Badge>;
       case "review":
-        return <Badge className="bg-yellow-100 text-yellow-800">Chờ duyệt</Badge>;
+        return (
+          <Badge className="bg-yellow-100 text-yellow-800">Chờ duyệt</Badge>
+        );
       default:
         return <Badge variant="secondary">{status}</Badge>;
     }
@@ -215,17 +235,27 @@ export default function AdminContent() {
         setSelectedContent(item);
         break;
       case "publish":
-        setContent(prev => prev.map(c => 
-          c.id === item.id ? { ...c, status: "published", publishDate: new Date().toISOString().split('T')[0] } : c
-        ));
+        setContent((prev) =>
+          prev.map((c) =>
+            c.id === item.id
+              ? {
+                  ...c,
+                  status: "published",
+                  publishDate: new Date().toISOString().split("T")[0],
+                }
+              : c,
+          ),
+        );
         break;
       case "unpublish":
-        setContent(prev => prev.map(c => 
-          c.id === item.id ? { ...c, status: "draft", publishDate: null } : c
-        ));
+        setContent((prev) =>
+          prev.map((c) =>
+            c.id === item.id ? { ...c, status: "draft", publishDate: null } : c,
+          ),
+        );
         break;
       case "delete":
-        setContent(prev => prev.filter(c => c.id !== item.id));
+        setContent((prev) => prev.filter((c) => c.id !== item.id));
         break;
     }
   };
@@ -237,7 +267,10 @@ export default function AdminContent() {
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-24 bg-gray-200 rounded-lg animate-pulse" />
+            <div
+              key={i}
+              className="h-24 bg-gray-200 rounded-lg animate-pulse"
+            />
           ))}
         </div>
         <div className="h-96 bg-gray-200 rounded-lg animate-pulse" />
@@ -355,10 +388,10 @@ export default function AdminContent() {
             <Eye className="h-4 w-4 text-yellow-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">{stats.review}</div>
-            <p className="text-xs text-gray-500">
-              {stats.draft} bản nháp
-            </p>
+            <div className="text-2xl font-bold text-yellow-600">
+              {stats.review}
+            </div>
+            <p className="text-xs text-gray-500">{stats.draft} bản nháp</p>
           </CardContent>
         </Card>
 
@@ -372,7 +405,9 @@ export default function AdminContent() {
               {stats.totalViews.toLocaleString()}
             </div>
             <p className="text-xs text-gray-500">
-              Trung bình: {Math.round(stats.totalViews / stats.published).toLocaleString()}/bài
+              Trung bình:{" "}
+              {Math.round(stats.totalViews / stats.published).toLocaleString()}
+              /bài
             </p>
           </CardContent>
         </Card>
@@ -383,10 +418,10 @@ export default function AdminContent() {
             <Globe className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">{stats.avgEngagement}%</div>
-            <p className="text-xs text-gray-500">
-              Đánh giá tương tác
-            </p>
+            <div className="text-2xl font-bold text-green-600">
+              {stats.avgEngagement}%
+            </div>
+            <p className="text-xs text-gray-500">Đánh giá tương tác</p>
           </CardContent>
         </Card>
       </div>
@@ -416,7 +451,10 @@ export default function AdminContent() {
                 />
               </div>
             </div>
-            <Select value={statusFilter} onValueChange={(value: StatusFilter) => setStatusFilter(value)}>
+            <Select
+              value={statusFilter}
+              onValueChange={(value: StatusFilter) => setStatusFilter(value)}
+            >
               <SelectTrigger className="w-48">
                 <SelectValue placeholder="Trạng thái" />
               </SelectTrigger>
@@ -427,7 +465,12 @@ export default function AdminContent() {
                 <SelectItem value="review">Chờ duyệt</SelectItem>
               </SelectContent>
             </Select>
-            <Select value={categoryFilter} onValueChange={(value: CategoryFilter) => setCategoryFilter(value)}>
+            <Select
+              value={categoryFilter}
+              onValueChange={(value: CategoryFilter) =>
+                setCategoryFilter(value)
+              }
+            >
               <SelectTrigger className="w-48">
                 <SelectValue placeholder="Danh mục" />
               </SelectTrigger>
@@ -484,7 +527,9 @@ export default function AdminContent() {
                   <TableCell>
                     <div className="text-sm">
                       <div>{item.views.toLocaleString()} lượt xem</div>
-                      <div className="text-gray-500">{item.engagement}% tương tác</div>
+                      <div className="text-gray-500">
+                        {item.engagement}% tương tác
+                      </div>
                     </div>
                   </TableCell>
                   <TableCell>

@@ -58,11 +58,14 @@ const App = () => (
                 <Route path="/digital-skills" element={<DigitalSkills />} />
 
                 {/* Admin routes - Protected */}
-                <Route path="/admin" element={
-                  <ProtectedRoute requireAdmin={true}>
-                    <AdminLayout />
-                  </ProtectedRoute>
-                }>
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute requireAdmin={true}>
+                      <AdminLayout />
+                    </ProtectedRoute>
+                  }
+                >
                   <Route index element={<AdminDashboard />} />
                   <Route path="users" element={<AdminUsers />} />
                   <Route path="content" element={<AdminContent />} />

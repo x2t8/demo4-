@@ -18,6 +18,7 @@
 ## 🏗️ Project Structure
 
 ### **Folder Organization**
+
 ```
 client/
 ├── components/          # Shared components
@@ -32,6 +33,7 @@ client/
 ```
 
 ### **Naming Conventions**
+
 - **Components**: PascalCase (`UserProfile.tsx`)
 - **Hooks**: camelCase with 'use' prefix (`useUserData.ts`)
 - **Utilities**: camelCase (`formatDate.ts`)
@@ -41,6 +43,7 @@ client/
 ## ⚙️ Setup Development Environment
 
 ### **Required Tools**
+
 ```bash
 # Node.js (v18+)
 node --version
@@ -56,6 +59,7 @@ npm --version
 ```
 
 ### **Environment Variables**
+
 ```bash
 # .env.local
 VITE_API_URL=http://localhost:3000/api
@@ -64,6 +68,7 @@ VITE_ENABLE_DEBUG=true
 ```
 
 ### **Development Commands**
+
 ```bash
 # Start development server
 npm run dev
@@ -81,6 +86,7 @@ npm run storybook
 ## 🎨 Component Development
 
 ### **Component Template**
+
 ```typescript
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -98,7 +104,7 @@ interface ExampleComponentProps {
 
 /**
  * ExampleComponent - A reusable component for displaying content
- * 
+ *
  * @example
  * <ExampleComponent variant="primary" onClick={handleClick}>
  *   Content goes here
@@ -132,6 +138,7 @@ export default function ExampleComponent({
 ```
 
 ### **Component Guidelines**
+
 1. **Props Interface**: Always define TypeScript interface
 2. **Default Values**: Use default parameters, not defaultProps
 3. **JSDoc Comments**: Document complex components
@@ -139,6 +146,7 @@ export default function ExampleComponent({
 5. **Compound Components**: Consider for complex UI patterns
 
 ### **Accessibility Requirements**
+
 ```typescript
 // ✅ Good: Proper ARIA attributes
 <button
@@ -163,6 +171,7 @@ export default function ExampleComponent({
 ## 📱 Page Development
 
 ### **Page Component Structure**
+
 ```typescript
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
@@ -176,7 +185,7 @@ export default function ExamplePage() {
   // Hooks first
   useScrollReveal();
   const [data, setData] = useState(null);
-  
+
   // Effects
   useEffect(() => {
     // Page-specific logic
@@ -188,11 +197,11 @@ export default function ExamplePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
+
       <main className="py-12">
         {/* Page content */}
       </main>
-      
+
       <Footer />
     </div>
   );
@@ -200,18 +209,19 @@ export default function ExamplePage() {
 ```
 
 ### **Page Meta Requirements**
+
 ```typescript
 // Add to each page component
 useEffect(() => {
-  document.title = 'Page Title - Công Dân Số An Toàn';
-  document.querySelector('meta[name="description"]')?.setAttribute(
-    'content', 
-    'Page description for SEO'
-  );
+  document.title = "Page Title - Công Dân Số An Toàn";
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute("content", "Page description for SEO");
 }, []);
 ```
 
 ### **Page Animation Pattern**
+
 ```typescript
 // Use page-specific animation classes
 <div className="page-fade-in">
@@ -227,6 +237,7 @@ useEffect(() => {
 ## 🎯 State Management
 
 ### **Local State (useState)**
+
 ```typescript
 // ✅ Good: Descriptive state names
 const [isModalOpen, setIsModalOpen] = useState(false);
@@ -239,42 +250,46 @@ const [data, setData] = useState();
 ```
 
 ### **Custom Hooks**
+
 ```typescript
 // hooks/useUserAuth.ts
 export function useUserAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  
+
   const login = useCallback(async (credentials: LoginData) => {
     setLoading(true);
     try {
       const user = await authAPI.login(credentials);
       setUser(user);
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
     } finally {
       setLoading(false);
     }
   }, []);
-  
+
   return { user, loading, login };
 }
 ```
 
 ### **Context Usage**
+
 ```typescript
 // contexts/ThemeContext.tsx
 interface ThemeContextType {
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined,
+);
 
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within ThemeProvider');
+    throw new Error("useTheme must be used within ThemeProvider");
   }
   return context;
 }
@@ -283,6 +298,7 @@ export function useTheme() {
 ## 🎨 Styling Guidelines
 
 ### **Tailwind CSS Patterns**
+
 ```typescript
 // ✅ Good: Responsive design
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -308,6 +324,7 @@ export function useTheme() {
 ```
 
 ### **Custom CSS Organization**
+
 ```css
 /* global.css structure */
 
@@ -339,32 +356,34 @@ export function useTheme() {
 ```
 
 ### **Component Styling Patterns**
+
 ```typescript
 // ✅ Good: Variant-based styling
 const buttonVariants = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700',
-  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
-  destructive: 'bg-red-600 text-white hover:bg-red-700',
+  primary: "bg-blue-600 text-white hover:bg-blue-700",
+  secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
+  destructive: "bg-red-600 text-white hover:bg-red-700",
 };
 
 // ✅ Good: Size variations
 const buttonSizes = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: "px-3 py-1.5 text-sm",
+  md: "px-4 py-2 text-base",
+  lg: "px-6 py-3 text-lg",
 };
 ```
 
 ## ♿ Accessibility Guidelines
 
 ### **Keyboard Navigation**
+
 ```typescript
 // ✅ Good: Keyboard support
 const handleKeyDown = (event: KeyboardEvent) => {
-  if (event.key === 'Enter' || event.key === ' ') {
+  if (event.key === "Enter" || event.key === " ") {
     handleClick();
   }
-  if (event.key === 'Escape') {
+  if (event.key === "Escape") {
     handleClose();
   }
 };
@@ -379,6 +398,7 @@ useEffect(() => {
 ```
 
 ### **Screen Reader Support**
+
 ```typescript
 // ✅ Good: Proper ARIA usage
 <button
@@ -399,6 +419,7 @@ useEffect(() => {
 ```
 
 ### **Color and Contrast**
+
 ```css
 /* ✅ Good: High contrast ratios */
 .text-primary {
@@ -415,6 +436,7 @@ useEffect(() => {
 ## 🚀 Performance Guidelines
 
 ### **Component Optimization**
+
 ```typescript
 // ✅ Good: Memoization for expensive calculations
 const expensiveValue = useMemo(() => {
@@ -433,6 +455,7 @@ const MemoizedComponent = React.memo(Component, (prevProps, nextProps) => {
 ```
 
 ### **Lazy Loading**
+
 ```typescript
 // ✅ Good: Route-based code splitting
 const HomePage = lazy(() => import('@/pages/HomePage'));
@@ -448,19 +471,21 @@ const HeavyChart = lazy(() => import('@/components/HeavyChart'));
 ```
 
 ### **Bundle Optimization**
+
 ```typescript
 // ✅ Good: Tree-shakable imports
-import { Button } from '@/components/ui/button';
-import { formatDate } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/utils";
 
 // ❌ Bad: Barrel imports
-import * as utils from '@/lib/utils';
-import { Button, Input, Dialog } from '@/components/ui';
+import * as utils from "@/lib/utils";
+import { Button, Input, Dialog } from "@/components/ui";
 ```
 
 ## 🧪 Testing Guidelines
 
 ### **Unit Testing**
+
 ```typescript
 // ExampleComponent.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
@@ -480,7 +505,7 @@ describe('ExampleComponent', () => {
         Click me
       </ExampleComponent>
     );
-    
+
     fireEvent.click(screen.getByText('Click me'));
     expect(handleClick).toHaveBeenCalledOnce();
   });
@@ -491,7 +516,7 @@ describe('ExampleComponent', () => {
         Content
       </ExampleComponent>
     );
-    
+
     const element = screen.getByText('Content').parentElement;
     expect(element).toHaveClass('bg-gray-50');
   });
@@ -499,29 +524,30 @@ describe('ExampleComponent', () => {
 ```
 
 ### **Custom Hook Testing**
+
 ```typescript
 // hooks/useUserAuth.test.ts
-import { renderHook, act } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { useUserAuth } from './useUserAuth';
+import { renderHook, act } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import { useUserAuth } from "./useUserAuth";
 
-describe('useUserAuth', () => {
-  it('initializes with null user', () => {
+describe("useUserAuth", () => {
+  it("initializes with null user", () => {
     const { result } = renderHook(() => useUserAuth());
     expect(result.current.user).toBeNull();
     expect(result.current.loading).toBe(true);
   });
 
-  it('handles login correctly', async () => {
+  it("handles login correctly", async () => {
     const { result } = renderHook(() => useUserAuth());
-    
+
     await act(async () => {
       await result.current.login({
-        email: 'test@example.com',
-        password: 'password123'
+        email: "test@example.com",
+        password: "password123",
       });
     });
-    
+
     expect(result.current.user).toBeDefined();
     expect(result.current.loading).toBe(false);
   });
@@ -531,6 +557,7 @@ describe('useUserAuth', () => {
 ## 📝 Code Standards
 
 ### **TypeScript Guidelines**
+
 ```typescript
 // ✅ Good: Explicit types for props
 interface ButtonProps {
@@ -555,6 +582,7 @@ const handleData = (data: any) => { ... };
 ```
 
 ### **Error Handling**
+
 ```typescript
 // ✅ Good: Comprehensive error handling
 const fetchUserData = async (userId: string) => {
@@ -596,10 +624,15 @@ class ErrorBoundary extends Component {
 ```
 
 ### **Performance Monitoring**
+
 ```typescript
 // ✅ Good: Performance measurements
 const measureComponentRender = (componentName: string) => {
-  return (target: any, propertyName: string, descriptor: PropertyDescriptor) => {
+  return (
+    target: any,
+    propertyName: string,
+    descriptor: PropertyDescriptor,
+  ) => {
     const method = descriptor.value;
     descriptor.value = function (...args: any[]) {
       const start = performance.now();
@@ -615,6 +648,7 @@ const measureComponentRender = (componentName: string) => {
 ## 🔧 Development Tools
 
 ### **Recommended VS Code Extensions**
+
 ```json
 {
   "recommendations": [
@@ -629,6 +663,7 @@ const measureComponentRender = (componentName: string) => {
 ```
 
 ### **VS Code Settings**
+
 ```json
 {
   "editor.formatOnSave": true,
@@ -644,6 +679,7 @@ const measureComponentRender = (componentName: string) => {
 ## 🚀 Deployment Checklist
 
 ### **Pre-deployment**
+
 - [ ] All tests passing
 - [ ] TypeScript compilation clean
 - [ ] Bundle size analysis completed
@@ -652,6 +688,7 @@ const measureComponentRender = (componentName: string) => {
 - [ ] SEO optimization verified
 
 ### **Production Build**
+
 ```bash
 # Build optimization checks
 npm run build
