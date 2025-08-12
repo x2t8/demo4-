@@ -208,11 +208,11 @@ export default function DigitalLaw() {
       impact: "Môi trường lành mạnh",
       usage: "Mạng xã hội, website",
       description:
-        "Nội dung đăng t���i phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy ��ịnh nền tảng.",
+        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy định nền tảng.",
       dos: [
-        "Ki���m tra tính chính xác thông tin",
+        "Kiểm tra tính chính xác thông tin",
         "Tôn trọng các giá trị xã hội",
-        "Tuân thủ quy ��ịnh nền tảng",
+        "Tuân thủ quy định nền tảng",
         "Khai báo hợp tác th��ơng mại",
         "Bảo vệ danh tiếng người khác",
         "Sử dụng ngôn ngữ văn minh",
