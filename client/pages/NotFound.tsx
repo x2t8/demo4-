@@ -34,7 +34,7 @@ export default function NotFound() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 page-fade-in">
       <Header />
 
       <div className="flex items-center justify-center min-h-[80vh] px-4 sm:px-6 lg:px-8">
