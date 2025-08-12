@@ -35,11 +35,12 @@ interface AuthModalProps {
   adminMode?: boolean;
 }
 
-export default function AuthModal({ isOpen, onClose, defaultMode = "login" }: AuthModalProps) {
-  const [mode, setMode] = useState<"login" | "register">(defaultMode);
+export default function AuthModal({ isOpen, onClose, defaultMode = "login", adminMode = false }: AuthModalProps) {
+  const [mode, setMode] = useState<"login" | "register">(adminMode ? "login" : defaultMode);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { login } = useAuth();
 
   const loginForm = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
