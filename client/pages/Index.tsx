@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   AlertTriangle,
   Shield,
@@ -111,7 +111,7 @@ export default function Index() {
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              Nền tảng giáo dục toàn diện v�� an toàn số, đạo đức số, AI và kỹ
+              Nền tảng giáo dục toàn diện về an toàn số, đạo đức số, AI và kỹ
               năng công nghệ cho người Việt Nam
             </p>
             <div
@@ -168,7 +168,7 @@ export default function Index() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center stagger-children">
               <div>
                 <div className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">
-                  Hàng ngh��n
+                  Hàng nghìn
                 </div>
                 <div className="text-sm sm:text-base text-gray-600">
                   Vụ lừa đảo online/năm
