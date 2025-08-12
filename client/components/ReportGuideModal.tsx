@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   X,
   Phone,
@@ -41,7 +41,7 @@ export default function ReportGuideModal({
         "📞 Công an: 113 (miễn phí, 24/7)",
         "🏛️ Số điện thoại đồn công an địa phương",
         "💰 Ngân hàng (nếu liên quan đến tài khoản)",
-        "📱 Nhà mạng (nếu bị lừa qua tin nhắn/cuộc gọi)",
+        "📱 Nhà mạng (nếu b�� lừa qua tin nhắn/cuộc gọi)",
       ],
       color: "bg-red-100 text-red-700 border-red-200",
     },
@@ -74,7 +74,7 @@ export default function ReportGuideModal({
     {
       icon: AlertTriangle,
       title: "Không Tự Ý",
-      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi v��� việc một mình",
+      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi vụ việc một mình",
     },
   ];
 
