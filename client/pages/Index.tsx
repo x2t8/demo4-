@@ -91,7 +91,7 @@ export default function Index() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors page-fade-in">
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors page-slide-up">
         <Header />
         <DisclaimerBanner />
 
@@ -111,7 +111,7 @@ export default function Index() {
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              Nền tảng giáo dục toàn diện về an toàn số, đạo đức số, AI và kỹ
+              Nền tảng giáo dục toàn diện v�� an toàn số, đạo đức số, AI và kỹ
               năng công nghệ cho người Việt Nam
             </p>
             <div
@@ -168,7 +168,7 @@ export default function Index() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center stagger-children">
               <div>
                 <div className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">
-                  Hàng nghìn
+                  Hàng ngh��n
                 </div>
                 <div className="text-sm sm:text-base text-gray-600">
                   Vụ lừa đảo online/năm
