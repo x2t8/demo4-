@@ -13,6 +13,19 @@ export default function TermsModal({
 }: TermsModalProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
+  const modalVisible = externalVisible !== undefined ? externalVisible : isVisible;
+
+  useEffect(() => {
+    if (modalVisible) {
+      // Khóa scroll
+      document.body.style.overflow = "hidden";
+      // Kéo viewport lên đầu ngay lập tức
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [modalVisible]);
+
   useEffect(() => {
     // Auto-show only if not manually controlled
     if (externalVisible === undefined) {
