@@ -410,7 +410,7 @@ export default function DigitalSkills() {
       id: "business",
       title: "Kinh doanh",
       icon: BarChart3,
-      description: "Kỹ năng số cho doanh nghiệp và marketing",
+      description: "Kỹ n��ng số cho doanh nghiệp và marketing",
       skills: [
         "Social media marketing",
         "E-commerce platforms",
@@ -956,7 +956,7 @@ export default function DigitalSkills() {
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 ${getAccessibilityClasses()}`}
+      className={`min-h-screen bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 page-fade-in ${getAccessibilityClasses()}`}
     >
       <Header />
       <DisclaimerBanner />
