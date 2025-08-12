@@ -506,7 +506,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Notion AI",
-          purpose: "AI tích hợp trong quản lý công vi��c",
+          purpose: "AI tích hợp trong quản lý công việc",
           level: "Trung bình",
           practical: "Tự động hóa ghi chú, tổ chức thông tin",
         },
@@ -1008,7 +1008,7 @@ export default function DigitalSkills() {
                     <div className="text-3xl font-bold text-yellow-300">
                       4 cấp độ
                     </div>
-                    <div className="text-sm opacity-80">Trình độ học</div>
+                    <div className="text-sm opacity-80">Trình ��ộ học</div>
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
@@ -1147,7 +1147,7 @@ export default function DigitalSkills() {
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto">
                   Hoàn thành bài đánh giá tương tác để nhận được lộ trình học
-                  t���p cá nhân hóa
+                  tập cá nhân hóa
                 </p>
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -1474,7 +1474,7 @@ export default function DigitalSkills() {
                           {tool.purpose}
                         </p>
                         <div className="bg-purple-50 p-2 rounded text-xs">
-                          <strong>Ứng dụng th���c tế:</strong> {tool.practical}
+                          <strong>Ứng dụng thực tế:</strong> {tool.practical}
                         </div>
                       </div>
                     ))}
@@ -1502,7 +1502,7 @@ export default function DigitalSkills() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Thực hành thường xuyên với dự án nhỏ
+                    Thực hành thường xuyên với dự án nh���
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
