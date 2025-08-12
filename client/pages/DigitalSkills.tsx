@@ -164,7 +164,7 @@ export default function DigitalSkills() {
         "In tài liệu",
       ],
       correctAnswer: 1,
-      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã chọn.",
+      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch���n.",
       category: "Kỹ năng cơ bản",
     },
     {
@@ -515,7 +515,7 @@ export default function DigitalSkills() {
     {
       category: "Blockchain & Crypto",
       icon: Coins,
-      description: "Hiểu biết cơ bản về công nghệ blockchain",
+      description: "Hiểu bi��t cơ bản về công nghệ blockchain",
       tools: [
         {
           name: "Bitcoin/Ethereum basics",
@@ -1008,7 +1008,7 @@ export default function DigitalSkills() {
                     <div className="text-3xl font-bold text-yellow-300">
                       4 cấp độ
                     </div>
-                    <div className="text-sm opacity-80">Trình ��ộ học</div>
+                    <div className="text-sm opacity-80">Trình độ học</div>
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
@@ -1367,7 +1367,7 @@ export default function DigitalSkills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            📊 C��c Cấp Độ Digital Literacy
+            📊 Các Cấp Độ Digital Literacy
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Xác định vị trí hiện tại và lộ trình phát triển kỹ năng số
@@ -1502,7 +1502,7 @@ export default function DigitalSkills() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Thực hành thường xuyên với dự án nh���
+                    Thực hành thường xuyên với dự án nhỏ
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
