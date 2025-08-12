@@ -137,7 +137,7 @@ export default function ScamTypes() {
       popularity: "78%",
       avgLoss: "12 triệu VNĐ",
       description:
-        "Tin nhắn chứa link độc hại hoặc yêu c��u cung cấp mã OTP, thông tin thẻ ngân hàng.",
+        "Tin nhắn chứa link độc hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
       techniques: [
         "Gửi link độc hại",
         "Giả mạo thông báo ngân hàng",
@@ -883,7 +883,7 @@ export default function ScamTypes() {
                   prevention: [
                     "Liên hệ trực tiếp ngân hàng",
                     "Không chuyển tiền phí",
-                    "Ch���n số spam",
+                    "Chặn số spam",
                   ],
                 },
               ].map((example, index) => (
