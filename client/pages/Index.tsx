@@ -180,7 +180,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center stagger-children">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center stagger-children">
               <div>
                 <div className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">
                   Hàng nghìn
