@@ -430,7 +430,7 @@ export default function AISafety() {
           <div className="container mx-auto max-w-6xl px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                🛡️ Đạo đ���c AI & Hướng dẫn an toàn
+                🛡️ Đạo đức AI & Hướng dẫn an toàn
               </h2>
               <p className="text-lg text-gray-600">Nguyên tắc sử dụng AI có trách nhiệm</p>
             </div>
@@ -518,7 +518,7 @@ export default function AISafety() {
                 },
                 {
                   type: "Audio Deepfake",
-                  icon: "��",
+                  icon: "🔊",
                   color: "orange",
                   signs: [
                     "Giọng nói máy móc, thiếu cảm xúc",
@@ -791,7 +791,7 @@ export default function AISafety() {
               Sẵn Sàng Sử Dụng AI An Toàn?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              AI là công cụ mạnh mẽ - hãy sử dụng một cách thông minh, có trách nhiệm và an toàn
+              AI là công cụ mạnh mẽ - h��y sử dụng một cách thông minh, có trách nhiệm và an toàn
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -821,7 +821,7 @@ export default function AISafety() {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold mb-2">🤖 Bộ Sưu Tập AI Tools Chuyên Nghiệp</h2>
-                  <p className="opacity-90">40+ công cụ AI ��ược chọn lọc kỹ càng cho từng mục đích sử dụng cụ thể</p>
+                  <p className="opacity-90">40+ công cụ AI được chọn lọc kỹ càng cho từng mục đích sử dụng cụ thể</p>
                 </div>
                 <Button
                   onClick={() => setShowAIToolsModal(false)}
