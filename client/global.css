@@ -124,6 +124,30 @@
 
 /* Custom Animations */
 @layer utilities {
+  /* Accessibility: Respect user preference for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-text-breathe,
+    .animate-protective-pulse,
+    .animate-warning-glow,
+    .animate-heartbeat,
+    .animate-gentle-wave,
+    .emergency-pulse {
+      animation: none;
+    }
+
+    .stagger-children > *,
+    .page-fade-in,
+    .page-slide-up,
+    .page-scale-in,
+    .page-bounce-in,
+    .page-rotate-in,
+    .modal-center {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .animate-text-breathe {
     animation: text-breathe 3s ease-in-out infinite;
   }
