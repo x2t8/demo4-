@@ -283,7 +283,7 @@ export default function AdminContent() {
               <DialogHeader>
                 <DialogTitle>Tạo nội dung mới</DialogTitle>
                 <DialogDescription>
-                  Tạo bài viết, h��ớng dẫn, quiz hoặc video mới
+                  Tạo bài viết, hướng dẫn, quiz hoặc video mới
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
@@ -430,7 +430,7 @@ export default function AdminContent() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Tất cả trạng thái</SelectItem>
-                <SelectItem value="published">Đã xuất b��n</SelectItem>
+                <SelectItem value="published">Đã xuất bản</SelectItem>
                 <SelectItem value="draft">Bản nháp</SelectItem>
                 <SelectItem value="review">Chờ duyệt</SelectItem>
               </SelectContent>
@@ -501,44 +501,45 @@ export default function AdminContent() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Hành động</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={() => handleContentAction("edit", item)}>
-                          <Eye className="mr-2 h-4 w-4" />
-                          Xem chi tiết
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => handleContentAction("edit", item)}>
-                          <Edit className="mr-2 h-4 w-4" />
-                          Chỉnh sửa
-                        </DropdownMenuItem>
-                        {item.status === "published" ? (
-                          <DropdownMenuItem onClick={() => handleContentAction("unpublish", item)}>
-                            <Lock className="mr-2 h-4 w-4" />
-                            Hủy xuất bản
-                          </DropdownMenuItem>
-                        ) : (
-                          <DropdownMenuItem onClick={() => handleContentAction("publish", item)}>
-                            <Globe className="mr-2 h-4 w-4" />
-                            Xuất bản
-                          </DropdownMenuItem>
-                        )}
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem 
-                          onClick={() => handleContentAction("delete", item)}
-                          className="text-red-600"
+                    <div className="flex space-x-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleContentAction("edit", item)}
+                        title="Xem chi tiết"
+                      >
+                        <Eye className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleContentAction("edit", item)}
+                        title="Chỉnh sửa"
+                      >
+                        <Edit className="h-4 w-4" />
+                      </Button>
+                      {item.status === "published" ? (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleContentAction("unpublish", item)}
+                          title="Hủy xuất bản"
+                          className="text-orange-600 hover:text-orange-700"
                         >
-                          <Trash2 className="mr-2 h-4 w-4" />
-                          Xóa
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                          <Lock className="h-4 w-4" />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleContentAction("publish", item)}
+                          title="Xuất bản"
+                          className="text-green-600 hover:text-green-700"
+                        >
+                          <Globe className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}
