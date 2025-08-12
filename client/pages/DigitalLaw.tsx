@@ -183,7 +183,7 @@ export default function DigitalLaw() {
         "Xin đồng ý trước khi thu thập dữ liệu",
         "Giải thích rõ mục đích sử dụng",
         "Bảo mật dữ liệu thu thập được",
-        "Cho phép người dùng chỉnh sửa/xóa",
+        "Cho phép người dùng chỉnh sửa/x��a",
         "Thông báo khi có rò rỉ dữ li��u",
         "Tuân thủ quyền được quên",
       ],
@@ -1013,7 +1013,7 @@ export default function DigitalLaw() {
                     },
                     {
                       year: "2015",
-                      title: "Nghị định 15 về xử phạt vi phạm bản quyền",
+                      title: "Nghị định 15 về xử phạt vi phạm bản quy��n",
                       desc: "Quy định cụ thể mức phạt vi phạm IP",
                       impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
                       side: "right",
@@ -1038,7 +1038,7 @@ export default function DigitalLaw() {
                     {
                       year: "2024",
                       title: "Nghị định về AI và Deepfake",
-                      desc: "Quy định mới về trí tuệ nhân tạo",
+                      desc: "Quy định mới về trí tuệ nhân t��o",
                       impact: "Kiểm soát việc sử dụng AI tạo nội dung",
                       side: "left",
                       color: "from-cyan-500 to-blue-500"
@@ -1105,7 +1105,7 @@ export default function DigitalLaw() {
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
-                            a: "⚖️ Có, nhưng rất hạn chế và cần đi���u kiện cụ thể",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
                             level: "Nâng cao"
                           }
                         ].map((quiz, idx) => (
