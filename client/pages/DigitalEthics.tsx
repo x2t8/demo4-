@@ -260,7 +260,7 @@ export default function DigitalEthics() {
       id: "respect",
       icon: Heart,
       title: "Tôn trọng và lịch sự",
-      importance: "Cực k�� quan trọng",
+      importance: "Cực kỳ quan trọng",
       importanceLevel: 98,
       color: "text-pink-600 bg-pink-100",
       gradient: "from-pink-500 to-red-500",
@@ -1827,7 +1827,7 @@ export default function DigitalEthics() {
                     🧠 Phúc lợi kỹ thuật số
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Cách sử dụng công nghệ một cách lành mạnh và cân bằng
+                    C��ch sử dụng công nghệ một cách lành mạnh và cân bằng
                   </p>
                 </div>
 
