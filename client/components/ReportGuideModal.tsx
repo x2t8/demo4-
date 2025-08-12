@@ -80,7 +80,7 @@ export default function ReportGuideModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4" style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto animate-slide-up my-auto">
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto modal-center">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
