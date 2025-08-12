@@ -41,6 +41,9 @@ export default function TermsModal({
     }
   };
 
+  const modalVisible =
+    externalVisible !== undefined ? externalVisible : isVisible;
+
 
   if (!modalVisible) return null;
 
