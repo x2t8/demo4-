@@ -18,6 +18,12 @@ const DigitalLaw = React.lazy(() => import("./pages/DigitalLaw"));
 const DigitalSkills = React.lazy(() => import("./pages/DigitalSkills"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
+// Admin pages
+const AdminLayout = React.lazy(() => import("./components/AdminLayout"));
+const AdminDashboard = React.lazy(() => import("./pages/AdminDashboard"));
+const AdminUsers = React.lazy(() => import("./pages/AdminUsers"));
+const AdminContent = React.lazy(() => import("./pages/AdminContent"));
+
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50">
