@@ -11,6 +11,17 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    /* Z-index hierarchy */
+    --z-tooltip: 40;
+    --z-dropdown: 50;
+    --z-sticky: 60;
+    --z-fixed: 70;
+    --z-modal-backdrop: 80;
+    --z-modal: 90;
+    --z-popover: 100;
+    --z-toast: 110;
+    --z-critical: 9999;
+
     --background: 240 20% 98%;
     --foreground: 222.2 84% 4.9%;
 
