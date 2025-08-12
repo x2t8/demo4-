@@ -8,15 +8,25 @@ export function useDisclaimerBanner() {
 
   // Load state from localStorage on mount
   useEffect(() => {
-    const dismissed = localStorage.getItem(DISCLAIMER_BANNER_KEY);
-    if (dismissed === 'true') {
-      setIsVisible(false);
+    try {
+      const dismissed = localStorage.getItem(DISCLAIMER_BANNER_KEY);
+      if (dismissed === 'true') {
+        setIsVisible(false);
+      }
+    } catch (error) {
+      console.warn('Cannot access localStorage:', error);
+      // Continue with default visible state
     }
   }, []);
 
   const dismissBanner = () => {
     setIsVisible(false);
-    localStorage.setItem(DISCLAIMER_BANNER_KEY, 'true');
+    try {
+      localStorage.setItem(DISCLAIMER_BANNER_KEY, 'true');
+    } catch (error) {
+      console.warn('Cannot write to localStorage:', error);
+      // UI still updates even if storage fails
+    }
   };
 
   return {
