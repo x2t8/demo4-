@@ -147,14 +147,14 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
             <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4">
               <div>
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                  {adminMode ? "Tên đăng nhập" : "Email"}
+                  {adminMode ? "Tên đăng nhập" : "Email/Username"}
                 </Label>
                 <div className="relative mt-1">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="email"
-                    type={adminMode ? "text" : "email"}
-                    placeholder={adminMode ? "admin" : "your.email@example.com"}
+                    type="text"
+                    placeholder={adminMode ? "admin" : "email@example.com hoặc username"}
                     className="pl-10"
                     {...loginForm.register("email")}
                   />
@@ -175,7 +175,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="��•••••••"
+                    placeholder="••••••••"
                     className="pl-10 pr-10"
                     {...loginForm.register("password")}
                   />
