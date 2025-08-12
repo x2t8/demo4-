@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   Phone,
@@ -105,7 +105,7 @@ export default function ScamTypes() {
         "Kẻ lừa đảo gọi điện giả danh cơ quan công an, ngân hàng, tòa án để lừa thông tin cá nhân và tiền bạc.",
       techniques: [
         "Giả danh công an, ngân hàng",
-        "Tạo áp lực tâm lý",
+        "T���o áp lực tâm lý",
         "Yêu cầu chuyển tiền khẩn cấp",
         "Đe dọa bắt giữ, phạt tiền",
       ],
@@ -231,7 +231,7 @@ export default function ScamTypes() {
                     <div className="text-3xl font-bold text-yellow-300">
                       15K+
                     </div>
-                    <div className="text-sm opacity-80">Vụ l��a đảo online</div>
+                    <div className="text-sm opacity-80">Vụ lừa đảo online</div>
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
