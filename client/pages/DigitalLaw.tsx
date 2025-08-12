@@ -238,7 +238,7 @@ export default function DigitalLaw() {
       impact: "Sử dụng an toàn",
       usage: "Các nền tảng MXH",
       description:
-        "Mỗi nền tảng mạng xã hội có quy đ���nh riêng, song song với luật pháp Việt Nam về an toàn thông tin mạng.",
+        "Mỗi nền tảng mạng xã hội có quy đ���nh riêng, song song v���i luật pháp Việt Nam về an toàn thông tin mạng.",
       dos: [
         "Đọc và tuân thủ Community Guidelines",
         "Báo cáo nội dung vi phạm",
@@ -300,7 +300,7 @@ export default function DigitalLaw() {
       description:
         "Luật An toàn thông tin mạng quy định về bảo vệ hệ thống thông tin quan trọng và phòng chống tấn công mạng.",
       dos: [
-        "Cập nhật ph���n mềm bảo mật định kỳ",
+        "Cập nhật ph���n mềm bảo m��t định kỳ",
         "Sử dụng mật khẩu mạnh, unique",
         "Backup dữ liệu quan trọng",
         "Báo cáo sự cố an ninh mạng",
@@ -320,7 +320,7 @@ export default function DigitalLaw() {
 
   return (
     <div
-      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 page-fade-in ${
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 ${
         isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
@@ -1198,7 +1198,7 @@ export default function DigitalLaw() {
                     ]
                   },
                   {
-                    title: "Nguồn ảnh/nhạc miễn phí",
+                    title: "Ngu��n ảnh/nhạc miễn phí",
                     icon: Heart,
                     color: "from-orange-500 to-red-500",
                     resources: [
@@ -1414,7 +1414,7 @@ export default function DigitalLaw() {
               ⚖️ Quy định pháp lý chi tiết
             </h2>
             <p className="text-gray-600 text-base leading-relaxed">
-              6 lĩnh v���c pháp lý quan trọng khi hoạt động số
+              6 lĩnh v����c pháp lý quan trọng khi hoạt động số
             </p>
           </div>
 
