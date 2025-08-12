@@ -60,18 +60,21 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
   const handleLogin = async (data: LoginForm) => {
     setIsLoading(true);
     try {
-      let success = false;
+      // Check if this is admin credentials
+      const isAdminCredentials = data.email === 'admin' && data.password === 'admin123';
 
-      if (adminMode) {
-        // Admin login - use username field instead of email
-        // For admin, we use the email field as username input
-        success = await login(data.email, data.password);
+      if (isAdminCredentials) {
+        // Admin login
+        const success = await login(data.email, data.password);
         if (success) {
           alert("Đăng nhập admin thành công!");
           onClose();
         } else {
-          alert("Tài khoản hoặc mật khẩu admin không đúng!\n\nThử: admin / admin123");
+          alert("Đã xảy ra lỗi khi đăng nhập admin");
         }
+      } else if (adminMode) {
+        // Admin mode but wrong credentials
+        alert("Tài khoản hoặc mật khẩu admin không đúng!\n\nThử: admin / admin123");
       } else {
         // Regular user login - would connect to real API later
         await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
