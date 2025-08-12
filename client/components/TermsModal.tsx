@@ -48,8 +48,8 @@ export default function TermsModal({
   if (!modalVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-2 sm:p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4" style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto animate-slide-up my-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center space-x-3">
