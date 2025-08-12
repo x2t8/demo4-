@@ -350,8 +350,10 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
           {/* Mockup notice */}
           <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
             <p className="text-yellow-800 text-xs text-center">
-              <strong>Lưu ý:</strong> Đây là giao diện mockup để chuẩn bị cho hệ thống xác thực. 
-              Chức năng đăng ký/đăng nhập sẽ được tích hợp với backend trong tương lai.
+              <strong>Lưu ý:</strong> {adminMode
+                ? "Tài khoản admin demo: admin / admin123"
+                : "Đây là giao diện mockup để chuẩn bị cho hệ thống xác thực. Chức năng đăng ký/đăng nhập sẽ được tích hợp với backend trong tương lai."
+              }
             </p>
           </div>
         </div>
