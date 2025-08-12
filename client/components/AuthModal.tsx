@@ -11,7 +11,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 // Validation schemas
 const loginSchema = z.object({
-  email: z.string().email("Email không hợp lệ"),
+  email: z.string().min(1, "Email/Username không được để trống"),
   password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
 });
 
@@ -175,7 +175,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="••••••••"
+                    placeholder="��•••••••"
                     className="pl-10 pr-10"
                     {...loginForm.register("password")}
                   />
