@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, AlertCircle, Info, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,7 +14,8 @@ export default function TermsModal({
 }: TermsModalProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
-  const modalVisible = externalVisible !== undefined ? externalVisible : isVisible;
+  const modalVisible =
+    externalVisible !== undefined ? externalVisible : isVisible;
 
   useEffect(() => {
     if (modalVisible) {
@@ -56,11 +58,14 @@ export default function TermsModal({
 
   if (!modalVisible) return null;
 
-  return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+  const modalContent = (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4"
+      style={{ zIndex: 9999 }}
+    >
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-50"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={externalOnClose || (() => setIsVisible(false))}
       ></div>
 
@@ -186,4 +191,6 @@ export default function TermsModal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }

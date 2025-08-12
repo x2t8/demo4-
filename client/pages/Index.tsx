@@ -29,13 +29,19 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 import { CaringToastProvider } from "@/components/CaringToast";
 import ReportGuideModal from "@/components/ReportGuideModal";
 import FloatingActionButton from "@/components/FloatingActionButton";
-import Carousel3D from "@/components/Carousel3D";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
+
+// Lazy load heavy 3D component for performance
+const Carousel3D = React.lazy(() => import("@/components/Carousel3D"));
 import { digitalModules } from "./IndexModules";
 
 export default function Index() {
   // Initialize scroll-based animations
   useScrollReveal();
   useStaggeredReveal();
+
+  // Shared banner state
+  const { dismissBanner } = useDisclaimerBanner();
 
   // Modal states
   const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
@@ -55,8 +61,7 @@ export default function Index() {
     {
       icon: Shield,
       title: "An Toàn Số",
-      description:
-        "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
+      description: "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
       color: "text-red-600 bg-red-200",
       link: "/scam-types",
     },
@@ -100,9 +105,11 @@ export default function Index() {
 
   return (
     <CaringToastProvider>
-      <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
-        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}>
+      <div
+        className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
+          isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <Header />
         <DisclaimerBanner />
 
@@ -133,9 +140,9 @@ export default function Index() {
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift group"
                 onClick={() => {
-                  const modulesSection = document.getElementById('modules');
+                  const modulesSection = document.getElementById("modules");
                   if (modulesSection) {
-                    modulesSection.scrollIntoView({ behavior: 'smooth' });
+                    modulesSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
               >
@@ -176,7 +183,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center stagger-children">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center stagger-children">
               <div>
                 <div className="text-3xl sm:text-4xl font-bold text-red-600 mb-2">
                   Hàng nghìn
@@ -236,7 +243,7 @@ export default function Index() {
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 animate-slide-up">
-                5 Mô-đun Học Tập Thiết Yếu
+                5 Mô-đun Học Tập Thi��t Yếu
               </h2>
               <p
                 className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto animate-fade-in"
@@ -246,11 +253,18 @@ export default function Index() {
               </p>
             </div>
 
-            <Carousel3D
-              modules={digitalModules}
-              onModuleChange={setCurrentModuleIndex}
-            />
-
+            <React.Suspense
+              fallback={
+                <div className="h-64 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                </div>
+              }
+            >
+              <Carousel3D
+                modules={digitalModules}
+                onModuleChange={setCurrentModuleIndex}
+              />
+            </React.Suspense>
 
             {/* Call to Action */}
             <div className="text-center mt-12 sm:mt-16">
@@ -276,7 +290,7 @@ export default function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                   5 Nguyên Tắc Vàng
                   <span className="text-green-600 block">Bảo Vệ Bản Thân</span>
                 </h2>
@@ -309,7 +323,7 @@ export default function Index() {
                     </p>
                     <Button className="bg-green-600 hover:bg-green-700">
                       <Users className="h-4 w-4 mr-2" />
-                      Chia sẻ với người thân
+                      Chia s�� với người thân
                     </Button>
                   </div>
                 </div>
@@ -324,7 +338,7 @@ export default function Index() {
           className="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Đã Bị Lừa Đảo? Báo Cáo Ngay!
             </h2>
             <p className="text-xl mb-8 opacity-90">
@@ -355,7 +369,10 @@ export default function Index() {
             <Button
               size="lg"
               variant="secondary"
-              onClick={() => setIsReportModalOpen(true)}
+              onClick={() => {
+                dismissBanner();
+                setIsReportModalOpen(true);
+              }}
             >
               <AlertTriangle className="h-5 w-5 mr-2" />
               Xem hướng dẫn báo cáo

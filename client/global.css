@@ -11,6 +11,17 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    /* Z-index hierarchy */
+    --z-tooltip: 40;
+    --z-dropdown: 50;
+    --z-sticky: 60;
+    --z-fixed: 70;
+    --z-modal-backdrop: 80;
+    --z-modal: 90;
+    --z-popover: 100;
+    --z-toast: 110;
+    --z-critical: 9999;
+
     --background: 240 20% 98%;
     --foreground: 222.2 84% 4.9%;
 
@@ -117,29 +128,94 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      "SF Pro Display",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-display: swap;
   }
 }
 
 /* Custom Animations */
 @layer utilities {
+  /* Accessibility: Respect user preference for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-text-breathe,
+    .animate-protective-pulse,
+    .animate-warning-glow,
+    .animate-heartbeat,
+    .animate-gentle-wave,
+    .emergency-pulse {
+      animation: none;
+    }
+
+    .stagger-children > *,
+    .page-fade-in,
+    .page-slide-up,
+    .page-scale-in,
+    .page-bounce-in,
+    .page-rotate-in,
+    .modal-center {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .animate-text-breathe {
     animation: text-breathe 3s ease-in-out infinite;
+    transform: translateZ(0); /* GPU acceleration */
+  }
+
+  .animate-text-breathe:hover {
+    will-change: transform, opacity; /* Only set will-change on interaction */
   }
 
   .animate-protective-pulse {
     animation: protective-pulse 2s ease-in-out infinite;
+    transform: translateZ(0);
+  }
+
+  .animate-protective-pulse:hover {
+    will-change: transform, opacity;
   }
 
   .animate-warning-glow {
     animation: warning-glow 2s ease-in-out infinite;
+    transform: translateZ(0);
+  }
+
+  .animate-warning-glow:hover {
+    will-change: filter;
   }
 
   .animate-heartbeat {
     animation: heartbeat 1.5s ease-in-out infinite;
+    transform: translateZ(0);
+  }
+
+  .animate-heartbeat:hover {
+    will-change: transform;
   }
 
   .animate-gentle-wave {
     animation: gentle-wave 2s ease-in-out infinite;
+    transform: translateZ(0);
+  }
+
+  .animate-gentle-wave:hover {
+    will-change: transform;
   }
 
   .hover-caring-lift {
@@ -253,6 +329,26 @@
     box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.25),
       0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .z-tooltip {
+    z-index: var(--z-tooltip);
+  }
+
+  .z-dropdown {
+    z-index: var(--z-dropdown);
+  }
+
+  .z-modal {
+    z-index: var(--z-modal);
+  }
+
+  .z-toast {
+    z-index: var(--z-toast);
+  }
+
+  .z-critical {
+    z-index: var(--z-critical);
   }
 
   .z-25 {

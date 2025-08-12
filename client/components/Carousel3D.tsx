@@ -25,15 +25,18 @@ interface Carousel3DProps {
   onModuleChange?: (index: number) => void;
 }
 
-export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps) {
+export default function Carousel3D({
+  modules,
+  onModuleChange,
+}: Carousel3DProps) {
   const [activeIndex, setActiveIndex] = useState(2); // Start with middle module
   const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState<'left' | 'right' | null>(null);
+  const [direction, setDirection] = useState<"left" | "right" | null>(null);
 
   const nextModule = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setDirection('right'); // Moving to next = sliding left
+    setDirection("right"); // Moving to next = sliding left
 
     // Add slide animation effect
     setTimeout(() => {
@@ -51,7 +54,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
   const prevModule = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setDirection('left'); // Moving to prev = sliding right
+    setDirection("left"); // Moving to prev = sliding right
 
     // Add slide animation effect
     setTimeout(() => {
@@ -81,30 +84,31 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
 
   const getVisibleModules = () => {
     const visibleModules = [];
-    
+
     for (let i = -2; i <= 2; i++) {
       const index = (activeIndex + i + modules.length) % modules.length;
       visibleModules.push({
         module: modules[index],
         originalIndex: index,
-        position: i
+        position: i,
       });
     }
-    
+
     return visibleModules;
   };
 
   const getModuleStyles = (position: number) => {
-    const baseStyles = "absolute top-1/2 transform transition-all duration-700 ease-out cursor-pointer";
+    const baseStyles =
+      "absolute top-1/2 transform transition-all duration-700 ease-out cursor-pointer";
 
     // Animation logic: when going next (right direction), all modules slide left
     // When going prev (left direction), all modules slide right
     let slideTransform = "";
     if (isAnimating && direction) {
-      if (direction === 'right') {
+      if (direction === "right") {
         // Next button: slide all modules left
         slideTransform = "-translate-x-16";
-      } else if (direction === 'left') {
+      } else if (direction === "left") {
         // Prev button: slide all modules right
         slideTransform = "translate-x-16";
       }
@@ -144,7 +148,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
   const visibleModules = getVisibleModules();
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" style={{ contain: "layout style paint" }}>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-xl animate-pulse" />
@@ -153,19 +157,19 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
         <div className="absolute top-1/2 -left-5 w-12 h-12 bg-gradient-to-r from-indigo-400/15 to-blue-400/15 rounded-full blur-md animate-pulse delay-500" />
       </div>
 
-      {/* Floating sparkles */}
+      {/* Simplified sparkles - reduced from 8 to 3 for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
             className="absolute"
             style={{
-              left: `${15 + i * 12}%`,
-              top: `${25 + (i % 3) * 20}%`,
-              animationDelay: `${i * 800}ms`,
+              left: `${20 + i * 30}%`,
+              top: `${30 + i * 20}%`,
+              animationDelay: `${i * 1200}ms`,
             }}
           >
-            <div className="w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40 animate-ping" />
+            <div className="w-1 h-1 bg-blue-400/40 rounded-full animate-ping" />
           </div>
         ))}
       </div>
@@ -174,7 +178,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
         className="relative w-full"
         style={{
           perspective: "1200px",
-          transformStyle: "preserve-3d"
+          transformStyle: "preserve-3d",
         }}
       >
         {/* Desktop: 5 modules, Mobile/Tablet: 3 modules */}
@@ -187,13 +191,15 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
             disabled={isAnimating}
             className={cn(
               "absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-60 w-16 h-16 lg:w-18 lg:h-18 rounded-full bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 backdrop-blur-md shadow-xl hover:shadow-2xl border-2 border-blue-200/60 hover:border-blue-400/80 hover:scale-110 transition-all duration-300 group hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-100",
-              isAnimating && "animate-pulse scale-95 opacity-70"
+              isAnimating && "animate-pulse scale-95 opacity-70",
             )}
           >
-            <ChevronLeft className={cn(
-              "h-8 w-8 lg:h-9 lg:w-9 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-all duration-300",
-              isAnimating && "animate-bounce"
-            )} />
+            <ChevronLeft
+              className={cn(
+                "h-8 w-8 lg:h-9 lg:w-9 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-all duration-300",
+                isAnimating && "animate-bounce",
+              )}
+            />
           </Button>
 
           <Button
@@ -203,13 +209,15 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
             disabled={isAnimating}
             className={cn(
               "absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-60 w-16 h-16 lg:w-18 lg:h-18 rounded-full bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 backdrop-blur-md shadow-xl hover:shadow-2xl border-2 border-blue-200/60 hover:border-blue-400/80 hover:scale-110 transition-all duration-300 group hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-100",
-              isAnimating && "animate-pulse scale-95 opacity-70"
+              isAnimating && "animate-pulse scale-95 opacity-70",
             )}
           >
-            <ChevronRight className={cn(
-              "h-8 w-8 lg:h-9 lg:w-9 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-all duration-300",
-              isAnimating && "animate-bounce"
-            )} />
+            <ChevronRight
+              className={cn(
+                "h-8 w-8 lg:h-9 lg:w-9 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-all duration-300",
+                isAnimating && "animate-bounce",
+              )}
+            />
           </Button>
 
           {/* 5 Module Cards with overlapping effect */}
@@ -229,29 +237,34 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
                   hiddenOnMobile && "md:block hidden",
                   // Enhanced animation effects
                   isAnimating && "animate-pulse",
-                  "transform-gpu" // GPU acceleration
+                  "transform-gpu", // GPU acceleration
                 )}
                 onClick={() => !isCenter && handleModuleClick(originalIndex)}
                 style={{
                   transformStyle: "preserve-3d",
                   // Add entrance animation
-                  animationDelay: `${Math.abs(position) * 50}ms`
+                  animationDelay: `${Math.abs(position) * 50}ms`,
                 }}
               >
                 <Card
                   className={cn(
                     getModuleWidth(position),
                     "bg-gradient-to-br from-white via-white to-gray-50/50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 border-2 transition-all duration-800 relative overflow-hidden group",
-                    isCenter && "shadow-2xl border-blue-300/70 hover:shadow-3xl hover:border-blue-400/80 ring-1 ring-blue-200/30",
-                    isAdjacent && "shadow-xl border-gray-200/60 hover:shadow-2xl hover:border-blue-300/50",
-                    isOuter && "shadow-lg border-gray-200/40 hover:shadow-xl hover:border-gray-300/60",
+                    isCenter &&
+                      "shadow-2xl border-blue-300/70 hover:shadow-3xl hover:border-blue-400/80 ring-1 ring-blue-200/30",
+                    isAdjacent &&
+                      "shadow-xl border-gray-200/60 hover:shadow-2xl hover:border-blue-300/50",
+                    isOuter &&
+                      "shadow-lg border-gray-200/40 hover:shadow-xl hover:border-gray-300/60",
                     // Animation effects during transition
-                    isAnimating && isCenter && "ring-2 ring-blue-400/50 animate-pulse",
-                    isAnimating && "border-blue-300/80"
+                    isAnimating &&
+                      isCenter &&
+                      "ring-2 ring-blue-400/50 animate-pulse",
+                    isAnimating && "border-blue-300/80",
                   )}
                   style={{
                     transformStyle: "preserve-3d",
-                    backfaceVisibility: "hidden"
+                    backfaceVisibility: "hidden",
                   }}
                 >
                   {/* Subtle gradient overlay */}
@@ -267,48 +280,79 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
 
                   {/* Shimmer effect during transition */}
                   {isAnimating && isCenter && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-pulse"
-                         style={{ animationDuration: '1000ms' }} />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-pulse"
+                      style={{ animationDuration: "1000ms" }}
+                    />
                   )}
-                  <CardContent className={cn(
-                    "h-full flex flex-col text-center transition-all duration-700",
-                    isCenter ? "p-8 lg:p-10" : isAdjacent ? "p-6 lg:p-7" : "p-5 lg:p-6"
-                  )}>
+                  <CardContent
+                    className={cn(
+                      "h-full flex flex-col text-center transition-all duration-700",
+                      isCenter
+                        ? "p-8 lg:p-10"
+                        : isAdjacent
+                          ? "p-6 lg:p-7"
+                          : "p-5 lg:p-6",
+                    )}
+                  >
                     {/* Icon - Centered at top with gradient background */}
                     <div className="flex justify-center mb-6 relative">
-                      <div className={cn(
-                        "inline-flex items-center justify-center rounded-xl transition-all duration-700 relative overflow-hidden",
-                        isCenter ? "p-6 lg:p-7" : isAdjacent ? "p-5 lg:p-6" : "p-4 lg:p-5"
-                      )}>
+                      <div
+                        className={cn(
+                          "inline-flex items-center justify-center rounded-xl transition-all duration-700 relative overflow-hidden",
+                          isCenter
+                            ? "p-6 lg:p-7"
+                            : isAdjacent
+                              ? "p-5 lg:p-6"
+                              : "p-4 lg:p-5",
+                        )}
+                      >
                         {/* Gradient background */}
-                        <div className={cn(
-                          "absolute inset-0 bg-gradient-to-br opacity-10",
-                          module.gradient || "from-blue-500 to-cyan-500"
-                        )} />
+                        <div
+                          className={cn(
+                            "absolute inset-0 bg-gradient-to-br opacity-10",
+                            module.gradient || "from-blue-500 to-cyan-500",
+                          )}
+                        />
                         {/* Pattern overlay */}
                         <div className="absolute inset-0 bg-white/60 dark:bg-gray-800/60" />
 
-                        <module.icon className={cn(
-                          "relative z-10 transition-all duration-700",
-                          module.color?.includes('text-') ? module.color.split(' ').find(c => c.startsWith('text-')) : "text-blue-600",
-                          // 10-15% larger icons
-                          isCenter ? "h-12 w-12 lg:h-14 lg:w-14" :
-                          isAdjacent ? "h-10 w-10 lg:h-12 lg:w-12" :
-                          "h-8 w-8 lg:h-10 lg:w-10"
-                        )} />
+                        <module.icon
+                          className={cn(
+                            "relative z-10 transition-all duration-700",
+                            module.color?.includes("text-")
+                              ? module.color
+                                  .split(" ")
+                                  .find((c) => c.startsWith("text-"))
+                              : "text-blue-600",
+                            // 10-15% larger icons
+                            isCenter
+                              ? "h-12 w-12 lg:h-14 lg:w-14"
+                              : isAdjacent
+                                ? "h-10 w-10 lg:h-12 lg:w-12"
+                                : "h-8 w-8 lg:h-10 lg:w-10",
+                          )}
+                        />
                       </div>
 
                       {/* Badge */}
                       {module.badge && isCenter && (
                         <div className="absolute -top-2 -right-2 z-20">
-                          <span className={cn(
-                            "px-2 py-1 text-xs font-semibold rounded-full text-white shadow-lg",
-                            module.badge === "Trending" && "bg-gradient-to-r from-blue-500 to-cyan-500",
-                            module.badge === "Hot" && "bg-gradient-to-r from-red-500 to-orange-500",
-                            module.badge === "Thiết yếu" && "bg-gradient-to-r from-red-600 to-red-700",
-                            module.badge === "Quan trọng" && "bg-gradient-to-r from-purple-500 to-pink-500",
-                            module.badge === "Cần thiết" && "bg-gradient-to-r from-indigo-500 to-blue-500"
-                          )}>
+                          <span
+                            className={cn(
+                              "px-2 py-1 text-xs font-semibold rounded-full text-white shadow-lg",
+                              module.badge === "Trending" &&
+                                "bg-gradient-to-r from-blue-500 to-cyan-500",
+                              module.badge === "Hot" &&
+                                "bg-gradient-to-r from-red-500 to-orange-500",
+                              module.badge === "Thiết yếu" &&
+                                "bg-gradient-to-r from-red-600 to-red-700",
+                              module.badge === "Quan trọng" &&
+                                "bg-gradient-to-r from-purple-500 to-pink-500",
+                              module.badge === "Cần thiết" &&
+                                "bg-gradient-to-r from-indigo-500 to-blue-500",
+                            )}
+                          >
                             {module.badge}
                           </span>
                         </div>
@@ -316,19 +360,29 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
                     </div>
 
                     {/* Title */}
-                    <h3 className={cn(
-                      "font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-all duration-700",
-                      isCenter ? "text-2xl lg:text-3xl" : isAdjacent ? "text-xl lg:text-2xl" : "text-lg lg:text-xl"
-                    )}>
+                    <h3
+                      className={cn(
+                        "font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-all duration-700",
+                        isCenter
+                          ? "text-2xl lg:text-3xl"
+                          : isAdjacent
+                            ? "text-xl lg:text-2xl"
+                            : "text-lg lg:text-xl",
+                      )}
+                    >
                       {module.title}
                     </h3>
 
                     {/* Description - only for center and adjacent */}
                     {(isCenter || isAdjacent) && (
-                      <p className={cn(
-                        "text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-1 transition-all duration-700",
-                        isCenter ? "text-base lg:text-lg" : "text-sm lg:text-base"
-                      )}>
+                      <p
+                        className={cn(
+                          "text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-1 transition-all duration-700",
+                          isCenter
+                            ? "text-base lg:text-lg"
+                            : "text-sm lg:text-base",
+                        )}
+                      >
                         {module.description}
                       </p>
                     )}
@@ -342,7 +396,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
                             variant="outline"
                             className={cn(
                               "px-2 py-1 text-xs font-medium",
-                              "border-gray-300/35 dark:border-gray-600/35 bg-gray-100/20 dark:bg-gray-700/20"
+                              "border-gray-300/35 dark:border-gray-600/35 bg-gray-100/20 dark:bg-gray-700/20",
                             )}
                           >
                             {module.level}
@@ -355,7 +409,9 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
                                   key={i}
                                   className={cn(
                                     "w-2 h-2 rounded-full",
-                                    i < module.difficulty ? "bg-blue-500" : "bg-gray-200 dark:bg-gray-600"
+                                    i < module.difficulty
+                                      ? "bg-blue-500"
+                                      : "bg-gray-200 dark:bg-gray-600",
                                   )}
                                 />
                               ))}
@@ -381,7 +437,6 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
                           )}
                         </div>
                       )}
-
                     </div>
 
                     {/* Action Button - only for center */}
@@ -406,9 +461,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
             );
           })}
         </div>
-
       </div>
-
     </div>
   );
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Info, X, Phone, Building, ExternalLink } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
 
 export default function DisclaimerBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const { isVisible, dismissBanner } = useDisclaimerBanner();
 
   if (!isVisible) return null;
 
@@ -51,7 +52,7 @@ export default function DisclaimerBanner() {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setIsVisible(false)}
+            onClick={dismissBanner}
             className="p-1 h-6 w-6 text-yellow-600 hover:text-yellow-800 hover:bg-yellow-100 flex-shrink-0"
           >
             <X className="h-4 w-4" />

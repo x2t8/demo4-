@@ -31,8 +31,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Store in localStorage
     localStorage.setItem("theme", theme);
 
-    // Debug log
-    console.log("Theme changed to:", theme);
+    // Theme change applied successfully
   }, [theme]);
 
   const toggleTheme = () => {

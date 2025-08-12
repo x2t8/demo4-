@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import {
   X,
   Phone,
@@ -89,11 +90,14 @@ export default function ReportGuideModal({
     },
   ];
 
-  return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+  const modalContent = (
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4"
+      style={{ zIndex: 9999 }}
+    >
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-50"
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       ></div>
 
@@ -230,4 +234,6 @@ export default function ReportGuideModal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }

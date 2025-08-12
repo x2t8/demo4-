@@ -1,26 +1,34 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import AuthModal from "./AuthModal";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "register">("login");
+  const { user, isAuthenticated, isAdmin, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link 
-              to="/" 
-              className="flex items-center space-x-2"
-            >
-              <img
-                src="/favicon.ico"
-                alt="Logo"
-                className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
-              />
-              <span className="text-lg sm:text-xl font-bold text-gray-900">
-                Công Dân Số An Toàn
-              </span>
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src="/favicon.ico"
+              alt="Công Dân Số An Toàn - Logo"
+              className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
+            />
+            <span className="text-lg sm:text-xl font-bold text-gray-900">
+              Công Dân Số An Toàn
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,6 +70,63 @@ export default function Header() {
               Kỹ năng số
             </Link>
           </nav>
+
+          {/* Auth buttons - Desktop */}
+          <div className="hidden md:flex items-center space-x-3">
+            {isAuthenticated ? (
+              <>
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-purple-700 hover:text-purple-600 border-purple-200 hover:bg-purple-50"
+                    >
+                      Admin Panel
+                    </Button>
+                  </Link>
+                )}
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <User className="h-4 w-4" />
+                  <span>Xin chào, {user?.username}</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleLogout}
+                  className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Đăng xuất
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setAuthMode("login");
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="text-gray-700 hover:text-blue-600"
+                >
+                  Đăng nhập
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    setAuthMode("register");
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                >
+                  <User className="h-4 w-4 mr-2" />
+                  Đăng ký
+                </Button>
+              </>
+            )}
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -130,9 +195,80 @@ export default function Header() {
             >
               Kỹ năng số
             </Link>
+
+            {/* Auth buttons - Mobile */}
+            <div className="border-t pt-3 mt-3 space-y-2">
+              {isAuthenticated ? (
+                <>
+                  {isAdmin && (
+                    <Link
+                      to="/admin"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start text-purple-700 hover:text-purple-600 border-purple-200 hover:bg-purple-50"
+                      >
+                        Admin Panel
+                      </Button>
+                    </Link>
+                  )}
+                  <div className="px-3 py-2 text-sm text-gray-600 bg-gray-50 rounded-md">
+                    <div className="flex items-center space-x-2">
+                      <User className="h-4 w-4" />
+                      <span>Xin chào, {user?.username}</span>
+                    </div>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleLogout}
+                    className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Đăng xuất
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      setAuthMode("login");
+                      setIsAuthModalOpen(true);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full justify-start text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                  >
+                    Đăng nhập
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      setAuthMode("register");
+                      setIsAuthModalOpen(true);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  >
+                    <User className="h-4 w-4 mr-2" />
+                    Đăng ký
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        defaultMode={authMode}
+      />
     </header>
   );
 }

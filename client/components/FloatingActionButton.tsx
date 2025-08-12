@@ -18,8 +18,7 @@ export default function FloatingActionButton() {
       label: "Chat hỗ trợ",
       color: "bg-blue-600 hover:bg-blue-700",
       action: () => {
-        // Implement chat support
-        console.log("Open chat support");
+        // Chat support implementation would go here
       },
     },
   ];

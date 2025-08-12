@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Shield, Phone, Mail, MapPin, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 import TermsModal from "./TermsModal";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
 
 export default function Footer() {
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
+  // Shared banner state
+  const { dismissBanner } = useDisclaimerBanner();
 
   return (
     <footer className="bg-gradient-to-br from-slate-800 to-gray-900 text-white">
@@ -112,7 +116,10 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <button
-                onClick={() => setIsTermsModalOpen(true)}
+                onClick={() => {
+                  dismissBanner();
+                  setIsTermsModalOpen(true);
+                }}
                 className="hover:text-blue-400 transition-colors underline"
               >
                 Điều khoản sử dụng
