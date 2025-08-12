@@ -207,7 +207,9 @@ export default function ScamTypes() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-scale-in">
+      <div className={`min-h-screen transition-all duration-1000 bg-gray-50 dark:bg-gray-900 md:bg-white ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}>
         <Header />
         <DisclaimerBanner />
 
@@ -282,7 +284,7 @@ export default function ScamTypes() {
                   },
                   {
                     icon: MessageSquare,
-                    title: "Lừa ��ảo SMS",
+                    title: "Lừa đảo SMS",
                     subtitle: "Link độc hại",
                     value: "78%",
                     color: "bg-white/90",
@@ -749,7 +751,7 @@ export default function ScamTypes() {
                               className={`w-3 h-3 mr-1 ${bookmarkedScams.includes(scam.id) ? "fill-current" : ""}`}
                             />
                             {bookmarkedScams.includes(scam.id)
-                              ? "Đã lưu"
+                              ? "��ã lưu"
                               : "Lưu"}
                           </Button>
                           <Button
