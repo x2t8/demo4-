@@ -148,7 +148,7 @@ export default function DigitalLaw() {
       impact: "Bảo vệ sáng tạo",
       usage: "Mọi tác phẩm số",
       description:
-        "Bản quyền bảo vệ quyền của tác giả đối với tác phẩm sáng tạo, bao gồm văn bản, hình ảnh, âm nhạc và video.",
+        "Bản quyền bảo vệ quyền của tác giả đối với tác phẩm sáng tạo, bao gồm văn bản, h��nh ảnh, âm nhạc và video.",
       dos: [
         "Xin phép tác giả trước khi sử dụng",
         "Sử dụng tài nguyên Creative Commons",
@@ -178,7 +178,7 @@ export default function DigitalLaw() {
       impact: "An toàn thông tin",
       usage: "Mọi hoạt động số",
       description:
-        "Luật Bảo vệ dữ liệu cá nhân quy định nghiêm ngặt về việc thu thập, xử lý và sử dụng thông tin cá nhân.",
+        "Luật Bảo vệ dữ liệu cá nhân quy định nghiêm ngặt về việc thu thập, xử lý và s�� dụng thông tin cá nhân.",
       dos: [
         "Xin đồng ý trước khi thu thập dữ liệu",
         "Giải thích rõ mục đích sử dụng",
@@ -208,7 +208,7 @@ export default function DigitalLaw() {
       impact: "Môi trường lành mạnh",
       usage: "Mạng xã hội, website",
       description:
-        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy định nền tảng.",
+        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo ��ức xã hội và quy định nền tảng.",
       dos: [
         "Kiểm tra tính chính xác thông tin",
         "Tôn trọng các giá trị xã hội",
@@ -389,7 +389,7 @@ export default function DigitalLaw() {
                   <div className="relative inline-block">
                     <Scale className="h-48 w-48 mx-auto text-yellow-300 drop-shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300" />
 
-                    {/* Bên trái cân: Pháp luật số - TO HƠN */}
+                    {/* Bên trái cân: Pháp luật số - TO H��N */}
                     <div className="absolute -left-24 top-12">
                       <Button
                         className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:bg-white/30 transition-all duration-300 h-auto flex-col"
@@ -779,7 +779,7 @@ export default function DigitalLaw() {
                     tips: [
                       "✅ YouTube Audio Library",
                       "✅ Epidemic Sound (trả phí)",
-                      "✅ Tự sáng tác",
+                      "✅ T��� sáng tác",
                       "❌ Nhạc từ Spotify",
                       "❌ Nhạc từ YouTube"
                     ]
@@ -1489,12 +1489,8 @@ export default function DigitalLaw() {
           }}
         >
           <div
-            className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden"
+            className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden max-h-[80vh] md:max-h-[calc(100vh-8rem)] mx-auto"
             onClick={(e) => e.stopPropagation()}
-            style={{
-              maxHeight: "calc(100vh - 8rem)",
-              margin: "auto",
-            }}
           >
             {(() => {
               const rule = legalRules.find((r) => r.id === selectedRule);
