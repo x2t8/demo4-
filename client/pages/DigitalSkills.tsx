@@ -164,7 +164,7 @@ export default function DigitalSkills() {
         "In tài liệu",
       ],
       correctAnswer: 1,
-      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch��n.",
+      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã chọn.",
       category: "Kỹ năng cơ bản",
     },
     {
@@ -1352,7 +1352,7 @@ export default function DigitalSkills() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }}
                       >
-                        Xem kỹ năng cốt lõi
+                        Xem kỹ năng c���t lõi
                       </Button>
                     </div>
                   </div>
