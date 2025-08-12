@@ -111,7 +111,7 @@ export default function DigitalLaw() {
   const digitalLawStats = [
     {
       value: "89%",
-      label: "Vi ph��m bản quyền không cố ý",
+      label: "Vi phạm bản quyền không cố ý",
       color: "from-purple-500 to-purple-600",
       description: "Do thiếu hiểu biết",
     },
@@ -635,7 +635,7 @@ export default function DigitalLaw() {
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
                     penalty: "50 triệu VNĐ",
-                    lesson: "Luôn kiểm tra license nhạc trước khi sử dụng trong video thương mại",
+                    lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
                     color: "from-red-500 to-pink-500",
                     icon: Music
                   },
@@ -755,7 +755,7 @@ export default function DigitalLaw() {
             <div className="mb-16">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">🚀 Quick Reference Cards</h3>
-                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình huống cụ thể</p>
+                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình hu��ng cụ thể</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1105,7 +1105,7 @@ export default function DigitalLaw() {
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
-                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần đi���u kiện cụ thể",
                             level: "Nâng cao"
                           }
                         ].map((quiz, idx) => (
