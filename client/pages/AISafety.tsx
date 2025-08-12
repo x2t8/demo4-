@@ -184,7 +184,7 @@ export default function AISafety() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-fade-in">
       <Header />
       <DisclaimerBanner />
 
