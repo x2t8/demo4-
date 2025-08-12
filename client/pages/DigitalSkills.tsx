@@ -192,7 +192,7 @@ export default function DigitalSkills() {
       correctAnswer: 1,
       explanation:
         "Cloud storage cho phép truy cập và đồng bộ dữ liệu từ nhiều thiết bị qua internet.",
-      category: "Công nghệ đám mây",
+      category: "Công ngh�� đám mây",
     },
     {
       id: 6,
@@ -228,7 +228,7 @@ export default function DigitalSkills() {
         "Một loại phần mềm văn phòng",
         "Hình thức lừa đảo qua email hoặc website giả mạo",
         "Cách thức sao lưu dữ liệu",
-        "Phương pháp tìm kiếm thông tin",
+        "Phương pháp tìm ki��m thông tin",
       ],
       correctAnswer: 1,
       explanation:
@@ -500,7 +500,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Midjourney/DALL-E",
-          purpose: "Tạo hình ảnh từ mô tả văn bản",
+          purpose: "Tạo hình ảnh từ mô tả v��n bản",
           level: "Trung bình",
           practical: "Thiết kế poster, minh họa bài viết",
         },
@@ -965,7 +965,9 @@ export default function DigitalSkills() {
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 page-fade-in ${getAccessibilityClasses()}`}
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      } ${getAccessibilityClasses()}`}
     >
       <Header />
       <DisclaimerBanner />
@@ -1496,7 +1498,7 @@ export default function DigitalSkills() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Tham gia cộng đồng v�� diễn đàn thảo luận
+                    Tham gia cộng đồng và diễn đàn thảo luận
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
