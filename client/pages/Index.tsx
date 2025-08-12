@@ -100,7 +100,9 @@ export default function Index() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors page-slide-up">
+      <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}>
         <Header />
         <DisclaimerBanner />
 
