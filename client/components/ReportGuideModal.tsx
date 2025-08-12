@@ -41,7 +41,7 @@ export default function ReportGuideModal({
         "📞 Công an: 113 (miễn phí, 24/7)",
         "🏛️ Số điện thoại đồn công an địa phương",
         "💰 Ngân hàng (nếu liên quan đến tài khoản)",
-        "📱 Nhà m��ng (nếu bị lừa qua tin nhắn/cuộc gọi)",
+        "📱 Nhà mạng (nếu bị lừa qua tin nhắn/cuộc gọi)",
       ],
       color: "bg-red-100 text-red-700 border-red-200",
     },
@@ -79,8 +79,8 @@ export default function ReportGuideModal({
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-2 sm:p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4" style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto animate-slide-up my-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
