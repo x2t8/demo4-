@@ -95,7 +95,7 @@ export default function AISafety() {
         "Brainstorming ý tưởng",
       ],
       risks: [
-        "Thông tin có thể không ch��nh xác",
+        "Thông tin có thể không chính xác",
         "Thiếu suy nghĩ phản biện",
         "Phụ thuộc quá mức vào AI",
         "Vi phạm bản quyền nếu sao chép",
@@ -194,7 +194,9 @@ export default function AISafety() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-rotate-in">
+    <div className={`min-h-screen transition-all duration-1000 bg-gray-50 dark:bg-gray-900 md:bg-white ${
+      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}>
       <Header />
       <DisclaimerBanner />
 
@@ -569,7 +571,7 @@ export default function AISafety() {
           <div className="container mx-auto max-w-6xl px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                🎓 AI trong Học tập & Công việc
+                🎓 AI trong Học t��p & Công việc
               </h2>
               <p className="text-lg text-gray-600">Hướng dẫn sử dụng AI hiệu quả và có trách nhiệm</p>
             </div>
