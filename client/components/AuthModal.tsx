@@ -16,7 +16,7 @@ const loginSchema = z.object({
 });
 
 const registerSchema = z.object({
-  fullName: z.string().min(2, "Họ tên phải c�� ít nhất 2 ký tự"),
+  fullName: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
   email: z.string().email("Email không hợp lệ"),
   password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
   confirmPassword: z.string(),
@@ -142,14 +142,14 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
             <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-4">
               <div>
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                  Email
+                  {adminMode ? "Tên đăng nhập" : "Email"}
                 </Label>
                 <div className="relative mt-1">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
+                    type={adminMode ? "text" : "email"}
+                    placeholder={adminMode ? "admin" : "your.email@example.com"}
                     className="pl-10"
                     {...loginForm.register("email")}
                   />
