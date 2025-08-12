@@ -158,7 +158,7 @@ export default function ScamTypes() {
       techniques: [
         "Giả mạo website ngân hàng",
         "Lừa đầu tư forex, chứng khoán",
-        "Phishing thông tin đăng nhập",
+        "Phishing thông tin ��ăng nhập",
         "Đính kèm virus, malware",
       ],
       prevention: [
@@ -197,9 +197,10 @@ export default function ScamTypes() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
-      <Header />
-      <DisclaimerBanner />
+    <CaringToastProvider>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
+        <Header />
+        <DisclaimerBanner />
 
       {/* Desktop/Tablet: New Layout theo hình */}
       <div className="hidden md:block">
@@ -476,7 +477,7 @@ export default function ScamTypes() {
                             <div className="bg-red-50 rounded-lg p-3 border border-red-200">
                               <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-1 text-xs">
                                 <XCircle className="h-3 w-3" />
-                                Thủ đoạn
+                                Thủ ��oạn
                               </h4>
                               <div className="space-y-1">
                                 {scam.techniques
@@ -970,7 +971,7 @@ export default function ScamTypes() {
                   Chia Sẻ Kiến Thức
                 </h3>
                 <p className="text-gray-600 text-xs mb-4">
-                  Giúp bạn bè và gia đình tránh bị lừa đảo
+                  Giúp bạn bè và gia đình tránh bị lừa ��ảo
                 </p>
 
                 <div className="grid grid-cols-3 gap-2">
@@ -1023,6 +1024,14 @@ export default function ScamTypes() {
           </div>
         </section>
       </div>
-    </div>
+
+      {/* Modal báo cáo */}
+      <ReportGuideModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
+      />
+
+      </div>
+    </CaringToastProvider>
   );
 }
