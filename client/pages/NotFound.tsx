@@ -43,9 +43,11 @@ export default function NotFound() {
   ];
 
   return (
-    <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 ${
-      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-    }`}>
+    <div
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <Header />
 
       <div className="flex items-center justify-center min-h-[80vh] px-4 sm:px-6 lg:px-8">

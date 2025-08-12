@@ -548,14 +548,19 @@ export default function DigitalLaw() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white rounded-full px-6 py-2 shadow-sm border mb-6">
                 <Scale className="h-5 w-5 text-indigo-600 mr-2" />
-                <span className="text-sm font-medium text-indigo-600">PHÁP LUẬT SỐ</span>
+                <span className="text-sm font-medium text-indigo-600">
+                  PHÁP LUẬT SỐ
+                </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 ⚖️ Hệ Thống Pháp Luật Số
-                <span className="block text-3xl md:text-4xl text-indigo-600 mt-2">Việt Nam 2024</span>
+                <span className="block text-3xl md:text-4xl text-indigo-600 mt-2">
+                  Việt Nam 2024
+                </span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Hiểu rõ và tuân thủ 6 lĩnh vực pháp lý quan trọng nhất trong hoạt động số
+                Hiểu rõ và tuân thủ 6 lĩnh vực pháp lý quan trọng nhất trong
+                hoạt động số
               </p>
             </div>
 
@@ -567,8 +572,12 @@ export default function DigitalLaw() {
                     <Gavel className="h-5 w-5 mr-2" />
                     <span className="font-bold">LEGAL NAVIGATOR AI</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">🧭 Tìm Luật Phù Hợp Với Tình Huống</h3>
-                  <p className="text-gray-600">Chọn tình huống của bạn để nhận hướng dẫn pháp lý cụ thể</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    🧭 Tìm Luật Phù Hợp Với Tình Huống
+                  </h3>
+                  <p className="text-gray-600">
+                    Chọn tình huống của bạn để nhận hướng dẫn pháp lý cụ thể
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -578,38 +587,55 @@ export default function DigitalLaw() {
                       title: "Tôi muốn sử dụng ảnh",
                       desc: "Từ Google, Pinterest, mạng xã hội",
                       laws: ["Bản quyền tác phẩm", "Fair Use"],
-                      color: "from-purple-500 to-pink-500"
+                      color: "from-purple-500 to-pink-500",
                     },
                     {
                       icon: Music,
                       title: "Tôi làm video có nhạc",
                       desc: "YouTube, TikTok, livestream",
                       laws: ["Bản quyền tác phẩm", "Nội dung hợp pháp"],
-                      color: "from-blue-500 to-cyan-500"
+                      color: "from-blue-500 to-cyan-500",
                     },
                     {
                       icon: DollarSign,
                       title: "Tôi bán hàng online",
                       desc: "Facebook, Shopee, website",
                       laws: ["Kinh doanh online", "Bảo vệ dữ liệu"],
-                      color: "from-green-500 to-emerald-500"
-                    }
+                      color: "from-green-500 to-emerald-500",
+                    },
                   ].map((scenario, idx) => (
-                    <Card key={idx} className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 hover:border-indigo-200">
+                    <Card
+                      key={idx}
+                      className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 hover:border-indigo-200"
+                    >
                       <CardContent className="p-6 text-center">
-                        <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${scenario.color} flex items-center justify-center shadow-lg`}>
+                        <div
+                          className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${scenario.color} flex items-center justify-center shadow-lg`}
+                        >
                           <scenario.icon className="h-8 w-8 text-white" />
                         </div>
-                        <h4 className="font-bold text-gray-900 mb-2">{scenario.title}</h4>
-                        <p className="text-sm text-gray-600 mb-3">{scenario.desc}</p>
+                        <h4 className="font-bold text-gray-900 mb-2">
+                          {scenario.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 mb-3">
+                          {scenario.desc}
+                        </p>
                         <div className="space-y-1">
                           {scenario.laws.map((law, lawIdx) => (
-                            <Badge key={lawIdx} variant="outline" className="text-xs block">
+                            <Badge
+                              key={lawIdx}
+                              variant="outline"
+                              className="text-xs block"
+                            >
                               📜 {law}
                             </Badge>
                           ))}
                         </div>
-                        <Button size="sm" className="mt-4 w-full" variant="outline">
+                        <Button
+                          size="sm"
+                          className="mt-4 w-full"
+                          variant="outline"
+                        >
                           <ChevronRight className="h-4 w-4 ml-2" />
                           Xem hướng dẫn
                         </Button>
@@ -623,8 +649,12 @@ export default function DigitalLaw() {
             {/* Legal Case Studies */}
             <div className="mb-16">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">📚 Case Studies Thực Tế</h3>
-                <p className="text-lg text-gray-600">Học từ những vụ việc nổi tiếng về vi phạm pháp luật số</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  📚 Case Studies Thực Tế
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Học từ những vụ việc nổi tiếng về vi phạm pháp luật số
+                </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -635,9 +665,10 @@ export default function DigitalLaw() {
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
                     penalty: "50 triệu VNĐ",
-                    lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
+                    lesson:
+                      "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
                     color: "from-red-500 to-pink-500",
-                    icon: Music
+                    icon: Music,
                   },
                   {
                     title: "Công ty E-commerce lộ thông tin khách hàng",
@@ -645,38 +676,58 @@ export default function DigitalLaw() {
                     year: "2024",
                     violation: "Vi phạm bảo vệ dữ liệu cá nhân",
                     penalty: "150 triệu VNĐ",
-                    lesson: "Phải mã hóa và bảo mật thông tin khách hàng theo chuẩn quốc tế",
+                    lesson:
+                      "Phải mã hóa và bảo mật thông tin khách hàng theo chuẩn quốc tế",
                     color: "from-blue-500 to-indigo-500",
-                    icon: Shield
-                  }
+                    icon: Shield,
+                  },
                 ].map((caseStudy, idx) => (
-                  <Card key={idx} className="overflow-hidden hover:shadow-xl transition-all duration-300">
-                    <div className={`bg-gradient-to-r ${caseStudy.color} p-6 text-white`}>
+                  <Card
+                    key={idx}
+                    className="overflow-hidden hover:shadow-xl transition-all duration-300"
+                  >
+                    <div
+                      className={`bg-gradient-to-r ${caseStudy.color} p-6 text-white`}
+                    >
                       <div className="flex items-center justify-between mb-3">
                         <caseStudy.icon className="h-8 w-8" />
                         <Badge className="bg-white/20 text-white border-white/30">
                           {caseStudy.year}
                         </Badge>
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{caseStudy.title}</h4>
+                      <h4 className="text-xl font-bold mb-2">
+                        {caseStudy.title}
+                      </h4>
                       <p className="opacity-90">{caseStudy.company}</p>
                     </div>
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Vi phạm:</span>
-                          <span className="font-semibold text-red-600">{caseStudy.violation}</span>
+                          <span className="text-sm text-gray-600">
+                            Vi phạm:
+                          </span>
+                          <span className="font-semibold text-red-600">
+                            {caseStudy.violation}
+                          </span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Mức phạt:</span>
-                          <span className="font-bold text-2xl text-red-700">{caseStudy.penalty}</span>
+                          <span className="text-sm text-gray-600">
+                            Mức phạt:
+                          </span>
+                          <span className="font-bold text-2xl text-red-700">
+                            {caseStudy.penalty}
+                          </span>
                         </div>
                         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
                           <div className="flex items-start">
                             <Lightbulb className="h-5 w-5 text-yellow-600 mt-0.5 mr-2 flex-shrink-0" />
                             <div>
-                              <p className="text-sm font-medium text-yellow-800 mb-1">Bài học rút ra:</p>
-                              <p className="text-sm text-yellow-700">{caseStudy.lesson}</p>
+                              <p className="text-sm font-medium text-yellow-800 mb-1">
+                                Bài học rút ra:
+                              </p>
+                              <p className="text-sm text-yellow-700">
+                                {caseStudy.lesson}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -693,8 +744,12 @@ export default function DigitalLaw() {
                 <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6">
                   <div className="text-center">
                     <DollarSign className="h-12 w-12 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold mb-2">⚖️ Máy Tính Mức Phạt Pháp Lý</h3>
-                    <p className="opacity-90">Ước tính mức phạt khi vi phạm luật số tại Việt Nam</p>
+                    <h3 className="text-2xl font-bold mb-2">
+                      ⚖️ Máy Tính Mức Phạt Pháp Lý
+                    </h3>
+                    <p className="opacity-90">
+                      Ước tính mức phạt khi vi phạm luật số tại Việt Nam
+                    </p>
                   </div>
                 </div>
                 <CardContent className="p-8">
@@ -706,7 +761,11 @@ export default function DigitalLaw() {
                         maxFine: "75 triệu",
                         type: "Cá nhân",
                         color: "text-orange-600",
-                        examples: ["Sử dụng ảnh không phép", "Post nhạc có bản quyền", "Copy nội dung blog"]
+                        examples: [
+                          "Sử dụng ảnh không phép",
+                          "Post nhạc có bản quyền",
+                          "Copy nội dung blog",
+                        ],
                       },
                       {
                         violation: "Vi phạm bản quyền doanh nghiệp",
@@ -714,7 +773,11 @@ export default function DigitalLaw() {
                         maxFine: "150 triệu",
                         type: "Tổ chức",
                         color: "text-red-600",
-                        examples: ["Sử dụng phần mềm crack", "Vi phạm trademark", "Đạo nhái sản phẩm"]
+                        examples: [
+                          "Sử dụng phần mềm crack",
+                          "Vi phạm trademark",
+                          "Đạo nhái sản phẩm",
+                        ],
                       },
                       {
                         violation: "Vi phạm dữ liệu cá nhân",
@@ -722,21 +785,39 @@ export default function DigitalLaw() {
                         maxFine: "100 triệu",
                         type: "Tổ chức",
                         color: "text-purple-600",
-                        examples: ["Lộ thông tin khách hàng", "Không xin phép thu thập", "Bán dữ liệu cá nhân"]
-                      }
+                        examples: [
+                          "Lộ thông tin khách hàng",
+                          "Không xin phép thu thập",
+                          "Bán dữ liệu cá nhân",
+                        ],
+                      },
                     ].map((penalty, idx) => (
-                      <Card key={idx} className="border border-gray-200 hover:shadow-lg transition-shadow">
+                      <Card
+                        key={idx}
+                        className="border border-gray-200 hover:shadow-lg transition-shadow"
+                      >
                         <CardContent className="p-6 text-center">
-                          <div className={`text-3xl font-bold ${penalty.color} mb-2`}>
+                          <div
+                            className={`text-3xl font-bold ${penalty.color} mb-2`}
+                          >
                             {penalty.maxFine} VNĐ
                           </div>
-                          <h4 className="font-semibold text-gray-900 mb-2">{penalty.violation}</h4>
-                          <Badge variant="outline" className="mb-4">{penalty.type}</Badge>
+                          <h4 className="font-semibold text-gray-900 mb-2">
+                            {penalty.violation}
+                          </h4>
+                          <Badge variant="outline" className="mb-4">
+                            {penalty.type}
+                          </Badge>
                           <div className="text-left">
-                            <p className="text-xs text-gray-600 mb-2">Ví dụ vi phạm:</p>
+                            <p className="text-xs text-gray-600 mb-2">
+                              Ví dụ vi phạm:
+                            </p>
                             <ul className="space-y-1">
                               {penalty.examples.map((example, exIdx) => (
-                                <li key={exIdx} className="text-xs text-gray-700 flex items-start">
+                                <li
+                                  key={exIdx}
+                                  className="text-xs text-gray-700 flex items-start"
+                                >
                                   <span className="text-red-500 mr-1">•</span>
                                   {example}
                                 </li>
@@ -754,8 +835,12 @@ export default function DigitalLaw() {
             {/* Quick Reference Legal Cards */}
             <div className="mb-16">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">🚀 Quick Reference Cards</h3>
-                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình hu��ng cụ thể</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  🚀 Quick Reference Cards
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Cheat sheet pháp lý cho từng tình hu��ng cụ thể
+                </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -769,8 +854,8 @@ export default function DigitalLaw() {
                       "✅ Pexels.com - Free",
                       "✅ Tự chụp ảnh",
                       "❌ Google Images",
-                      "❌ Pinterest"
-                    ]
+                      "❌ Pinterest",
+                    ],
                   },
                   {
                     title: "Nhạc cho video",
@@ -781,8 +866,8 @@ export default function DigitalLaw() {
                       "✅ Epidemic Sound (trả phí)",
                       "✅ Tự sáng tác",
                       "❌ Nhạc từ Spotify",
-                      "❌ Nhạc từ YouTube"
-                    ]
+                      "❌ Nhạc từ YouTube",
+                    ],
                   },
                   {
                     title: "Bán hàng online",
@@ -793,8 +878,8 @@ export default function DigitalLaw() {
                       "✅ Khai báo thuế",
                       "✅ Chính sách đổi trả",
                       "❌ Bán hàng fake",
-                      "❌ Trốn thuế"
-                    ]
+                      "❌ Trốn thuế",
+                    ],
                   },
                   {
                     title: "Thu thập dữ liệu",
@@ -805,21 +890,33 @@ export default function DigitalLaw() {
                       "✅ Giải thích mục đích",
                       "✅ Bảo mật dữ liệu",
                       "❌ Thu thập lén lút",
-                      "❌ Bán cho bên thứ 3"
-                    ]
-                  }
+                      "❌ Bán cho bên thứ 3",
+                    ],
+                  },
                 ].map((card, idx) => (
-                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <div className={`bg-gradient-to-r ${card.color} p-4 text-white rounded-t-lg`}>
+                  <Card
+                    key={idx}
+                    className="group hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  >
+                    <div
+                      className={`bg-gradient-to-r ${card.color} p-4 text-white rounded-t-lg`}
+                    >
                       <card.icon className="h-8 w-8 mx-auto mb-2" />
-                      <h4 className="font-bold text-center text-sm">{card.title}</h4>
+                      <h4 className="font-bold text-center text-sm">
+                        {card.title}
+                      </h4>
                     </div>
                     <CardContent className="p-4">
                       <div className="space-y-2">
                         {card.tips.map((tip, tipIdx) => (
-                          <div key={tipIdx} className={`text-xs p-2 rounded ${
-                            tip.startsWith('✅') ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-                          }`}>
+                          <div
+                            key={tipIdx}
+                            className={`text-xs p-2 rounded ${
+                              tip.startsWith("✅")
+                                ? "bg-green-50 text-green-700"
+                                : "bg-red-50 text-red-700"
+                            }`}
+                          >
                             {tip}
                           </div>
                         ))}
@@ -836,25 +933,34 @@ export default function DigitalLaw() {
                 <Card
                   key={rule.id}
                   className={`group cursor-pointer transition-all duration-300 hover:shadow-lg border-2 overflow-hidden legal-rule-card opacity-0 translate-y-8 ${
-                    index === 0 ? 'bg-purple-100 border-purple-200' :
-                    index === 1 ? 'bg-blue-100 border-blue-200' :
-                    index === 2 ? 'bg-green-100 border-green-200' :
-                    index === 3 ? 'bg-orange-100 border-orange-200' :
-                    index === 4 ? 'bg-indigo-100 border-indigo-200' :
-                    'bg-red-100 border-red-200'
+                    index === 0
+                      ? "bg-purple-100 border-purple-200"
+                      : index === 1
+                        ? "bg-blue-100 border-blue-200"
+                        : index === 2
+                          ? "bg-green-100 border-green-200"
+                          : index === 3
+                            ? "bg-orange-100 border-orange-200"
+                            : index === 4
+                              ? "bg-indigo-100 border-indigo-200"
+                              : "bg-red-100 border-red-200"
                   }`}
                   style={{
-                    animationDelay: `${800 + index * 200}ms`
+                    animationDelay: `${800 + index * 200}ms`,
                   }}
                 >
                   {/* Clean Header with Priority Indicator */}
                   <div className="relative p-6">
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${rule.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${rule.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                      >
                         <rule.icon className="h-8 w-8 text-white" />
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-gray-300">#{index + 1}</div>
+                        <div className="text-2xl font-bold text-gray-300">
+                          #{index + 1}
+                        </div>
                         <Badge variant="outline" className="text-xs">
                           {rule.importance}
                         </Badge>
@@ -885,29 +991,43 @@ export default function DigitalLaw() {
                           <div>
                             <div className="flex items-center gap-1 mb-2">
                               <CheckCircle className="h-3 w-3 text-green-600" />
-                              <span className="font-medium text-green-700">Được phép</span>
+                              <span className="font-medium text-green-700">
+                                Được phép
+                              </span>
                             </div>
                             <div className="space-y-1">
                               {rule.dos.slice(0, 2).map((item, idx) => (
-                                <div key={idx} className="text-gray-600">• {item}</div>
+                                <div key={idx} className="text-gray-600">
+                                  • {item}
+                                </div>
                               ))}
-                              {rule.dos.length > 2 && !expandedCards.includes(rule.id) && (
-                                <div className="text-gray-400">+{rule.dos.length - 2} khác</div>
-                              )}
+                              {rule.dos.length > 2 &&
+                                !expandedCards.includes(rule.id) && (
+                                  <div className="text-gray-400">
+                                    +{rule.dos.length - 2} khác
+                                  </div>
+                                )}
                             </div>
                           </div>
                           <div>
                             <div className="flex items-center gap-1 mb-2">
                               <XCircle className="h-3 w-3 text-red-600" />
-                              <span className="font-medium text-red-700">Cấm</span>
+                              <span className="font-medium text-red-700">
+                                Cấm
+                              </span>
                             </div>
                             <div className="space-y-1">
                               {rule.donts.slice(0, 2).map((item, idx) => (
-                                <div key={idx} className="text-gray-600">• {item}</div>
+                                <div key={idx} className="text-gray-600">
+                                  • {item}
+                                </div>
                               ))}
-                              {rule.donts.length > 2 && !expandedCards.includes(rule.id) && (
-                                <div className="text-gray-400">+{rule.donts.length - 2} khác</div>
-                              )}
+                              {rule.donts.length > 2 &&
+                                !expandedCards.includes(rule.id) && (
+                                  <div className="text-gray-400">
+                                    +{rule.donts.length - 2} khác
+                                  </div>
+                                )}
                             </div>
                           </div>
                         </div>
@@ -921,13 +1041,20 @@ export default function DigitalLaw() {
                             <div>
                               <div className="flex items-center gap-1 mb-3">
                                 <CheckCircle className="h-4 w-4 text-green-600" />
-                                <span className="font-bold text-green-700">✅ Toàn bộ được phép làm ({rule.dos.length})</span>
+                                <span className="font-bold text-green-700">
+                                  ✅ Toàn bộ được phép làm ({rule.dos.length})
+                                </span>
                               </div>
                               <div className="space-y-2">
                                 {rule.dos.map((item, idx) => (
-                                  <div key={idx} className="flex items-start gap-2 p-2 bg-green-50 rounded border-l-4 border-green-200">
+                                  <div
+                                    key={idx}
+                                    className="flex items-start gap-2 p-2 bg-green-50 rounded border-l-4 border-green-200"
+                                  >
                                     <div className="w-1 h-1 bg-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                                    <span className="text-gray-700 leading-relaxed">{item}</span>
+                                    <span className="text-gray-700 leading-relaxed">
+                                      {item}
+                                    </span>
                                   </div>
                                 ))}
                               </div>
@@ -937,13 +1064,21 @@ export default function DigitalLaw() {
                             <div>
                               <div className="flex items-center gap-1 mb-3">
                                 <XCircle className="h-4 w-4 text-red-600" />
-                                <span className="font-bold text-red-700">❌ Toàn bộ không được làm ({rule.donts.length})</span>
+                                <span className="font-bold text-red-700">
+                                  ❌ Toàn bộ không được làm ({rule.donts.length}
+                                  )
+                                </span>
                               </div>
                               <div className="space-y-2">
                                 {rule.donts.map((item, idx) => (
-                                  <div key={idx} className="flex items-start gap-2 p-2 bg-red-50 rounded border-l-4 border-red-200">
+                                  <div
+                                    key={idx}
+                                    className="flex items-start gap-2 p-2 bg-red-50 rounded border-l-4 border-red-200"
+                                  >
                                     <div className="w-1 h-1 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>
-                                    <span className="text-gray-700 leading-relaxed">{item}</span>
+                                    <span className="text-gray-700 leading-relaxed">
+                                      {item}
+                                    </span>
                                   </div>
                                 ))}
                               </div>
@@ -993,8 +1128,12 @@ export default function DigitalLaw() {
             {/* Legal Timeline */}
             <div className="mt-16 mb-16">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">📅 Timeline Pháp Luật Số Việt Nam</h3>
-                <p className="text-lg text-gray-600">Các mốc quan trọng trong việc xây dựng hệ thống pháp luật số</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  📅 Timeline Pháp Luật Số Việt Nam
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Các mốc quan trọng trong việc xây dựng hệ thống pháp luật số
+                </p>
               </div>
 
               <div className="relative">
@@ -1009,7 +1148,7 @@ export default function DigitalLaw() {
                       desc: "Nền tảng bảo vệ bản quyền tại Việt Nam",
                       impact: "Bảo vệ quyền tác giả, thương hiệu",
                       side: "left",
-                      color: "from-blue-500 to-indigo-500"
+                      color: "from-blue-500 to-indigo-500",
                     },
                     {
                       year: "2015",
@@ -1017,7 +1156,7 @@ export default function DigitalLaw() {
                       desc: "Quy định cụ thể mức phạt vi phạm IP",
                       impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
                       side: "right",
-                      color: "from-purple-500 to-pink-500"
+                      color: "from-purple-500 to-pink-500",
                     },
                     {
                       year: "2020",
@@ -1025,7 +1164,7 @@ export default function DigitalLaw() {
                       desc: "Bảo vệ dữ liệu và an ninh mạng",
                       impact: "Quy định về bảo vệ dữ liệu cá nhân",
                       side: "left",
-                      color: "from-green-500 to-emerald-500"
+                      color: "from-green-500 to-emerald-500",
                     },
                     {
                       year: "2021",
@@ -1033,7 +1172,7 @@ export default function DigitalLaw() {
                       desc: "Tương đương GDPR của châu Âu",
                       impact: "Phạt tối đa 5% doanh thu cho doanh nghiệp",
                       side: "right",
-                      color: "from-orange-500 to-red-500"
+                      color: "from-orange-500 to-red-500",
                     },
                     {
                       year: "2024",
@@ -1041,24 +1180,41 @@ export default function DigitalLaw() {
                       desc: "Quy định mới về trí tuệ nhân tạo",
                       impact: "Kiểm soát việc sử dụng AI tạo nội dung",
                       side: "left",
-                      color: "from-cyan-500 to-blue-500"
-                    }
+                      color: "from-cyan-500 to-blue-500",
+                    },
                   ].map((event, index) => (
-                    <div key={index} className={`flex items-center ${event.side === 'right' ? 'flex-row-reverse' : ''}`}>
-                      <div className={`w-1/2 ${event.side === 'right' ? 'pl-8' : 'pr-8'}`}>
+                    <div
+                      key={index}
+                      className={`flex items-center ${event.side === "right" ? "flex-row-reverse" : ""}`}
+                    >
+                      <div
+                        className={`w-1/2 ${event.side === "right" ? "pl-8" : "pr-8"}`}
+                      >
                         <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-                          <div className={`bg-gradient-to-r ${event.color} text-white p-4 rounded-t-lg`}>
-                            <div className="text-2xl font-bold mb-1">{event.year}</div>
-                            <h4 className="font-semibold text-lg">{event.title}</h4>
+                          <div
+                            className={`bg-gradient-to-r ${event.color} text-white p-4 rounded-t-lg`}
+                          >
+                            <div className="text-2xl font-bold mb-1">
+                              {event.year}
+                            </div>
+                            <h4 className="font-semibold text-lg">
+                              {event.title}
+                            </h4>
                           </div>
                           <CardContent className="p-4">
-                            <p className="text-gray-700 mb-3 leading-relaxed">{event.desc}</p>
+                            <p className="text-gray-700 mb-3 leading-relaxed">
+                              {event.desc}
+                            </p>
                             <div className="bg-gray-50 p-3 rounded-lg">
                               <div className="flex items-start">
                                 <TrendingUp className="h-4 w-4 text-indigo-500 mt-1 mr-2 flex-shrink-0" />
                                 <div>
-                                  <p className="text-xs text-gray-600 mb-1">Tác động:</p>
-                                  <p className="text-sm font-medium text-gray-800">{event.impact}</p>
+                                  <p className="text-xs text-gray-600 mb-1">
+                                    Tác động:
+                                  </p>
+                                  <p className="text-sm font-medium text-gray-800">
+                                    {event.impact}
+                                  </p>
                                 </div>
                               </div>
                             </div>
@@ -1068,8 +1224,12 @@ export default function DigitalLaw() {
 
                       {/* Timeline Node */}
                       <div className="relative z-10">
-                        <div className={`w-6 h-6 bg-gradient-to-r ${event.color} rounded-full border-4 border-white shadow-lg`}></div>
-                        <div className={`absolute -inset-2 bg-gradient-to-r ${event.color} rounded-full blur-sm opacity-50`}></div>
+                        <div
+                          className={`w-6 h-6 bg-gradient-to-r ${event.color} rounded-full border-4 border-white shadow-lg`}
+                        ></div>
+                        <div
+                          className={`absolute -inset-2 bg-gradient-to-r ${event.color} rounded-full blur-sm opacity-50`}
+                        ></div>
                       </div>
 
                       <div className="w-1/2"></div>
@@ -1084,39 +1244,54 @@ export default function DigitalLaw() {
               <Card className="overflow-hidden border-2 border-purple-200">
                 <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
                   <Brain className="h-12 w-12 mx-auto mb-4" />
-                  <h3 className="text-3xl font-bold mb-3">🧠 Legal Knowledge Quiz</h3>
-                  <p className="text-lg opacity-90">Kiểm tra kiến thức pháp luật số của bạn</p>
+                  <h3 className="text-3xl font-bold mb-3">
+                    🧠 Legal Knowledge Quiz
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    Kiểm tra kiến thức pháp luật số của bạn
+                  </p>
                 </div>
                 <CardContent className="p-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">📝 Câu hỏi mẫu:</h4>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">
+                        📝 Câu hỏi mẫu:
+                      </h4>
                       <div className="space-y-4">
                         {[
                           {
                             q: "Tôi có thể sử dụng ảnh từ Google Images cho mục đích thương mại không?",
                             a: "❌ Không. Ảnh từ Google Images đa số có bản quyền",
-                            level: "Cơ bản"
+                            level: "Cơ bản",
                           },
                           {
                             q: "Mức phạt t���i đa cho cá nhân vi phạm bản quyền?",
                             a: "💰 75 triệu VNĐ theo luật Việt Nam",
-                            level: "Trung bình"
+                            level: "Trung bình",
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
                             a: "⚖️ Có, nhưng rất hạn chế và cần đi���u kiện cụ thể",
-                            level: "Nâng cao"
-                          }
+                            level: "Nâng cao",
+                          },
                         ].map((quiz, idx) => (
-                          <Card key={idx} className="border border-gray-200 hover:shadow-md transition-shadow">
+                          <Card
+                            key={idx}
+                            className="border border-gray-200 hover:shadow-md transition-shadow"
+                          >
                             <CardContent className="p-4">
                               <div className="flex items-start justify-between mb-2">
-                                <span className="text-sm font-medium text-gray-900">{quiz.q}</span>
-                                <Badge variant="outline" className="text-xs">{quiz.level}</Badge>
+                                <span className="text-sm font-medium text-gray-900">
+                                  {quiz.q}
+                                </span>
+                                <Badge variant="outline" className="text-xs">
+                                  {quiz.level}
+                                </Badge>
                               </div>
                               <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-r">
-                                <p className="text-sm text-green-800">{quiz.a}</p>
+                                <p className="text-sm text-green-800">
+                                  {quiz.a}
+                                </p>
                               </div>
                             </CardContent>
                           </Card>
@@ -1125,22 +1300,48 @@ export default function DigitalLaw() {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">🎯 Đánh giá kiến thức:</h4>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">
+                        🎯 Đánh giá kiến thức:
+                      </h4>
                       <div className="space-y-4">
                         {[
-                          { level: "Beginner", desc: "Hiểu biết cơ bản về bản quyền", percent: 30, color: "bg-red-500" },
-                          { level: "Intermediate", desc: "Nắm được các quy định quan trọng", percent: 60, color: "bg-orange-500" },
-                          { level: "Advanced", desc: "Thành thạo luật số và thực hành", percent: 90, color: "bg-green-500" }
+                          {
+                            level: "Beginner",
+                            desc: "Hiểu biết cơ bản về bản quyền",
+                            percent: 30,
+                            color: "bg-red-500",
+                          },
+                          {
+                            level: "Intermediate",
+                            desc: "Nắm được các quy định quan trọng",
+                            percent: 60,
+                            color: "bg-orange-500",
+                          },
+                          {
+                            level: "Advanced",
+                            desc: "Thành thạo luật số và thực hành",
+                            percent: 90,
+                            color: "bg-green-500",
+                          },
                         ].map((level, idx) => (
                           <div key={idx} className="bg-gray-50 p-4 rounded-lg">
                             <div className="flex justify-between items-center mb-2">
-                              <span className="font-semibold text-gray-900">{level.level}</span>
-                              <span className="text-sm text-gray-600">{level.percent}%</span>
+                              <span className="font-semibold text-gray-900">
+                                {level.level}
+                              </span>
+                              <span className="text-sm text-gray-600">
+                                {level.percent}%
+                              </span>
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                              <div className={`h-2 rounded-full ${level.color} transition-all duration-1000`} style={{ width: `${level.percent}%` }}></div>
+                              <div
+                                className={`h-2 rounded-full ${level.color} transition-all duration-1000`}
+                                style={{ width: `${level.percent}%` }}
+                              ></div>
                             </div>
-                            <p className="text-sm text-gray-600">{level.desc}</p>
+                            <p className="text-sm text-gray-600">
+                              {level.desc}
+                            </p>
                           </div>
                         ))}
                       </div>
@@ -1158,8 +1359,12 @@ export default function DigitalLaw() {
             {/* Legal Resources Library */}
             <div className="mt-16 mb-16">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">📚 Thư Viện Tài Nguyên Pháp Lý</h3>
-                <p className="text-lg text-gray-600">Bộ sưu tập các nguồn tài liệu pháp lý hữu ích</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  📚 Thư Viện Tài Nguyên Pháp Lý
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Bộ sưu tập các nguồn tài liệu pháp lý hữu ích
+                </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1172,8 +1377,8 @@ export default function DigitalLaw() {
                       "Luật Sở hữu trí tuệ 2005",
                       "Nghị định 15/2020",
                       "Luật An toàn thông tin mạng",
-                      "Luật Bảo vệ dữ liệu cá nhân"
-                    ]
+                      "Luật Bảo vệ dữ liệu cá nhân",
+                    ],
                   },
                   {
                     title: "Template pháp lý",
@@ -1183,8 +1388,8 @@ export default function DigitalLaw() {
                       "Mẫu đơn xin cấp bằng bảo hộ",
                       "Terms & Conditions",
                       "Privacy Policy",
-                      "Copyright Notice"
-                    ]
+                      "Copyright Notice",
+                    ],
                   },
                   {
                     title: "Tools kiểm tra",
@@ -1194,8 +1399,8 @@ export default function DigitalLaw() {
                       "Google Reverse Image Search",
                       "TinEye - Tìm nguồn ảnh",
                       "Copyright Checker",
-                      "Plagiarism Detector"
-                    ]
+                      "Plagiarism Detector",
+                    ],
                   },
                   {
                     title: "Ngu��n ảnh/nhạc miễn phí",
@@ -1205,25 +1410,41 @@ export default function DigitalLaw() {
                       "Unsplash.com",
                       "YouTube Audio Library",
                       "Creative Commons",
-                      "Freepik (Attribution)"
-                    ]
-                  }
+                      "Freepik (Attribution)",
+                    ],
+                  },
                 ].map((category, idx) => (
-                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300">
-                    <div className={`bg-gradient-to-r ${category.color} p-4 text-white rounded-t-lg`}>
+                  <Card
+                    key={idx}
+                    className="group hover:shadow-lg transition-all duration-300"
+                  >
+                    <div
+                      className={`bg-gradient-to-r ${category.color} p-4 text-white rounded-t-lg`}
+                    >
                       <category.icon className="h-8 w-8 mx-auto mb-2" />
-                      <h4 className="font-bold text-center">{category.title}</h4>
+                      <h4 className="font-bold text-center">
+                        {category.title}
+                      </h4>
                     </div>
                     <CardContent className="p-4">
                       <div className="space-y-2">
                         {category.resources.map((resource, resIdx) => (
-                          <div key={resIdx} className="flex items-center p-2 rounded hover:bg-gray-50 cursor-pointer transition-colors">
+                          <div
+                            key={resIdx}
+                            className="flex items-center p-2 rounded hover:bg-gray-50 cursor-pointer transition-colors"
+                          >
                             <ChevronRight className="h-3 w-3 text-gray-400 mr-2" />
-                            <span className="text-sm text-gray-700">{resource}</span>
+                            <span className="text-sm text-gray-700">
+                              {resource}
+                            </span>
                           </div>
                         ))}
                       </div>
-                      <Button size="sm" variant="outline" className="w-full mt-4">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full mt-4"
+                      >
                         Xem tất cả
                       </Button>
                     </CardContent>
@@ -1246,19 +1467,37 @@ export default function DigitalLaw() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl">
-                  <div className="text-3xl font-bold text-red-600 mb-2">75 tri���u VNĐ</div>
-                  <div className="text-sm text-gray-700 font-medium">Mức phạt tối đa cá nhân</div>
-                  <div className="text-xs text-gray-500 mt-1">Theo luật Việt Nam</div>
+                  <div className="text-3xl font-bold text-red-600 mb-2">
+                    75 tri���u VNĐ
+                  </div>
+                  <div className="text-sm text-gray-700 font-medium">
+                    Mức phạt tối đa cá nhân
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Theo luật Việt Nam
+                  </div>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">150 triệu VNĐ</div>
-                  <div className="text-sm text-gray-700 font-medium">Mức phạt tối đa tổ chức</div>
-                  <div className="text-xs text-gray-500 mt-1">Doanh nghiệp vi phạm</div>
+                  <div className="text-3xl font-bold text-orange-600 mb-2">
+                    150 triệu VNĐ
+                  </div>
+                  <div className="text-sm text-gray-700 font-medium">
+                    Mức phạt tối đa tổ chức
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Doanh nghiệp vi phạm
+                  </div>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">89%</div>
-                  <div className="text-sm text-gray-700 font-medium">Vi phạm không cố ý</div>
-                  <div className="text-xs text-gray-500 mt-1">Do thiếu hiểu biết</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">
+                    89%
+                  </div>
+                  <div className="text-sm text-gray-700 font-medium">
+                    Vi phạm không cố ý
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Do thiếu hiểu biết
+                  </div>
                 </div>
               </div>
             </div>

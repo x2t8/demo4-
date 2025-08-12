@@ -55,8 +55,7 @@ export default function Index() {
     {
       icon: Shield,
       title: "An Toàn Số",
-      description:
-        "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
+      description: "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
       color: "text-red-600 bg-red-200",
       link: "/scam-types",
     },
@@ -100,9 +99,11 @@ export default function Index() {
 
   return (
     <CaringToastProvider>
-      <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
-        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}>
+      <div
+        className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
+          isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <Header />
         <DisclaimerBanner />
 
@@ -133,9 +134,9 @@ export default function Index() {
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift group"
                 onClick={() => {
-                  const modulesSection = document.getElementById('modules');
+                  const modulesSection = document.getElementById("modules");
                   if (modulesSection) {
-                    modulesSection.scrollIntoView({ behavior: 'smooth' });
+                    modulesSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
               >
@@ -250,7 +251,6 @@ export default function Index() {
               modules={digitalModules}
               onModuleChange={setCurrentModuleIndex}
             />
-
 
             {/* Call to Action */}
             <div className="text-center mt-12 sm:mt-16">

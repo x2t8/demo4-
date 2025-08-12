@@ -993,8 +993,8 @@ export default function DigitalSkills() {
                   <span className="text-yellow-300">Digital Literacy</span>
                 </h1>
                 <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                  Nắm vững công nghệ số từ cơ bản đến nâng cao. Phát triển kỹ năng
-                  thiết yếu cho thời đại 4.0 và tương lai số hóa.
+                  Nắm vững công nghệ số từ cơ bản đến nâng cao. Phát triển kỹ
+                  năng thiết yếu cho thời đại 4.0 và tương lai số hóa.
                 </p>
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
@@ -1100,9 +1100,14 @@ export default function DigitalSkills() {
                                   : "bg-red-500"
                           }`}
                           style={{
-                            width: item.value === "Cơ bản" ? "25%" :
-                                   item.value === "Trung bình" ? "50%" :
-                                   item.value === "Nâng cao" ? "75%" : "90%"
+                            width:
+                              item.value === "Cơ bản"
+                                ? "25%"
+                                : item.value === "Trung bình"
+                                  ? "50%"
+                                  : item.value === "Nâng cao"
+                                    ? "75%"
+                                    : "90%",
                           }}
                         ></div>
                       </div>

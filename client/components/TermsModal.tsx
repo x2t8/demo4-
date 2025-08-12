@@ -13,7 +13,8 @@ export default function TermsModal({
 }: TermsModalProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
-  const modalVisible = externalVisible !== undefined ? externalVisible : isVisible;
+  const modalVisible =
+    externalVisible !== undefined ? externalVisible : isVisible;
 
   useEffect(() => {
     if (modalVisible) {
