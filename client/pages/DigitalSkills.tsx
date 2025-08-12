@@ -961,16 +961,161 @@ export default function DigitalSkills() {
       <Header />
       <DisclaimerBanner />
 
-      {/* Page Header */}
-      <div className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Keyboard className="h-16 w-16 mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Kỹ Năng Số & Digital Literacy
-          </h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Phát triển kỹ năng công nghệ thiết yếu cho thời đại số
-          </p>
+      {/* Desktop/Tablet: New Hero Layout following DigitalLaw style */}
+      <div className="hidden md:block">
+        {/* Hero Section - Layout như DigitalLaw */}
+        <div className="relative bg-gradient-to-br from-emerald-400 via-teal-500 to-green-600 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-black opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center mb-6">
+                  <Keyboard className="h-12 w-12 mr-4 animate-pulse" />
+                  <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    PHÁT TRIỂN KỸ NĂNG SỐ
+                  </span>
+                </div>
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                  Kỹ Năng Số &{" "}
+                  <span className="text-yellow-300">Digital Literacy</span>
+                </h1>
+                <p className="text-xl opacity-90 mb-8 leading-relaxed">
+                  Nắm vững công nghệ số từ cơ bản đến nâng cao. Phát triển kỹ năng
+                  thiết yếu cho thời đại 4.0 và tương lai số hóa.
+                </p>
+                <div className="flex items-center space-x-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">
+                      10 câu
+                    </div>
+                    <div className="text-sm opacity-80">Quiz đánh giá</div>
+                  </div>
+                  <div className="w-px h-12 bg-white/30"></div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">
+                      4 cấp độ
+                    </div>
+                    <div className="text-sm opacity-80">Trình độ học</div>
+                  </div>
+                  <div className="w-px h-12 bg-white/30"></div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">
+                      40+ tools
+                    </div>
+                    <div className="text-sm opacity-80">Công cụ hữu ích</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Skill Cards (DigitalLaw style - Simple Grid 2x2) */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: Monitor,
+                    title: "Máy tính cơ bản",
+                    subtitle: "Office, File, Browser",
+                    value: "Cơ bản",
+                    color: "bg-white",
+                    textColor: "text-blue-600",
+                  },
+                  {
+                    icon: Globe,
+                    title: "Tìm kiếm thông tin",
+                    subtitle: "Research, Fact-check",
+                    value: "Trung bình",
+                    color: "bg-white/90",
+                    textColor: "text-green-600",
+                  },
+                  {
+                    icon: Users,
+                    title: "Collaboration",
+                    subtitle: "Teams, Project tool",
+                    value: "Nâng cao",
+                    color: "bg-white/80",
+                    textColor: "text-purple-600",
+                  },
+                  {
+                    icon: Lock,
+                    title: "An ninh & Privacy",
+                    subtitle: "Security, Backup",
+                    value: "Quan trọng",
+                    color: "bg-white/70",
+                    textColor: "text-red-600",
+                  },
+                ].map((item, index) => (
+                  <Card
+                    key={index}
+                    className={`${item.color} border-0 hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg`}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div
+                          className={`w-10 h-10 ${
+                            item.textColor === "text-blue-600"
+                              ? "bg-blue-100"
+                              : item.textColor === "text-green-600"
+                                ? "bg-green-100"
+                                : item.textColor === "text-purple-600"
+                                  ? "bg-purple-100"
+                                  : "bg-red-100"
+                          } rounded-lg flex items-center justify-center`}
+                        >
+                          <item.icon className={`h-5 w-5 ${item.textColor}`} />
+                        </div>
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-sm mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-xs mb-2">
+                        {item.subtitle}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-500">Cấp độ</span>
+                        <span className={`font-bold text-sm ${item.textColor}`}>
+                          {item.value}
+                        </span>
+                      </div>
+                      <div className="mt-2 w-full bg-gray-200 rounded-full h-1.5">
+                        <div
+                          className={`h-1.5 rounded-full transition-all duration-1000 ${
+                            item.textColor === "text-blue-600"
+                              ? "bg-blue-500"
+                              : item.textColor === "text-green-600"
+                                ? "bg-green-500"
+                                : item.textColor === "text-purple-600"
+                                  ? "bg-purple-500"
+                                  : "bg-red-500"
+                          }`}
+                          style={{
+                            width: item.value === "Cơ bản" ? "25%" :
+                                   item.value === "Trung bình" ? "50%" :
+                                   item.value === "Nâng cao" ? "75%" : "90%"
+                          }}
+                        ></div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile: Simple Header */}
+      <div className="md:hidden">
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Keyboard className="h-16 w-16 mx-auto mb-6" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Kỹ Năng Số & Digital Literacy
+            </h1>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              Phát triển kỹ năng công nghệ thiết yếu cho thời đại số
+            </p>
+          </div>
         </div>
       </div>
 

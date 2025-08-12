@@ -33,6 +33,7 @@ import {
   Coffee,
   Target,
   ArrowLeft,
+  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -207,7 +208,7 @@ export default function DigitalLaw() {
       impact: "Môi trường lành mạnh",
       usage: "Mạng xã hội, website",
       description:
-        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy ��ịnh nền tảng.",
+        "Nội dung đăng t���i phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy ��ịnh nền tảng.",
       dos: [
         "Ki���m tra tính chính xác thông tin",
         "Tôn trọng các giá trị xã hội",
@@ -217,7 +218,7 @@ export default function DigitalLaw() {
         "Sử dụng ngôn ngữ văn minh",
       ],
       donts: [
-        "Đăng tin giả, tin đồn thất thiệt",
+        "��ăng tin giả, tin đồn thất thiệt",
         "Xúc phạm danh dự, nhân phẩm",
         "Kích động bạo lực, thù hận",
         "Quảng cáo sản phẩm trái phép",
@@ -237,7 +238,7 @@ export default function DigitalLaw() {
       impact: "Sử dụng an toàn",
       usage: "Các nền tảng MXH",
       description:
-        "Mỗi nền tảng mạng xã hội có quy định riêng, song song với luật pháp Việt Nam về an toàn thông tin mạng.",
+        "Mỗi nền tảng mạng xã hội có quy đ���nh riêng, song song với luật pháp Việt Nam về an toàn thông tin mạng.",
       dos: [
         "Đọc và tuân thủ Community Guidelines",
         "Báo cáo nội dung vi phạm",
@@ -299,7 +300,7 @@ export default function DigitalLaw() {
       description:
         "Luật An toàn thông tin mạng quy định về bảo vệ hệ thống thông tin quan trọng và phòng chống tấn công mạng.",
       dos: [
-        "Cập nhật phần mềm bảo mật định kỳ",
+        "Cập nhật ph���n mềm bảo mật định kỳ",
         "Sử dụng mật khẩu mạnh, unique",
         "Backup dữ liệu quan trọng",
         "Báo cáo sự cố an ninh mạng",
@@ -453,7 +454,7 @@ export default function DigitalLaw() {
               Khái Niệm Pháp Lý Cơ Bản
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Những kiến thức nền tảng về luật sở hữu trí tuệ trong thời đ���i
+              Những kiến thức nền tảng về luật sở hữu trí tuệ trong thời đ����i
               số
             </p>
           </div>
@@ -550,15 +551,286 @@ export default function DigitalLaw() {
                 <span className="text-sm font-medium text-indigo-600">PHÁP LUẬT SỐ</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                📋 Quy Định Pháp Lý
-                <span className="block text-3xl md:text-4xl text-indigo-600 mt-2">Chi Tiết</span>
+                ⚖️ Hệ Thống Pháp Luật Số
+                <span className="block text-3xl md:text-4xl text-indigo-600 mt-2">Việt Nam 2024</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Hiểu rõ và tuân thủ 6 lĩnh vực pháp lý quan trọng nhất trong hoạt động số
               </p>
             </div>
 
-            {/* Clean Grid Layout with Better Organization */}
+            {/* Interactive Legal Navigator */}
+            <div className="mb-16">
+              <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-indigo-100">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full px-6 py-3 mb-4">
+                    <Gavel className="h-5 w-5 mr-2" />
+                    <span className="font-bold">LEGAL NAVIGATOR AI</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">🧭 Tìm Luật Phù Hợp Với Tình Huống</h3>
+                  <p className="text-gray-600">Chọn tình huống của bạn để nhận hướng dẫn pháp lý cụ thể</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {[
+                    {
+                      icon: Image,
+                      title: "Tôi muốn sử dụng ảnh",
+                      desc: "Từ Google, Pinterest, mạng xã hội",
+                      laws: ["Bản quyền tác phẩm", "Fair Use"],
+                      color: "from-purple-500 to-pink-500"
+                    },
+                    {
+                      icon: Music,
+                      title: "Tôi làm video có nhạc",
+                      desc: "YouTube, TikTok, livestream",
+                      laws: ["Bản quyền tác phẩm", "Nội dung hợp pháp"],
+                      color: "from-blue-500 to-cyan-500"
+                    },
+                    {
+                      icon: DollarSign,
+                      title: "Tôi bán hàng online",
+                      desc: "Facebook, Shopee, website",
+                      laws: ["Kinh doanh online", "Bảo vệ dữ liệu"],
+                      color: "from-green-500 to-emerald-500"
+                    }
+                  ].map((scenario, idx) => (
+                    <Card key={idx} className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 hover:border-indigo-200">
+                      <CardContent className="p-6 text-center">
+                        <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${scenario.color} flex items-center justify-center shadow-lg`}>
+                          <scenario.icon className="h-8 w-8 text-white" />
+                        </div>
+                        <h4 className="font-bold text-gray-900 mb-2">{scenario.title}</h4>
+                        <p className="text-sm text-gray-600 mb-3">{scenario.desc}</p>
+                        <div className="space-y-1">
+                          {scenario.laws.map((law, lawIdx) => (
+                            <Badge key={lawIdx} variant="outline" className="text-xs block">
+                              📜 {law}
+                            </Badge>
+                          ))}
+                        </div>
+                        <Button size="sm" className="mt-4 w-full" variant="outline">
+                          <ChevronRight className="h-4 w-4 ml-2" />
+                          Xem hướng dẫn
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Legal Case Studies */}
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">📚 Case Studies Thực Tế</h3>
+                <p className="text-lg text-gray-600">Học từ những vụ việc nổi tiếng về vi phạm pháp luật số</p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {[
+                  {
+                    title: "Vụ việc sử dụng nhạc không phép trên TikTok",
+                    company: "Creator Việt Nam",
+                    year: "2023",
+                    violation: "Vi phạm bản quyền âm nhạc",
+                    penalty: "50 triệu VNĐ",
+                    lesson: "Luôn kiểm tra license nhạc trước khi sử dụng trong video thương mại",
+                    color: "from-red-500 to-pink-500",
+                    icon: Music
+                  },
+                  {
+                    title: "Công ty E-commerce lộ thông tin khách hàng",
+                    company: "Shopx Vietnam",
+                    year: "2024",
+                    violation: "Vi phạm bảo vệ dữ liệu cá nhân",
+                    penalty: "150 triệu VNĐ",
+                    lesson: "Phải mã hóa và bảo mật thông tin khách hàng theo chuẩn quốc tế",
+                    color: "from-blue-500 to-indigo-500",
+                    icon: Shield
+                  }
+                ].map((caseStudy, idx) => (
+                  <Card key={idx} className="overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div className={`bg-gradient-to-r ${caseStudy.color} p-6 text-white`}>
+                      <div className="flex items-center justify-between mb-3">
+                        <caseStudy.icon className="h-8 w-8" />
+                        <Badge className="bg-white/20 text-white border-white/30">
+                          {caseStudy.year}
+                        </Badge>
+                      </div>
+                      <h4 className="text-xl font-bold mb-2">{caseStudy.title}</h4>
+                      <p className="opacity-90">{caseStudy.company}</p>
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Vi phạm:</span>
+                          <span className="font-semibold text-red-600">{caseStudy.violation}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Mức phạt:</span>
+                          <span className="font-bold text-2xl text-red-700">{caseStudy.penalty}</span>
+                        </div>
+                        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                          <div className="flex items-start">
+                            <Lightbulb className="h-5 w-5 text-yellow-600 mt-0.5 mr-2 flex-shrink-0" />
+                            <div>
+                              <p className="text-sm font-medium text-yellow-800 mb-1">Bài học rút ra:</p>
+                              <p className="text-sm text-yellow-700">{caseStudy.lesson}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Legal Penalty Calculator */}
+            <div className="mb-16">
+              <Card className="overflow-hidden border-2 border-orange-200">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6">
+                  <div className="text-center">
+                    <DollarSign className="h-12 w-12 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold mb-2">⚖️ Máy Tính Mức Phạt Pháp Lý</h3>
+                    <p className="opacity-90">Ước tính mức phạt khi vi phạm luật số tại Việt Nam</p>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      {
+                        violation: "Vi phạm b���n quyền cá nhân",
+                        minFine: "5 triệu",
+                        maxFine: "75 triệu",
+                        type: "Cá nhân",
+                        color: "text-orange-600",
+                        examples: ["Sử dụng ảnh không phép", "Post nhạc có bản quyền", "Copy nội dung blog"]
+                      },
+                      {
+                        violation: "Vi phạm bản quyền doanh nghiệp",
+                        minFine: "10 triệu",
+                        maxFine: "150 triệu",
+                        type: "Tổ chức",
+                        color: "text-red-600",
+                        examples: ["Sử dụng phần mềm crack", "Vi phạm trademark", "Đạo nhái sản phẩm"]
+                      },
+                      {
+                        violation: "Vi phạm dữ liệu cá nhân",
+                        minFine: "20 triệu",
+                        maxFine: "100 triệu",
+                        type: "Tổ chức",
+                        color: "text-purple-600",
+                        examples: ["Lộ thông tin khách hàng", "Không xin phép thu thập", "Bán dữ liệu cá nhân"]
+                      }
+                    ].map((penalty, idx) => (
+                      <Card key={idx} className="border border-gray-200 hover:shadow-lg transition-shadow">
+                        <CardContent className="p-6 text-center">
+                          <div className={`text-3xl font-bold ${penalty.color} mb-2`}>
+                            {penalty.maxFine} VNĐ
+                          </div>
+                          <h4 className="font-semibold text-gray-900 mb-2">{penalty.violation}</h4>
+                          <Badge variant="outline" className="mb-4">{penalty.type}</Badge>
+                          <div className="text-left">
+                            <p className="text-xs text-gray-600 mb-2">Ví dụ vi phạm:</p>
+                            <ul className="space-y-1">
+                              {penalty.examples.map((example, exIdx) => (
+                                <li key={exIdx} className="text-xs text-gray-700 flex items-start">
+                                  <span className="text-red-500 mr-1">•</span>
+                                  {example}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Quick Reference Legal Cards */}
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">🚀 Quick Reference Cards</h3>
+                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình huống cụ thể</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  {
+                    title: "Sử dụng ảnh an toàn",
+                    icon: Image,
+                    color: "from-purple-500 to-pink-500",
+                    tips: [
+                      "✅ Unsplash.com - Free",
+                      "✅ Pexels.com - Free",
+                      "✅ Tự chụp ảnh",
+                      "❌ Google Images",
+                      "❌ Pinterest"
+                    ]
+                  },
+                  {
+                    title: "Nhạc cho video",
+                    icon: Music,
+                    color: "from-blue-500 to-cyan-500",
+                    tips: [
+                      "✅ YouTube Audio Library",
+                      "✅ Epidemic Sound (trả phí)",
+                      "✅ Tự sáng tác",
+                      "❌ Nhạc từ Spotify",
+                      "❌ Nhạc từ YouTube"
+                    ]
+                  },
+                  {
+                    title: "Bán hàng online",
+                    icon: DollarSign,
+                    color: "from-green-500 to-emerald-500",
+                    tips: [
+                      "✅ Đăng ký kinh doanh",
+                      "✅ Khai báo thuế",
+                      "✅ Chính sách đổi trả",
+                      "❌ Bán hàng fake",
+                      "❌ Trốn thuế"
+                    ]
+                  },
+                  {
+                    title: "Thu thập dữ liệu",
+                    icon: Eye,
+                    color: "from-orange-500 to-red-500",
+                    tips: [
+                      "✅ Xin phép trước",
+                      "✅ Giải thích mục đích",
+                      "✅ Bảo mật dữ liệu",
+                      "❌ Thu thập lén lút",
+                      "❌ Bán cho bên thứ 3"
+                    ]
+                  }
+                ].map((card, idx) => (
+                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div className={`bg-gradient-to-r ${card.color} p-4 text-white rounded-t-lg`}>
+                      <card.icon className="h-8 w-8 mx-auto mb-2" />
+                      <h4 className="font-bold text-center text-sm">{card.title}</h4>
+                    </div>
+                    <CardContent className="p-4">
+                      <div className="space-y-2">
+                        {card.tips.map((tip, tipIdx) => (
+                          <div key={tipIdx} className={`text-xs p-2 rounded ${
+                            tip.startsWith('✅') ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+                          }`}>
+                            {tip}
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Legal Rules Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {legalRules.map((rule, index) => (
                 <Card
@@ -716,6 +988,248 @@ export default function DigitalLaw() {
                   </div>
                 </Card>
               ))}
+            </div>
+
+            {/* Legal Timeline */}
+            <div className="mt-16 mb-16">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">📅 Timeline Pháp Luật Số Việt Nam</h3>
+                <p className="text-lg text-gray-600">Các mốc quan trọng trong việc xây dựng hệ thống pháp luật số</p>
+              </div>
+
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500"></div>
+
+                <div className="space-y-12">
+                  {[
+                    {
+                      year: "2006",
+                      title: "Luật Sở hữu trí tuệ",
+                      desc: "Nền tảng bảo vệ bản quyền tại Việt Nam",
+                      impact: "Bảo vệ quyền tác giả, thương hiệu",
+                      side: "left",
+                      color: "from-blue-500 to-indigo-500"
+                    },
+                    {
+                      year: "2015",
+                      title: "Nghị định 15 về xử phạt vi phạm bản quyền",
+                      desc: "Quy định cụ thể mức phạt vi phạm IP",
+                      impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
+                      side: "right",
+                      color: "from-purple-500 to-pink-500"
+                    },
+                    {
+                      year: "2020",
+                      title: "Luật An toàn thông tin mạng",
+                      desc: "Bảo vệ dữ liệu và an ninh mạng",
+                      impact: "Quy định về bảo vệ dữ liệu cá nhân",
+                      side: "left",
+                      color: "from-green-500 to-emerald-500"
+                    },
+                    {
+                      year: "2021",
+                      title: "Luật Bảo vệ dữ liệu cá nhân",
+                      desc: "Tương đương GDPR của châu Âu",
+                      impact: "Phạt tối đa 5% doanh thu cho doanh nghiệp",
+                      side: "right",
+                      color: "from-orange-500 to-red-500"
+                    },
+                    {
+                      year: "2024",
+                      title: "Nghị định về AI và Deepfake",
+                      desc: "Quy định mới về trí tuệ nhân tạo",
+                      impact: "Kiểm soát việc sử dụng AI tạo nội dung",
+                      side: "left",
+                      color: "from-cyan-500 to-blue-500"
+                    }
+                  ].map((event, index) => (
+                    <div key={index} className={`flex items-center ${event.side === 'right' ? 'flex-row-reverse' : ''}`}>
+                      <div className={`w-1/2 ${event.side === 'right' ? 'pl-8' : 'pr-8'}`}>
+                        <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+                          <div className={`bg-gradient-to-r ${event.color} text-white p-4 rounded-t-lg`}>
+                            <div className="text-2xl font-bold mb-1">{event.year}</div>
+                            <h4 className="font-semibold text-lg">{event.title}</h4>
+                          </div>
+                          <CardContent className="p-4">
+                            <p className="text-gray-700 mb-3 leading-relaxed">{event.desc}</p>
+                            <div className="bg-gray-50 p-3 rounded-lg">
+                              <div className="flex items-start">
+                                <TrendingUp className="h-4 w-4 text-indigo-500 mt-1 mr-2 flex-shrink-0" />
+                                <div>
+                                  <p className="text-xs text-gray-600 mb-1">Tác động:</p>
+                                  <p className="text-sm font-medium text-gray-800">{event.impact}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+
+                      {/* Timeline Node */}
+                      <div className="relative z-10">
+                        <div className={`w-6 h-6 bg-gradient-to-r ${event.color} rounded-full border-4 border-white shadow-lg`}></div>
+                        <div className={`absolute -inset-2 bg-gradient-to-r ${event.color} rounded-full blur-sm opacity-50`}></div>
+                      </div>
+
+                      <div className="w-1/2"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Legal Quiz */}
+            <div className="mt-16 mb-16">
+              <Card className="overflow-hidden border-2 border-purple-200">
+                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
+                  <Brain className="h-12 w-12 mx-auto mb-4" />
+                  <h3 className="text-3xl font-bold mb-3">🧠 Legal Knowledge Quiz</h3>
+                  <p className="text-lg opacity-90">Kiểm tra kiến thức pháp luật số của bạn</p>
+                </div>
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">📝 Câu hỏi mẫu:</h4>
+                      <div className="space-y-4">
+                        {[
+                          {
+                            q: "Tôi có thể sử dụng ảnh từ Google Images cho mục đích thương mại không?",
+                            a: "❌ Không. Ảnh từ Google Images đa số có bản quyền",
+                            level: "Cơ bản"
+                          },
+                          {
+                            q: "Mức phạt t���i đa cho cá nhân vi phạm bản quyền?",
+                            a: "💰 75 triệu VNĐ theo luật Việt Nam",
+                            level: "Trung bình"
+                          },
+                          {
+                            q: "Fair Use có áp dụng tại Việt Nam không?",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
+                            level: "Nâng cao"
+                          }
+                        ].map((quiz, idx) => (
+                          <Card key={idx} className="border border-gray-200 hover:shadow-md transition-shadow">
+                            <CardContent className="p-4">
+                              <div className="flex items-start justify-between mb-2">
+                                <span className="text-sm font-medium text-gray-900">{quiz.q}</span>
+                                <Badge variant="outline" className="text-xs">{quiz.level}</Badge>
+                              </div>
+                              <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-r">
+                                <p className="text-sm text-green-800">{quiz.a}</p>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">🎯 Đánh giá kiến thức:</h4>
+                      <div className="space-y-4">
+                        {[
+                          { level: "Beginner", desc: "Hiểu biết cơ bản về bản quyền", percent: 30, color: "bg-red-500" },
+                          { level: "Intermediate", desc: "Nắm được các quy định quan trọng", percent: 60, color: "bg-orange-500" },
+                          { level: "Advanced", desc: "Thành thạo luật số và thực hành", percent: 90, color: "bg-green-500" }
+                        ].map((level, idx) => (
+                          <div key={idx} className="bg-gray-50 p-4 rounded-lg">
+                            <div className="flex justify-between items-center mb-2">
+                              <span className="font-semibold text-gray-900">{level.level}</span>
+                              <span className="text-sm text-gray-600">{level.percent}%</span>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                              <div className={`h-2 rounded-full ${level.color} transition-all duration-1000`} style={{ width: `${level.percent}%` }}></div>
+                            </div>
+                            <p className="text-sm text-gray-600">{level.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700">
+                        <Brain className="h-4 w-4 mr-2" />
+                        Bắt đầu Quiz (10 câu hỏi)
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Legal Resources Library */}
+            <div className="mt-16 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">📚 Thư Viện Tài Nguyên Pháp Lý</h3>
+                <p className="text-lg text-gray-600">Bộ sưu tập các nguồn tài liệu pháp lý hữu ích</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: "Văn bản pháp luật",
+                    icon: FileText,
+                    color: "from-blue-500 to-indigo-500",
+                    resources: [
+                      "Luật Sở hữu trí tuệ 2005",
+                      "Nghị định 15/2020",
+                      "Luật An toàn thông tin mạng",
+                      "Luật Bảo vệ dữ liệu cá nhân"
+                    ]
+                  },
+                  {
+                    title: "Template pháp lý",
+                    icon: Flag,
+                    color: "from-green-500 to-emerald-500",
+                    resources: [
+                      "Mẫu đơn xin cấp bằng bảo hộ",
+                      "Terms & Conditions",
+                      "Privacy Policy",
+                      "Copyright Notice"
+                    ]
+                  },
+                  {
+                    title: "Tools kiểm tra",
+                    icon: Search,
+                    color: "from-purple-500 to-pink-500",
+                    resources: [
+                      "Google Reverse Image Search",
+                      "TinEye - Tìm nguồn ảnh",
+                      "Copyright Checker",
+                      "Plagiarism Detector"
+                    ]
+                  },
+                  {
+                    title: "Nguồn ảnh/nhạc miễn phí",
+                    icon: Heart,
+                    color: "from-orange-500 to-red-500",
+                    resources: [
+                      "Unsplash.com",
+                      "YouTube Audio Library",
+                      "Creative Commons",
+                      "Freepik (Attribution)"
+                    ]
+                  }
+                ].map((category, idx) => (
+                  <Card key={idx} className="group hover:shadow-lg transition-all duration-300">
+                    <div className={`bg-gradient-to-r ${category.color} p-4 text-white rounded-t-lg`}>
+                      <category.icon className="h-8 w-8 mx-auto mb-2" />
+                      <h4 className="font-bold text-center">{category.title}</h4>
+                    </div>
+                    <CardContent className="p-4">
+                      <div className="space-y-2">
+                        {category.resources.map((resource, resIdx) => (
+                          <div key={resIdx} className="flex items-center p-2 rounded hover:bg-gray-50 cursor-pointer transition-colors">
+                            <ChevronRight className="h-3 w-3 text-gray-400 mr-2" />
+                            <span className="text-sm text-gray-700">{resource}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <Button size="sm" variant="outline" className="w-full mt-4">
+                        Xem tất cả
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
 
             {/* Additional Info Section */}
@@ -900,7 +1414,7 @@ export default function DigitalLaw() {
               ⚖️ Quy định pháp lý chi tiết
             </h2>
             <p className="text-gray-600 text-base leading-relaxed">
-              6 lĩnh vực pháp lý quan trọng khi hoạt động số
+              6 lĩnh v���c pháp lý quan trọng khi hoạt động số
             </p>
           </div>
 

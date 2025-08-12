@@ -103,7 +103,7 @@ export default function ScamTypes() {
       techniques: [
         "Giả danh công an, ngân hàng",
         "Tạo áp lực tâm lý",
-        "Yêu cầu chuyển tiền khẩn cấp",
+        "Yêu cầu chuyển ti��n khẩn cấp",
         "Đe dọa bắt giữ, phạt tiền",
       ],
       prevention: [
@@ -125,7 +125,7 @@ export default function ScamTypes() {
       popularity: "78%",
       avgLoss: "12 triệu VNĐ",
       description:
-        "Tin nhắn chứa link độc hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
+        "Tin nhắn chứa link đ��c hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
       techniques: [
         "Gửi link đ��c hại",
         "Giả mạo thông báo ngân hàng",
@@ -177,7 +177,7 @@ export default function ScamTypes() {
       popularity: "45%",
       avgLoss: "35 triệu VNĐ",
       description:
-        "Sử dụng thiết bị sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
+        "Sử dụng thiết b��� sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
       techniques: [
         "Lắp thiết bị sao chép tại ATM",
         "Camera quay lén mã PIN",
@@ -201,47 +201,46 @@ export default function ScamTypes() {
       {/* Desktop/Tablet: New Layout theo hình */}
       <div className="hidden md:block">
         {/* Hero Section - Layout như DigitalEthics */}
-        <section className="bg-gradient-to-br from-red-400 via-pink-400 to-red-500 relative overflow-hidden py-16 lg:py-20">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-          </div>
+        <div className="relative bg-gradient-to-br from-red-400 via-pink-400 to-red-500 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-black opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left side - Content */}
-              <div className="text-white space-y-6">
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
-                  <Shield className="h-5 w-5" />
-                  <span className="text-sm font-medium">BẢO VỆ AN TOÀN SỐ</span>
+              <div>
+                <div className="flex items-center mb-6">
+                  <Shield className="h-12 w-12 mr-4 animate-pulse" />
+                  <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    BẢO VỆ AN TOÀN SỐ
+                  </span>
                 </div>
-
-                <div className="space-y-4">
-                  <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                    An Toàn Số &
-                    <span className="text-yellow-300 block">Phòng Chống</span>
-                    <span className="text-yellow-300">Lừa Đảo</span>
-                  </h1>
-
-                  <p className="text-lg lg:text-xl opacity-90 leading-relaxed max-w-lg">
-                    Học cách nhận biết, phòng tránh và bảo vệ b��n thân khỏi các
-                    hình thức lừa đảo trực tuyến trong thời đại số hiện đại.
-                  </p>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 pt-6">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                  An Toàn Số &{" "}
+                  <span className="text-yellow-300">Phòng Chống Lừa Đảo</span>
+                </h1>
+                <p className="text-xl opacity-90 mb-8 leading-relaxed">
+                  Học cách nhận biết, phòng tránh và bảo vệ bản thân khỏi các
+                  hình thức lừa đảo trực tuyến trong thời đại số hiện đại.
+                </p>
+                <div className="flex items-center space-x-6">
                   <div className="text-center">
-                    <div className="text-2xl lg:text-3xl font-bold">15K+</div>
+                    <div className="text-3xl font-bold text-yellow-300">
+                      15K+
+                    </div>
                     <div className="text-sm opacity-80">Vụ lừa đảo online</div>
                   </div>
+                  <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
-                    <div className="text-2xl lg:text-3xl font-bold">
+                    <div className="text-3xl font-bold text-yellow-300">
                       2.5K tỷ
                     </div>
                     <div className="text-sm opacity-80">Thiệt hại/năm</div>
                   </div>
+                  <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
-                    <div className="text-2xl lg:text-3xl font-bold">68%</div>
+                    <div className="text-3xl font-bold text-yellow-300">
+                      68%
+                    </div>
                     <div className="text-sm opacity-80">Qua đi��n thoại</div>
                   </div>
                 </div>
@@ -335,7 +334,7 @@ export default function ScamTypes() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Desktop Scam Cards - New Design */}
         <section className="px-4 py-16 bg-gray-50">
@@ -585,16 +584,16 @@ export default function ScamTypes() {
             {/* Quick Stats - Smaller */}
             <div className="grid grid-cols-3 gap-3 text-center">
               <div className="bg-white/20 rounded-lg p-2.5">
-                <div className="font-bold text-base">15K+</div>
-                <div className="text-xs text-red-100">vụ/năm</div>
+                <div className="font-bold text-base">4 kiểu</div>
+                <div className="text-xs text-red-100">lừa đảo</div>
               </div>
               <div className="bg-white/20 rounded-lg p-2.5">
-                <div className="font-bold text-base">2.5K tỷ</div>
-                <div className="text-xs text-red-100">thiệt hại</div>
+                <div className="font-bold text-base">167tr</div>
+                <div className="text-xs text-red-100">TB/vụ</div>
               </div>
               <div className="bg-white/20 rounded-lg p-2.5">
-                <div className="font-bold text-base">68%</div>
-                <div className="text-xs text-red-100">qua ĐT</div>
+                <div className="font-bold text-base">+35%</div>
+                <div className="text-xs text-red-100">tăng 2024</div>
               </div>
             </div>
           </div>
@@ -810,7 +809,7 @@ export default function ScamTypes() {
               {[
                 {
                   title: "Lừa đảo 'Công an gọi điện'",
-                  type: "Điện thoại",
+                  type: "Đi���n thoại",
                   icon: Phone,
                   story:
                     "Một người nhận cuộc gọi từ số lạ tự xưng là Công an, nói tài khoản liên quan đến vụ rửa tiền. Kẻ lừa đảo yêu cầu chuyển tiền để 'bảo toàn tài sản'.",
