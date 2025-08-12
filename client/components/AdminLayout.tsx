@@ -211,27 +211,12 @@ export default function AdminLayout() {
             </Button>
 
             {/* User menu */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                  <div className="h-6 w-6 bg-blue-600 rounded-full flex items-center justify-center">
-                    <User className="h-3 w-3 text-white" />
-                  </div>
-                  <span className="hidden sm:block text-sm font-medium">{user.name}</span>
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Tài khoản</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Hồ sơ</DropdownMenuItem>
-                <DropdownMenuItem>Cài đặt</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-red-600">
-                  Đăng xuất
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="flex items-center space-x-2">
+              <div className="h-6 w-6 bg-blue-600 rounded-full flex items-center justify-center">
+                <User className="h-3 w-3 text-white" />
+              </div>
+              <span className="hidden sm:block text-sm font-medium">{user.name}</span>
+            </div>
           </div>
         </header>
 
