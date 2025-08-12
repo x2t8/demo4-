@@ -23,6 +23,7 @@ const AdminLayout = React.lazy(() => import("./components/AdminLayout"));
 const AdminDashboard = React.lazy(() => import("./pages/AdminDashboard"));
 const AdminUsers = React.lazy(() => import("./pages/AdminUsers"));
 const AdminContent = React.lazy(() => import("./pages/AdminContent"));
+const AdminReports = React.lazy(() => import("./pages/AdminReports"));
 
 // Loading component
 const PageLoader = () => (
