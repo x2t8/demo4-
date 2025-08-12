@@ -186,7 +186,7 @@ export default function AISafety() {
       tips: [
         "So sánh nhiều nguồn thông tin",
         "Tìm hiểu cách AI hoạt động",
-        "Đặt câu hỏi phản biện",
+        "Đặt c��u hỏi phản biện",
         "Giữ thói quen suy nghĩ độc lập",
       ],
     },
@@ -212,7 +212,7 @@ export default function AISafety() {
                 <div className="flex items-center mb-6">
                   <Bot className="h-12 w-12 mr-4 animate-pulse" />
                   <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    TR��Í TUỆ NHÂN TẠO AN TOÀN
+                    TRÍ TUỆ NHÂN TẠO AN TOÀN
                   </span>
                 </div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -706,7 +706,7 @@ export default function AISafety() {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {[
-                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chiều sâu" },
+                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chi��u sâu" },
                       { title: "Chi tiết cá nhân", desc: "Có trải nghiệm và câu chuyện riêng" },
                       { title: "Lỗi nhỏ bình thường", desc: "Có thể có lỗi chính tả, ngữ pháp nhỏ" },
                       { title: "Phong cách nhất quán", desc: "Giữ được tính cách và style riêng" },
