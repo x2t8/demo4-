@@ -179,9 +179,9 @@ export default function AISafety() {
       ],
       risks: [
         "Bias trong kết quả tìm kiếm",
-        "Thông tin thiên l��ch",
+        "Thông tin thiên lệch",
         "Filter bubble effect",
-        "M��t khả năng tư duy độc lập",
+        "Mất khả năng tư duy độc lập",
       ],
       tips: [
         "So sánh nhiều nguồn thông tin",
