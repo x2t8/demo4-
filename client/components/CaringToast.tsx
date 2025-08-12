@@ -53,7 +53,7 @@ export default function CaringToast({
 
   return (
     <div
-      className={`fixed top-20 right-4 z-50 max-w-sm transition-all duration-300 ${
+      className={`fixed top-20 right-4 z-[150] max-w-sm transition-all duration-300 ${
         isVisible
           ? "translate-x-0 opacity-100 animate-slide-up"
           : "translate-x-full opacity-0"
