@@ -63,10 +63,21 @@ export default function DigitalEthics() {
   const [bookmarkedItems, setBookmarkedItems] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState<boolean>(false);
   const [showFloatingNav, setShowFloatingNav] = useState<boolean>(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const toggleBookmark = (ethicsId: string) => {
     setBookmarkedEthics((prev) =>
@@ -140,9 +151,7 @@ export default function DigitalEthics() {
     // Add search logic here
   };
 
-  // Swipe gesture handling
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  // Swipe gesture handling is handled by existing state above
 
   const minSwipeDistance = 50;
 
@@ -300,7 +309,7 @@ export default function DigitalEthics() {
       ],
       donts: [
         "Chia sẻ tin giả, tin đồn",
-        "Spam hay flood tin nhắn",
+        "Spam hay flood tin nh�����n",
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
@@ -332,7 +341,7 @@ export default function DigitalEthics() {
         "Tạo drama hay xung đột",
         "Phân chia cộng đồng",
         "Né tránh trách nhiệm",
-        "Làm tổn hại danh tiếng nhóm",
+        "Làm tổn hại danh ti���ng nhóm",
         "Tạo các nhóm độc hại",
         "Khuyến khích hành vi tiêu cực",
       ],
@@ -391,7 +400,7 @@ export default function DigitalEthics() {
       donts: [
         "Lan truyền tin giả, thông tin sai lệch",
         "Tham gia các hoạt động bất hợp pháp online",
-        "Lạm dụng quyền tự do ngôn luận",
+        "Lạm dụng quyền t�� do ngôn luận",
         "Phá hoại hay tấn công hệ thống",
         "Tạo tài khoản giả",
         "Thao túng dư luận",
@@ -426,7 +435,11 @@ export default function DigitalEthics() {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100">
+    <div
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       <Header />
       <DisclaimerBanner />
 
@@ -523,7 +536,6 @@ export default function DigitalEthics() {
           </div>
         </div>
 
-
         {/* Detailed Ethics Rules - Desktop (Zigzag Layout) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Section Title */}
@@ -532,7 +544,8 @@ export default function DigitalEthics() {
               📖 Nguyên Tắc Đạo Đức Số
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              6 nguyên tắc cốt lõi để xây dựng một không gian mạng văn minh, an toàn và tích cực cho tất cả mọi người
+              6 nguyên tắc cốt lõi để xây dựng một không gian mạng văn minh, an
+              toàn và tích cực cho tất cả mọi người
             </p>
             <div className="mt-6 w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
           </div>
@@ -540,13 +553,16 @@ export default function DigitalEthics() {
           <div className="space-y-24">
             {ethicsRules.map((ethics, index) => (
               <div key={ethics.id} id={ethics.id} className="scroll-mt-24">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                >
                   {/* Content Section */}
-                  <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                     <Card className="overflow-hidden shadow-xl border-0 h-full">
                       {/* Card Header with Gradient */}
-                      <div className={`bg-gradient-to-r ${ethics.gradient} text-white p-6`}>
+                      <div
+                        className={`bg-gradient-to-r ${ethics.gradient} text-white p-6`}
+                      >
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center space-x-4">
                             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
@@ -640,11 +656,17 @@ export default function DigitalEthics() {
 
                         {/* Action Buttons */}
                         <div className="mt-6 flex items-center justify-center space-x-3">
-                          <Button variant="outline" size="sm" className="flex items-center">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center"
+                          >
                             <Share2 className="h-4 w-4 mr-2" />
                             Chia sẻ
                           </Button>
-                          <Button size="sm" className="bg-purple-600 hover:bg-purple-700 flex items-center"
+                          <Button
+                            size="sm"
+                            className="bg-purple-600 hover:bg-purple-700 flex items-center"
                             onClick={() => toggleBookmark(ethics.id)}
                           >
                             {bookmarkedEthics.includes(ethics.id) ? (
@@ -652,7 +674,9 @@ export default function DigitalEthics() {
                             ) : (
                               <Bookmark className="h-4 w-4 mr-2" />
                             )}
-                            {bookmarkedEthics.includes(ethics.id) ? 'Đã lưu' : 'Lưu lại'}
+                            {bookmarkedEthics.includes(ethics.id)
+                              ? "Đã lưu"
+                              : "Lưu lại"}
                           </Button>
                         </div>
                       </CardContent>
@@ -660,15 +684,21 @@ export default function DigitalEthics() {
                   </div>
 
                   {/* Visual Section */}
-                  <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                     <div className="relative">
                       {/* Background decoration */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${ethics.gradient} opacity-10 rounded-3xl transform rotate-6`}></div>
-                      <div className={`absolute inset-0 bg-gradient-to-br ${ethics.gradient} opacity-5 rounded-3xl transform -rotate-3`}></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${ethics.gradient} opacity-10 rounded-3xl transform rotate-6`}
+                      ></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${ethics.gradient} opacity-5 rounded-3xl transform -rotate-3`}
+                      ></div>
 
                       {/* Main visual card */}
                       <Card className="relative bg-white shadow-2xl border-0 p-8 text-center">
-                        <div className={`w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br ${ethics.gradient} flex items-center justify-center shadow-lg`}>
+                        <div
+                          className={`w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br ${ethics.gradient} flex items-center justify-center shadow-lg`}
+                        >
                           <ethics.icon className="h-12 w-12 text-white" />
                         </div>
 
@@ -679,7 +709,9 @@ export default function DigitalEthics() {
                         {/* Progress indicator */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-600">Tầm quan trọng</span>
+                            <span className="text-gray-600">
+                              T���m quan trọng
+                            </span>
                             <span className="font-semibold text-purple-600">
                               {ethics.importanceLevel}%
                             </span>
@@ -693,17 +725,27 @@ export default function DigitalEthics() {
                         {/* Quick stats */}
                         <div className="mt-6 grid grid-cols-2 gap-4 text-center">
                           <div className="p-3 bg-green-50 rounded-lg">
-                            <div className="text-lg font-bold text-green-600">{ethics.dos.length}</div>
-                            <div className="text-xs text-green-600">Nên làm</div>
+                            <div className="text-lg font-bold text-green-600">
+                              {ethics.dos.length}
+                            </div>
+                            <div className="text-xs text-green-600">
+                              Nên làm
+                            </div>
                           </div>
                           <div className="p-3 bg-red-50 rounded-lg">
-                            <div className="text-lg font-bold text-red-600">{ethics.donts.length}</div>
-                            <div className="text-xs text-red-600">Không nên</div>
+                            <div className="text-lg font-bold text-red-600">
+                              {ethics.donts.length}
+                            </div>
+                            <div className="text-xs text-red-600">
+                              Không nên
+                            </div>
                           </div>
                         </div>
 
                         {/* Floating number */}
-                        <div className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${ethics.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                        <div
+                          className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br ${ethics.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                        >
                           {index + 1}
                         </div>
                       </Card>
@@ -757,8 +799,8 @@ export default function DigitalEthics() {
                 🧠 Sức Khỏe Số & Phúc Lợi Kỹ Thuật Số
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Cách sử dụng công nghệ một cách lành mạnh và cân bằng cho
-                cuộc sống tốt đẹp hơn
+                Cách sử dụng công nghệ một cách lành mạnh và cân bằng cho cuộc
+                sống tốt đẹp hơn
               </p>
             </div>
 
@@ -796,7 +838,7 @@ export default function DigitalEthics() {
                 },
                 {
                   icon: "📚",
-                  title: "Học hỏi liên tục",
+                  title: "H��c hỏi liên tục",
                   description: "Sử dụng internet để phát triển bản thân",
                   tips: [
                     "Theo dõi kênh giáo dục",
@@ -860,7 +902,7 @@ export default function DigitalEthics() {
                 💬 Kỹ Năng Giao Tiếp Online Hiệu Quả
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Những mẹo thực tế để giao tiếp hiệu quả và xây dựng mối quan hệ
+                Những mẹo th��c tế để giao tiếp hiệu quả và xây dựng mối quan hệ
                 tích cực
               </p>
             </div>
@@ -944,7 +986,7 @@ export default function DigitalEthics() {
                 🛡️ Chống Tin Giả & Thông Tin Sai Lệch
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Làm thế nào để nhận biết và ngăn chặn sự lan truyền thông tin
+                Làm thế n��o để nhận biết và ngăn chặn sự lan truyền thông tin
                 sai lệch
               </p>
             </div>
@@ -1023,7 +1065,7 @@ export default function DigitalEthics() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Hướng dẫn người thân cách kiểm tra</span>
+                      <span>Hư���ng dẫn người thân cách kiểm tra</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
@@ -1743,7 +1785,7 @@ export default function DigitalEthics() {
           {/* Statistics Section */}
           {currentMobileSection === "stats" && (
             <div className="animate-in slide-in-from-right duration-300">
-                           <div className="flex items-center justify-between p-4 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-30">
+              <div className="flex items-center justify-between p-4 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-30">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -1764,8 +1806,8 @@ export default function DigitalEthics() {
                     📊 Đạo đức số trên thế giới
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Những con s��� cho thấy tầm quan tr��ng của đạo đ��c trong không
-                    gian số
+                    Những con s��� cho thấy tầm quan tr��ng của đạo đ��c trong
+                    không gian số
                   </p>
                 </div>
 
@@ -1824,7 +1866,7 @@ export default function DigitalEthics() {
                   {[
                     {
                       icon: "⏰",
-                      title: "Cân bằng thời gian online",
+                      title: "C��n bằng thời gian online",
                       description: "Sử dụng công nghệ một cách có ý thức",
                       tips: [
                         "Đặt giới hạn thời gian",
@@ -2415,7 +2457,6 @@ export default function DigitalEthics() {
           </div>
         )}
       </div>
-
     </div>
   );
 }

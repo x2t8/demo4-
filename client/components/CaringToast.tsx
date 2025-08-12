@@ -53,7 +53,7 @@ export default function CaringToast({
 
   return (
     <div
-      className={`fixed top-20 right-4 z-50 max-w-sm transition-all duration-300 ${
+      className={`fixed top-20 right-4 z-[150] max-w-sm transition-all duration-300 ${
         isVisible
           ? "translate-x-0 opacity-100 animate-slide-up"
           : "translate-x-full opacity-0"
@@ -104,8 +104,8 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
-  // Auto-show care messages when user stays on page
-  useEffect(() => {
+  // Auto-show care messages when user stays on page (TẮTẠM THỜI)
+  /* useEffect(() => {
     const careMessages = [
       {
         message: "💚 Bạn đang bảo vệ bản thân và gia đình khỏi lừa đảo",
@@ -140,12 +140,13 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
       clearTimeout(firstTimer);
       clearInterval(interval);
     };
-  }, []);
+  }, []); */
 
   return (
     <>
       {children}
-      {toasts.map((toast) => (
+      {/* Toast tạm thời bị tắt */}
+      {/* {toasts.map((toast) => (
         <CaringToast
           key={toast.id}
           message={toast.message}
@@ -153,7 +154,7 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
           duration={toast.duration}
           onClose={() => removeToast(toast.id)}
         />
-      ))}
+      ))} */}
     </>
   );
 }

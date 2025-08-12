@@ -115,6 +115,15 @@ export default function DigitalSkills() {
   const [fontSize, setFontSize] = useState("normal");
   const [highContrast, setHighContrast] = useState(false);
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   // Sample quiz questions (in real app, would fetch from API)
   const quizQuestions: QuizQuestion[] = [
     {
@@ -155,7 +164,7 @@ export default function DigitalSkills() {
         "In tài liệu",
       ],
       correctAnswer: 1,
-      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch��n.",
+      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch���n.",
       category: "Kỹ năng cơ bản",
     },
     {
@@ -487,7 +496,7 @@ export default function DigitalSkills() {
           name: "ChatGPT",
           purpose: "Hỗ trợ viết lách, brainstorming, Q&A",
           level: "Cơ bản",
-          practical: "Viết email, tóm tắt tài liệu, �� tưởng content",
+          practical: "Viết email, tóm tắt tài liệu, ý tưởng content",
         },
         {
           name: "Midjourney/DALL-E",
@@ -506,7 +515,7 @@ export default function DigitalSkills() {
     {
       category: "Blockchain & Crypto",
       icon: Coins,
-      description: "Hiểu biết cơ bản về công nghệ blockchain",
+      description: "Hiểu bi��t cơ bản về công nghệ blockchain",
       tools: [
         {
           name: "Bitcoin/Ethereum basics",
@@ -543,7 +552,7 @@ export default function DigitalSkills() {
           name: "Wearable devices",
           purpose: "Thiết bị đeo theo dõi sức khỏe",
           level: "Cơ bản",
-          practical: "Theo dõi v���n động, giấc ngủ",
+          practical: "Theo dõi vận động, giấc ngủ",
         },
         {
           name: "Industrial IoT",
@@ -956,7 +965,9 @@ export default function DigitalSkills() {
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 ${getAccessibilityClasses()}`}
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-emerald-100 via-teal-50 to-blue-100 ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      } ${getAccessibilityClasses()}`}
     >
       <Header />
       <DisclaimerBanner />
@@ -982,8 +993,8 @@ export default function DigitalSkills() {
                   <span className="text-yellow-300">Digital Literacy</span>
                 </h1>
                 <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                  Nắm vững công nghệ số từ cơ bản đến nâng cao. Phát triển kỹ năng
-                  thiết yếu cho thời đại 4.0 và tương lai số hóa.
+                  Nắm vững công nghệ số từ cơ bản đến nâng cao. Phát triển kỹ
+                  năng thiết yếu cho thời đại 4.0 và tương lai số hóa.
                 </p>
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
@@ -1089,9 +1100,14 @@ export default function DigitalSkills() {
                                   : "bg-red-500"
                           }`}
                           style={{
-                            width: item.value === "Cơ bản" ? "25%" :
-                                   item.value === "Trung bình" ? "50%" :
-                                   item.value === "Nâng cao" ? "75%" : "90%"
+                            width:
+                              item.value === "Cơ bản"
+                                ? "25%"
+                                : item.value === "Trung bình"
+                                  ? "50%"
+                                  : item.value === "Nâng cao"
+                                    ? "75%"
+                                    : "90%",
                           }}
                         ></div>
                       </div>
@@ -1136,7 +1152,7 @@ export default function DigitalSkills() {
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto">
                   Hoàn thành bài đánh giá tương tác để nhận được lộ trình học
-                  t���p cá nhân hóa
+                  tập cá nhân hóa
                 </p>
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -1356,7 +1372,7 @@ export default function DigitalSkills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            📊 C��c Cấp Độ Digital Literacy
+            📊 Các Cấp Độ Digital Literacy
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Xác định vị trí hiện tại và lộ trình phát triển kỹ năng số

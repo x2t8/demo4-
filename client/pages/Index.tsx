@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   AlertTriangle,
   Shield,
@@ -40,14 +40,22 @@ export default function Index() {
   // Modal states
   const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   // Module tracking
   const [currentModuleIndex, setCurrentModuleIndex] = React.useState(2); // Start with AI module
   const digitalModules = [
     {
       icon: Shield,
       title: "An Toàn Số",
-      description:
-        "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân", // Sửa "bảo v��" thành "bảo vệ"
+      description: "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
       color: "text-red-600 bg-red-200",
       link: "/scam-types",
     },
@@ -60,7 +68,7 @@ export default function Index() {
     },
     {
       icon: Bot,
-      title: "AI An Toàn", // Sửa "AI An To��n" thành "AI An Toàn"
+      title: "AI An Toàn",
       description: "Sử dụng AI thông minh, nhận biết deepfake và nội dung giả",
       color: "text-blue-600 bg-blue-200",
       link: "/ai-safety",
@@ -82,7 +90,7 @@ export default function Index() {
   ];
 
   const protectionTips = [
-    "Không cung cấp thông tin cá nhân qua điện thoại", // Sửa "đi���n" thành "điện"
+    "Không cung cấp thông tin cá nhân qua điện thoại",
     "Kiểm tra kỹ nguồn gốc tin nhắn, email",
     "Không click vào link lạ trong tin nhắn",
     "Xác minh thông tin qua kênh chính thức",
@@ -91,7 +99,11 @@ export default function Index() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
+      <div
+        className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${
+          isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <Header />
         <DisclaimerBanner />
 
@@ -121,17 +133,15 @@ export default function Index() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift group"
+                onClick={() => {
+                  const modulesSection = document.getElementById("modules");
+                  if (modulesSection) {
+                    modulesSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 <BookOpen className="h-5 w-5 mr-2 group-hover:animate-gentle-wave" />
                 Tìm hiểu ngay
-              </Button>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift emergency-pulse group"
-                onClick={() => setIsReportModalOpen(true)}
-              >
-                <Phone className="h-5 w-5 mr-2 group-hover:animate-heartbeat" />
-                Báo cáo lừa đảo
               </Button>
             </div>
           </div>
@@ -242,7 +252,6 @@ export default function Index() {
               onModuleChange={setCurrentModuleIndex}
             />
 
-
             {/* Call to Action */}
             <div className="text-center mt-12 sm:mt-16">
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
@@ -320,7 +329,6 @@ export default function Index() {
             </h2>
             <p className="text-xl mb-8 opacity-90">
               Hãy liên hệ ngay với cơ quan chức năng để được hỗ trợ kịp thời
-              {/* Sửa "đ��" thành "để" */}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <Card className="bg-white text-gray-900 hover-caring-lift">
