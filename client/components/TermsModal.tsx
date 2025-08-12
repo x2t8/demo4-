@@ -47,8 +47,8 @@ export default function TermsModal({
   if (!modalVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-2 sm:p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-slide-up">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center space-x-3">
@@ -77,7 +77,7 @@ export default function TermsModal({
                   <strong>
                     CHỈ DÀNH CHO MỤC ĐÍCH GIÁO DỤC VÀ TUYÊN TRUYỀN
                   </strong>{" "}
-                  về an toàn s���. Chúng tôi{" "}
+                  về an toàn số. Chúng tôi{" "}
                   <strong>KHÔNG HỖ TRỢ BÁO CÁO LỪA ĐẢO</strong> dưới mọi hình
                   thức.
                 </p>
