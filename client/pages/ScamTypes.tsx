@@ -44,11 +44,15 @@ import SocialShare from "@/components/SocialShare";
 import RealWorldExamples from "@/components/RealWorldExamples";
 import { CaringToastProvider } from "@/components/CaringToast";
 import ReportGuideModal from "@/components/ReportGuideModal";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
 
 export default function ScamTypes() {
   const [selectedScams, setSelectedScams] = useState<string[]>([]);
   const [bookmarkedScams, setBookmarkedScams] = useState<string[]>([]);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+
+  // Shared banner state
+  const { dismissBanner } = useDisclaimerBanner();
 
   // Page loading animation (same as DigitalLaw)
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -80,7 +84,7 @@ export default function ScamTypes() {
     },
     {
       value: "2,500 tỷ",
-      label: "VNĐ thiệt hại/năm",
+      label: "VN�� thiệt hại/năm",
       color: "from-orange-500 to-orange-600",
       description: "Trung bình 167 triệu/vụ",
     },
@@ -264,7 +268,10 @@ export default function ScamTypes() {
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all emergency-pulse group"
-                  onClick={() => setIsReportModalOpen(true)}
+                  onClick={() => {
+                    dismissBanner();
+                    setIsReportModalOpen(true);
+                  }}
                 >
                   <Siren className="h-5 w-5 mr-2 group-hover:animate-heartbeat" />
                   Báo cáo lừa đảo ngay
@@ -855,7 +862,7 @@ export default function ScamTypes() {
                   type: "Mạng xã hội",
                   icon: TrendingUp,
                   story:
-                    "Một người được bạn Zalo giới thiệu sàn đầu tư Forex với lãi suất bất thường. Sau khi nạp tiền, họ không thể rút tiền và bị chặn liên lạc.",
+                    "Một người được bạn Zalo giới thiệu sàn đầu tư Forex v���i lãi suất bất thường. Sau khi nạp tiền, họ không thể rút tiền và bị chặn liên lạc.",
                   damage: "100 triệu VNĐ",
                   redFlags: [
                     "Lãi suất quá cao (30%/tháng)",
