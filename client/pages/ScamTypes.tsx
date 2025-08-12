@@ -42,6 +42,8 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 import Statistics from "@/components/Statistics";
 import SocialShare from "@/components/SocialShare";
 import RealWorldExamples from "@/components/RealWorldExamples";
+import { CaringToastProvider } from "@/components/CaringToast";
+import ReportGuideModal from "@/components/ReportGuideModal";
 
 export default function ScamTypes() {
   const [selectedScams, setSelectedScams] = useState<string[]>([]);
@@ -134,7 +136,7 @@ export default function ScamTypes() {
       ],
       prevention: [
         "Không click link lạ",
-        "Kiểm tra số điện thoại gửi",
+        "Kiểm tra s�� điện thoại gửi",
         "Không chia sẻ mã OTP",
         "Xác minh qua kênh chính thức",
       ],
