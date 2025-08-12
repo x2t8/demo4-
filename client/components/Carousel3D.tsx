@@ -153,19 +153,19 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
         <div className="absolute top-1/2 -left-5 w-12 h-12 bg-gradient-to-r from-indigo-400/15 to-blue-400/15 rounded-full blur-md animate-pulse delay-500" />
       </div>
 
-      {/* Floating sparkles */}
+      {/* Simplified sparkles - reduced from 8 to 3 for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <div
             key={i}
             className="absolute"
             style={{
-              left: `${15 + i * 12}%`,
-              top: `${25 + (i % 3) * 20}%`,
-              animationDelay: `${i * 800}ms`,
+              left: `${20 + i * 30}%`,
+              top: `${30 + i * 20}%`,
+              animationDelay: `${i * 1200}ms`,
             }}
           >
-            <div className="w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40 animate-ping" />
+            <div className="w-1 h-1 bg-blue-400/40 rounded-full animate-ping" />
           </div>
         ))}
       </div>
