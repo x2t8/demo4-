@@ -158,7 +158,7 @@ export default function ScamTypes() {
       techniques: [
         "Giả mạo website ngân hàng",
         "Lừa đầu tư forex, chứng khoán",
-        "Phishing thông tin ��ăng nhập",
+        "Phishing thông tin đăng nhập",
         "Đính kèm virus, malware",
       ],
       prevention: [
@@ -198,7 +198,7 @@ export default function ScamTypes() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-fade-in">
         <Header />
         <DisclaimerBanner />
 
@@ -477,7 +477,7 @@ export default function ScamTypes() {
                             <div className="bg-red-50 rounded-lg p-3 border border-red-200">
                               <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-1 text-xs">
                                 <XCircle className="h-3 w-3" />
-                                Thủ ��oạn
+                                Thủ đoạn
                               </h4>
                               <div className="space-y-1">
                                 {scam.techniques
@@ -971,7 +971,7 @@ export default function ScamTypes() {
                   Chia Sẻ Kiến Thức
                 </h3>
                 <p className="text-gray-600 text-xs mb-4">
-                  Giúp bạn bè và gia đình tránh bị lừa ��ảo
+                  Giúp bạn bè và gia đình tránh bị lừa đảo
                 </p>
 
                 <div className="grid grid-cols-3 gap-2">
