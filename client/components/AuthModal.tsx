@@ -48,7 +48,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
   const { login } = useAuth();
 
   const loginForm = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(adminMode ? adminLoginSchema : loginSchema),
   });
 
   const registerForm = useForm<RegisterForm>({
