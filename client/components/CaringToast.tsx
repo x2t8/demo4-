@@ -104,8 +104,8 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
-  // Auto-show care messages when user stays on page (TẮTẠM THỜI)
-  /* useEffect(() => {
+  // Auto-show care messages when user stays on page
+  useEffect(() => {
     const careMessages = [
       {
         message: "💚 Bạn đang bảo vệ bản thân và gia đình khỏi lừa đảo",
@@ -140,7 +140,7 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
       clearTimeout(firstTimer);
       clearInterval(interval);
     };
-  }, []); */
+  }, []);
 
   return (
     <>
