@@ -160,9 +160,44 @@ export default function Header() {
             >
               Kỹ năng số
             </Link>
+
+            {/* Auth buttons - Mobile */}
+            <div className="border-t pt-3 mt-3 space-y-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  setAuthMode("login");
+                  setIsAuthModalOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full justify-start text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
+                Đăng nhập
+              </Button>
+              <Button
+                size="sm"
+                onClick={() => {
+                  setAuthMode("register");
+                  setIsAuthModalOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              >
+                <User className="h-4 w-4 mr-2" />
+                Đăng ký
+              </Button>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        defaultMode={authMode}
+      />
     </header>
   );
 }
