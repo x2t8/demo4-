@@ -233,7 +233,7 @@ export default function DigitalSkills() {
       correctAnswer: 1,
       explanation:
         "Phishing là hình thức lừa đảo bằng cách giả mạo email hoặc website để đánh cắp thông tin.",
-      category: "An ninh m���ng",
+      category: "An ninh mạng",
     },
     {
       id: 9,
@@ -506,7 +506,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Notion AI",
-          purpose: "AI tích hợp trong quản lý công việc",
+          purpose: "AI tích hợp trong quản lý công vi��c",
           level: "Trung bình",
           practical: "Tự động hóa ghi chú, tổ chức thông tin",
         },
@@ -552,7 +552,7 @@ export default function DigitalSkills() {
           name: "Wearable devices",
           purpose: "Thiết bị đeo theo dõi sức khỏe",
           level: "Cơ bản",
-          practical: "Theo dõi v���n động, giấc ngủ",
+          practical: "Theo dõi vận động, giấc ngủ",
         },
         {
           name: "Industrial IoT",
@@ -1474,7 +1474,7 @@ export default function DigitalSkills() {
                           {tool.purpose}
                         </p>
                         <div className="bg-purple-50 p-2 rounded text-xs">
-                          <strong>Ứng dụng thực tế:</strong> {tool.practical}
+                          <strong>Ứng dụng th���c tế:</strong> {tool.practical}
                         </div>
                       </div>
                     ))}
