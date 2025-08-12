@@ -313,7 +313,7 @@ export default function DigitalEthics() {
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
-        "Lan truy���n thông tin chưa kiểm chứng",
+        "Lan truyền thông tin chưa kiểm chứng",
       ],
     },
     {
@@ -465,7 +465,7 @@ export default function DigitalEthics() {
                 </h1>
                 <p className="text-xl opacity-90 mb-8 leading-relaxed">
                   Học cách ứng xử văn minh, tôn trọng và xây dựng cộng đồng mạng
-                  tích c���c trong thời đại số hiện đại.
+                  tích cực trong thời đại số hiện đại.
                 </p>
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
@@ -728,7 +728,7 @@ export default function DigitalEthics() {
           {/* Ethics Statistics Section */}
           <div className="mt-20">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Thống Kê Đạo Đức Số Toàn Cầu
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -764,7 +764,7 @@ export default function DigitalEthics() {
           {/* Digital Wellbeing Section */}
           <div className="mt-20 bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-12">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 🧠 Sức Khỏe Số & Phúc Lợi Kỹ Thuật Số
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -810,7 +810,7 @@ export default function DigitalEthics() {
                   title: "H��c hỏi liên tục",
                   description: "Sử dụng internet để phát triển bản thân",
                   tips: [
-                    "Theo dõi kênh giáo d��c",
+                    "Theo dõi kênh giáo dục",
                     "Tham gia khóa học online",
                     "Đọc nội dung chất lượng",
                   ],
@@ -867,7 +867,7 @@ export default function DigitalEthics() {
           {/* Communication Tips Section */}
           <div className="mt-20">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 💬 Kỹ Năng Giao Tiếp Online Hiệu Quả
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -951,7 +951,7 @@ export default function DigitalEthics() {
           <div className="mt-20 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-12">
             <div className="text-center mb-16">
               <AlertCircle className="h-16 w-16 mx-auto mb-6 text-orange-600" />
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 🛡️ Chống Tin Giả & Thông Tin Sai Lệch
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -1055,7 +1055,7 @@ export default function DigitalEthics() {
             <Card className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0">
               <CardContent className="p-12">
                 <Heart className="h-16 w-16 mx-auto mb-6" />
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                   Cùng Xây Dựng Internet Tích Cực!
                 </h2>
                 <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
