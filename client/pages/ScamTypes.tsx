@@ -84,7 +84,7 @@ export default function ScamTypes() {
     },
     {
       value: "2,500 tỷ",
-      label: "VN�� thiệt hại/năm",
+      label: "VNĐ thiệt hại/năm",
       color: "from-orange-500 to-orange-600",
       description: "Trung bình 167 triệu/vụ",
     },
@@ -239,7 +239,7 @@ export default function ScamTypes() {
                 </h1>
                 <p className="text-xl opacity-90 mb-8 leading-relaxed">
                   Học cách nhận biết, phòng tránh và bảo vệ bản thân khỏi các
-                  hình thức lừa đảo trực tuyến trong thời đại số hiện đại.
+                  hình thức lừa đảo trực tuy��n trong thời đại số hiện đại.
                 </p>
                 <div className="flex items-center space-x-6 mb-8">
                   <div className="text-center">
@@ -381,7 +381,7 @@ export default function ScamTypes() {
               </div>
               <div className="flex items-center gap-2">
                 <MessageSquare className="w-4 h-4 text-orange-500" />
-                <span>Lừa đảo qua SMS</span>
+                <span>L���a đảo qua SMS</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-yellow-500" />
@@ -726,7 +726,7 @@ export default function ScamTypes() {
                         <div className="mb-3">
                           <h4 className="font-medium text-green-700 text-xs mb-1.5 flex items-center gap-1">
                             <CheckCircle className="w-3 h-3" />
-                            Phòng chống
+                            Phòng ch���ng
                           </h4>
                           <div className="bg-green-50 rounded-lg p-2.5 space-y-1">
                             {scam.prevention.map((prevention, idx) => (
