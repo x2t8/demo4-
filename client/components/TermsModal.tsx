@@ -48,7 +48,17 @@ export default function TermsModal({
   if (!modalVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4" style={{ alignItems: 'center', justifyContent: 'center' }}>
+    <div
+      className="fixed bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4"
+      style={{
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto modal-center">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
@@ -96,7 +106,7 @@ export default function TermsModal({
                 </h3>
                 <ul className="text-blue-700 text-sm space-y-1">
                   <li>• Nâng cao nhận thức về an toàn số</li>
-                  <li>• Giáo dục kỹ năng phòng chống lừa đảo</li>
+                  <li>• Giáo dục kỹ năng phòng chống lừa ��ảo</li>
                   <li>• Chia sẻ kiến thức bảo vệ thông tin cá nhân</li>
                   <li>• Hướng dẫn sử dụng công nghệ an toàn</li>
                 </ul>
