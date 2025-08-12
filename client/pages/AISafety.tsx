@@ -102,7 +102,7 @@ export default function AISafety() {
       tips: [
         "Luôn kiểm tra thông tin từ AI",
         "Sử dụng AI như công cụ hỗ trợ, không thay thế",
-        "Không chia sẻ thông tin nhạy c��m",
+        "Không chia sẻ thông tin nhạy cảm",
         "Ghi nhận nguồn khi sử dụng AI",
       ],
     },
@@ -430,7 +430,7 @@ export default function AISafety() {
           <div className="container mx-auto max-w-6xl px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                🛡️ Đạo đức AI & Hướng dẫn an toàn
+                🛡️ Đạo đ���c AI & Hướng dẫn an toàn
               </h2>
               <p className="text-lg text-gray-600">Nguyên tắc sử dụng AI có trách nhiệm</p>
             </div>
@@ -464,7 +464,7 @@ export default function AISafety() {
                   title: "Giữ tư duy phản biện",
                   color: "green",
                   principles: [
-                    "Đặt câu hỏi v�� thông tin AI",
+                    "Đặt câu hỏi về thông tin AI",
                     "So sánh nhiều nguồn",
                     "Phát triển critical thinking",
                     "Không phụ thuộc hoàn toàn vào AI",
@@ -518,7 +518,7 @@ export default function AISafety() {
                 },
                 {
                   type: "Audio Deepfake",
-                  icon: "🔊",
+                  icon: "��",
                   color: "orange",
                   signs: [
                     "Giọng nói máy móc, thiếu cảm xúc",
@@ -701,12 +701,12 @@ export default function AISafety() {
                     <span className="text-3xl">👤</span>
                   </div>
                   <CardTitle className="text-2xl text-green-800">HUMAN CONTENT</CardTitle>
-                  <p className="text-green-600">N���i dung do con người tạo</p>
+                  <p className="text-green-600">Nội dung do con người tạo</p>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {[
-                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, c�� chiều sâu" },
+                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chiều sâu" },
                       { title: "Chi tiết cá nhân", desc: "Có trải nghiệm và câu chuyện riêng" },
                       { title: "Lỗi nhỏ bình thường", desc: "Có thể có lỗi chính tả, ngữ pháp nhỏ" },
                       { title: "Phong cách nhất quán", desc: "Giữ được tính cách và style riêng" },
