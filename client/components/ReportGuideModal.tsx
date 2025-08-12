@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   X,
   Phone,
@@ -19,6 +19,17 @@ export default function ReportGuideModal({
   isOpen,
   onClose,
 }: ReportGuideModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      // Khóa scroll
+      document.body.style.overflow = "hidden";
+      // Kéo viewport lên đầu ngay lập tức
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const reportSteps = [
