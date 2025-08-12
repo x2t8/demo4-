@@ -335,7 +335,7 @@ export default function DigitalEthics() {
         "Báo cáo hành vi không phù hợp",
         "Tham gia các hoạt động tích cực",
         "Tạo nội dung giáo dục",
-        "Kết nối những người có cùng s��� thích",
+        "Kết nối những người có cùng sở thích",
       ],
       donts: [
         "Tạo drama hay xung đột",
@@ -435,7 +435,9 @@ export default function DigitalEthics() {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 page-bounce-in">
+    <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 ${
+      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}>
       <Header />
       <DisclaimerBanner />
 
@@ -688,7 +690,7 @@ export default function DigitalEthics() {
                         {/* Progress indicator */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-600">Tầm quan trọng</span>
+                            <span className="text-gray-600">T���m quan trọng</span>
                             <span className="font-semibold text-purple-600">
                               {ethics.importanceLevel}%
                             </span>
@@ -869,7 +871,7 @@ export default function DigitalEthics() {
                 💬 Kỹ Năng Giao Tiếp Online Hiệu Quả
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Những mẹo thực tế để giao tiếp hiệu quả và xây dựng mối quan hệ
+                Những mẹo th��c tế để giao tiếp hiệu quả và xây dựng mối quan hệ
                 tích cực
               </p>
             </div>
@@ -953,7 +955,7 @@ export default function DigitalEthics() {
                 🛡️ Chống Tin Giả & Thông Tin Sai Lệch
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Làm thế nào để nhận biết và ngăn chặn sự lan truyền thông tin
+                Làm thế n��o để nhận biết và ngăn chặn sự lan truyền thông tin
                 sai lệch
               </p>
             </div>
@@ -1589,7 +1591,7 @@ export default function DigitalEthics() {
                       {/* Clear Learning Message */}
                       <div className="space-y-4">
                         <h3 className="font-bold text-purple-800 text-xl leading-tight">
-                          ���� Sẵn sàng bắt đầu hành trình học?
+                          🌟 Sẵn sàng bắt đầu hành trình học?
                         </h3>
                         <p className="text-purple-700 text-base leading-relaxed px-4">
                           Cam kết thực hành những nguyên tắc đạo đức số và trở
@@ -1992,7 +1994,7 @@ export default function DigitalEthics() {
                         "Chuyển sang chat riêng nếu cần",
                         "Biết khi nào nên dừng cuộc tranh luận",
                         "Xin lỗi khi mắc lỗi",
-                        "T���p trung vào giải pháp",
+                        "Tập trung vào giải pháp",
                       ],
                     },
                     {
