@@ -50,6 +50,15 @@ export default function ScamTypes() {
   const [bookmarkedScams, setBookmarkedScams] = useState<string[]>([]);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   // Initialize protective animations
   useScrollReveal();
   useStaggeredReveal();
@@ -105,7 +114,7 @@ export default function ScamTypes() {
         "Kẻ lừa đảo gọi điện giả danh cơ quan công an, ngân hàng, tòa án để lừa thông tin cá nhân và tiền bạc.",
       techniques: [
         "Giả danh công an, ngân hàng",
-        "T���o áp lực tâm lý",
+        "Tạo áp lực tâm lý",
         "Yêu cầu chuyển tiền khẩn cấp",
         "Đe dọa bắt giữ, phạt tiền",
       ],
@@ -273,7 +282,7 @@ export default function ScamTypes() {
                   },
                   {
                     icon: MessageSquare,
-                    title: "Lừa đảo SMS",
+                    title: "Lừa ��ảo SMS",
                     subtitle: "Link độc hại",
                     value: "78%",
                     color: "bg-white/90",
