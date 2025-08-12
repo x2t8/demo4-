@@ -9,6 +9,15 @@ import Footer from "@/components/Footer";
 export default function NotFound() {
   const navigate = useNavigate();
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   const quickLinks = [
     {
       title: "An Toàn Số",
