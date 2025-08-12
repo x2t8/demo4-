@@ -149,9 +149,7 @@ export default function DigitalEthics() {
     // Add search logic here
   };
 
-  // Swipe gesture handling
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  // Swipe gesture handling is handled by existing state above
 
   const minSwipeDistance = 50;
 
@@ -309,7 +307,7 @@ export default function DigitalEthics() {
       ],
       donts: [
         "Chia sẻ tin giả, tin đồn",
-        "Spam hay flood tin nhắn",
+        "Spam hay flood tin nh���n",
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
@@ -1835,7 +1833,7 @@ export default function DigitalEthics() {
                   {[
                     {
                       icon: "⏰",
-                      title: "Cân bằng thời gian online",
+                      title: "C��n bằng thời gian online",
                       description: "Sử dụng công nghệ một cách có ý thức",
                       tips: [
                         "Đặt giới hạn thời gian",
