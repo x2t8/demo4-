@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useAuth } from "../contexts/AuthContext";
 
 // Validation schemas
 const loginSchema = z.object({
