@@ -45,12 +45,24 @@ const App = () => (
         <BrowserRouter>
           <Suspense fallback={<PageLoader />}>
             <Routes>
+              {/* Public routes */}
               <Route path="/" element={<Index />} />
               <Route path="/scam-types" element={<ScamTypes />} />
               <Route path="/digital-ethics" element={<DigitalEthics />} />
               <Route path="/ai-safety" element={<AISafety />} />
               <Route path="/digital-law" element={<DigitalLaw />} />
               <Route path="/digital-skills" element={<DigitalSkills />} />
+
+              {/* Admin routes */}
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="users" element={<AdminUsers />} />
+                <Route path="content" element={<AdminContent />} />
+                <Route path="reports" element={<AdminDashboard />} />
+                <Route path="security" element={<AdminDashboard />} />
+                <Route path="settings" element={<AdminDashboard />} />
+              </Route>
+
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
