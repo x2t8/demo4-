@@ -225,7 +225,7 @@ export default function ScamTypes() {
                   Học cách nhận biết, phòng tránh và bảo vệ bản thân khỏi các
                   hình thức lừa đảo trực tuyến trong thời đại số hiện đại.
                 </p>
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-6 mb-8">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-yellow-300">
                       15K+
@@ -247,6 +247,16 @@ export default function ScamTypes() {
                     <div className="text-sm opacity-80">Qua điện thoại</div>
                   </div>
                 </div>
+
+                {/* Báo cáo lừa đảo button */}
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all emergency-pulse group"
+                  onClick={() => setIsReportModalOpen(true)}
+                >
+                  <Siren className="h-5 w-5 mr-2 group-hover:animate-heartbeat" />
+                  Báo cáo lừa đảo ngay
+                </Button>
               </div>
 
               {/* Right side - Cards (DigitalEthics style - Simple Grid 2x2) */}
@@ -861,7 +871,7 @@ export default function ScamTypes() {
                   prevention: [
                     "Liên hệ trực tiếp ngân hàng",
                     "Không chuyển tiền phí",
-                    "Chặn số spam",
+                    "Ch���n số spam",
                   ],
                 },
               ].map((example, index) => (
