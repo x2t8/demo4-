@@ -145,7 +145,8 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
   return (
     <>
       {children}
-      {toasts.map((toast) => (
+      {/* Toast tạm thời bị tắt */}
+      {/* {toasts.map((toast) => (
         <CaringToast
           key={toast.id}
           message={toast.message}
@@ -153,7 +154,7 @@ export function CaringToastProvider({ children }: CaringToastProviderProps) {
           duration={toast.duration}
           onClose={() => removeToast(toast.id)}
         />
-      ))}
+      ))} */}
     </>
   );
 }
