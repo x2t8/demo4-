@@ -19,6 +19,20 @@ export default function ReportGuideModal({
   isOpen,
   onClose,
 }: ReportGuideModalProps) {
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const reportSteps = [
@@ -41,7 +55,7 @@ export default function ReportGuideModal({
         "📞 Công an: 113 (miễn phí, 24/7)",
         "🏛️ Số điện thoại đồn công an địa phương",
         "💰 Ngân hàng (nếu liên quan đến tài khoản)",
-        "📱 Nhà mạng (nếu b�� lừa qua tin nhắn/cuộc gọi)",
+        "📱 Nhà mạng (nếu bị lừa qua tin nhắn/cuộc gọi)",
       ],
       color: "bg-red-100 text-red-700 border-red-200",
     },
