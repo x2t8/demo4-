@@ -233,7 +233,7 @@ export default function DigitalSkills() {
       correctAnswer: 1,
       explanation:
         "Phishing là hình thức lừa đảo bằng cách giả mạo email hoặc website để đánh cắp thông tin.",
-      category: "An ninh mạng",
+      category: "An ninh m���ng",
     },
     {
       id: 9,
@@ -500,7 +500,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Midjourney/DALL-E",
-          purpose: "Tạo hình ảnh từ mô tả v��n bản",
+          purpose: "Tạo hình ảnh từ mô tả văn bản",
           level: "Trung bình",
           practical: "Thiết kế poster, minh họa bài viết",
         },
@@ -593,7 +593,7 @@ export default function DigitalSkills() {
     {
       icon: Monitor,
       title: "Kỹ năng máy tính cơ bản",
-      description: "Sử dụng thành thạo máy tính và các phần mềm thiết y���u",
+      description: "Sử dụng thành thạo máy tính và các phần mềm thiết yếu",
       level: "Cơ bản",
       color: "bg-blue-100 text-blue-800",
       skills: [
