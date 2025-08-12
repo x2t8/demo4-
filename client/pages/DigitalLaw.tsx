@@ -214,7 +214,7 @@ export default function DigitalLaw() {
         "Tôn trọng các giá trị xã hội",
         "Tuân thủ quy định nền tảng",
         "Khai báo hợp tác th��ơng mại",
-        "Bảo vệ danh tiếng người khác",
+        "B���o vệ danh tiếng người khác",
         "Sử dụng ngôn ngữ văn minh",
       ],
       donts: [
@@ -454,7 +454,7 @@ export default function DigitalLaw() {
               Khái Niệm Pháp Lý Cơ Bản
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Những kiến th��c nền tảng về luật sở hữu trí tuệ trong thời đ����i
+              Những kiến thức nền tảng về luật sở hữu trí tuệ trong thời đ����i
               số
             </p>
           </div>
@@ -634,7 +634,7 @@ export default function DigitalLaw() {
                     company: "Creator Việt Nam",
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
-                    penalty: "50 triệu VNĐ",
+                    penalty: "50 tri���u VNĐ",
                     lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
                     color: "from-red-500 to-pink-500",
                     icon: Music
@@ -1013,7 +1013,7 @@ export default function DigitalLaw() {
                     },
                     {
                       year: "2015",
-                      title: "Nghị định 15 về xử phạt vi phạm bản quyền",
+                      title: "Nghị định 15 về xử phạt vi ph���m bản quyền",
                       desc: "Quy định cụ thể mức phạt vi phạm IP",
                       impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
                       side: "right",
@@ -1039,7 +1039,7 @@ export default function DigitalLaw() {
                       year: "2024",
                       title: "Nghị định về AI và Deepfake",
                       desc: "Quy định mới về trí tuệ nhân tạo",
-                      impact: "Kiểm soát việc sử d���ng AI tạo nội dung",
+                      impact: "Kiểm soát việc sử dụng AI tạo nội dung",
                       side: "left",
                       color: "from-cyan-500 to-blue-500"
                     }
@@ -1105,7 +1105,7 @@ export default function DigitalLaw() {
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
-                            a: "⚖️ Có, nhưng rất hạn chế và cần điều ki���n cụ thể",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
                             level: "Nâng cao"
                           }
                         ].map((quiz, idx) => (
@@ -1308,7 +1308,7 @@ export default function DigitalLaw() {
                 <span className="font-semibold">Thông tin quan trọng</span>
               </div>
               <p className="text-indigo-100">
-                89% vi phạm bản quyền x��y ra do thiếu hiểu biết pháp luật, không
+                89% vi phạm bản quyền xảy ra do thiếu hiểu biết pháp luật, không
                 phải cố ý làm sai
               </p>
             </div>
@@ -1360,7 +1360,7 @@ export default function DigitalLaw() {
               Pháp Luật Số & Bản Quyền
             </h1>
             <p className="text-base opacity-95 mb-8 leading-relaxed px-4">
-              Hi���u biết pháp luật để sử dụng công nghệ một cách hợp pháp và an
+              Hiểu biết pháp luật để sử dụng công nghệ một cách hợp pháp và an
               toàn
             </p>
 
