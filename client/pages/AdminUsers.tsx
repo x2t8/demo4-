@@ -451,44 +451,45 @@ export default function AdminUsers() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Hành động</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={() => handleUserAction("edit", user)}>
-                          <Eye className="mr-2 h-4 w-4" />
-                          Xem chi tiết
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => handleUserAction("edit", user)}>
-                          <Edit className="mr-2 h-4 w-4" />
-                          Chỉnh sửa
-                        </DropdownMenuItem>
-                        {user.status === "active" ? (
-                          <DropdownMenuItem onClick={() => handleUserAction("suspend", user)}>
-                            <ShieldAlert className="mr-2 h-4 w-4" />
-                            Đình chỉ
-                          </DropdownMenuItem>
-                        ) : (
-                          <DropdownMenuItem onClick={() => handleUserAction("activate", user)}>
-                            <ShieldCheck className="mr-2 h-4 w-4" />
-                            Kích hoạt
-                          </DropdownMenuItem>
-                        )}
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem 
-                          onClick={() => handleUserAction("delete", user)}
-                          className="text-red-600"
+                    <div className="flex space-x-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleUserAction("edit", user)}
+                        title="Xem chi tiết"
+                      >
+                        <Eye className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleUserAction("edit", user)}
+                        title="Chỉnh sửa"
+                      >
+                        <Edit className="h-4 w-4" />
+                      </Button>
+                      {user.status === "active" ? (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleUserAction("suspend", user)}
+                          title="Đình chỉ"
+                          className="text-red-600 hover:text-red-700"
                         >
-                          <Trash2 className="mr-2 h-4 w-4" />
-                          Xóa
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                          <ShieldAlert className="h-4 w-4" />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleUserAction("activate", user)}
+                          title="Kích hoạt"
+                          className="text-green-600 hover:text-green-700"
+                        >
+                          <ShieldCheck className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}
