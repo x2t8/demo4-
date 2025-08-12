@@ -1099,7 +1099,7 @@ export default function DigitalLaw() {
                             level: "Cơ bản"
                           },
                           {
-                            q: "Mức phạt t���i đa cho cá nhân vi phạm bản quyền?",
+                            q: "Mức phạt tối đa cho cá nhân vi phạm bản quyền?",
                             a: "💰 75 triệu VNĐ theo luật Việt Nam",
                             level: "Trung bình"
                           },
