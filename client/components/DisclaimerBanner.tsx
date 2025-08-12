@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Info, X, Phone, Building, ExternalLink } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
 
 export default function DisclaimerBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const { isVisible, dismissBanner } = useDisclaimerBanner();
 
   if (!isVisible) return null;
 
@@ -16,7 +17,7 @@ export default function DisclaimerBanner() {
           <div className="flex-1 min-w-0">
             <div className="text-sm text-yellow-800">
               <strong>Tuyên bố miễn trách:</strong> Website này chỉ cung cấp
-              thông tin giáo dục về an toàn số. Tất cả số liệu, ví dụ và tình
+              thông tin giáo dục về an toàn số. T��t cả số liệu, ví dụ và tình
               huống đều mang tính minh họa, không phải dữ liệu thực tế.
               <br className="hidden sm:block mt-1" />
               <div className="mt-2 space-y-1 sm:space-y-0 sm:space-x-4 sm:flex items-center">
@@ -51,7 +52,7 @@ export default function DisclaimerBanner() {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setIsVisible(false)}
+            onClick={dismissBanner}
             className="p-1 h-6 w-6 text-yellow-600 hover:text-yellow-800 hover:bg-yellow-100 flex-shrink-0"
           >
             <X className="h-4 w-4" />
