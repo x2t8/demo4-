@@ -128,9 +128,9 @@ export default function ScamTypes() {
       popularity: "78%",
       avgLoss: "12 triệu VNĐ",
       description:
-        "Tin nhắn chứa link đ��c hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
+        "Tin nhắn chứa link độc hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
       techniques: [
-        "Gửi link đ��c hại",
+        "Gửi link độc hại",
         "Giả mạo thông báo ngân hàng",
         "Yêu cầu mã OTP",
         "Khuyến mại giả",
@@ -180,7 +180,7 @@ export default function ScamTypes() {
       popularity: "45%",
       avgLoss: "35 triệu VNĐ",
       description:
-        "Sử dụng thiết b��� sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
+        "Sử dụng thiết bị sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
       techniques: [
         "Lắp thiết bị sao chép tại ATM",
         "Camera quay lén mã PIN",
@@ -188,7 +188,7 @@ export default function ScamTypes() {
         "Máy POS giả",
       ],
       prevention: [
-        "Che tay khi nhập m�� PIN",
+        "Che tay khi nhập mã PIN",
         "Kiểm tra ATM trước khi sử dụng",
         "Theo dõi giao dịch thường xuyên",
         "Báo ngay khi phát hiện bất thường",
@@ -244,7 +244,7 @@ export default function ScamTypes() {
                     <div className="text-3xl font-bold text-yellow-300">
                       68%
                     </div>
-                    <div className="text-sm opacity-80">Qua đi��n thoại</div>
+                    <div className="text-sm opacity-80">Qua điện thoại</div>
                   </div>
                 </div>
               </div>
@@ -812,7 +812,7 @@ export default function ScamTypes() {
               {[
                 {
                   title: "Lừa đảo 'Công an gọi điện'",
-                  type: "Đi���n thoại",
+                  type: "Điện thoại",
                   icon: Phone,
                   story:
                     "Một người nhận cuộc gọi từ số lạ tự xưng là Công an, nói tài khoản liên quan đến vụ rửa tiền. Kẻ lừa đảo yêu cầu chuyển tiền để 'bảo toàn tài sản'.",
