@@ -224,25 +224,16 @@ export default function AdminDashboard() {
           </p>
         </div>
         <div className="flex items-center space-x-3">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">
-                {timeRange === "7d" ? "7 ngày qua" : timeRange === "30d" ? "30 ngày qua" : "90 ngày qua"}
-                <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => setTimeRange("7d")}>
-                7 ngày qua
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTimeRange("30d")}>
-                30 ngày qua
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTimeRange("90d")}>
-                90 ngày qua
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Select value={timeRange} onValueChange={setTimeRange}>
+            <SelectTrigger className="w-48">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="7d">7 ngày qua</SelectItem>
+              <SelectItem value="30d">30 ngày qua</SelectItem>
+              <SelectItem value="90d">90 ngày qua</SelectItem>
+            </SelectContent>
+          </Select>
           <Button>
             <Download className="mr-2 h-4 w-4" />
             Xuất báo cáo
