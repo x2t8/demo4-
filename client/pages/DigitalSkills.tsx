@@ -496,7 +496,7 @@ export default function DigitalSkills() {
           name: "ChatGPT",
           purpose: "Hỗ trợ viết lách, brainstorming, Q&A",
           level: "Cơ bản",
-          practical: "Viết email, tóm tắt tài liệu, �� tưởng content",
+          practical: "Viết email, tóm tắt tài liệu, ý tưởng content",
         },
         {
           name: "Midjourney/DALL-E",
@@ -506,7 +506,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Notion AI",
-          purpose: "AI tích hợp trong qu���n lý công việc",
+          purpose: "AI tích hợp trong quản lý công việc",
           level: "Trung bình",
           practical: "Tự động hóa ghi chú, tổ chức thông tin",
         },
@@ -593,7 +593,7 @@ export default function DigitalSkills() {
     {
       icon: Monitor,
       title: "Kỹ năng máy tính cơ bản",
-      description: "Sử dụng thành thạo máy tính và các phần mềm thiết yếu",
+      description: "Sử dụng thành thạo máy tính và các phần mềm thiết y���u",
       level: "Cơ bản",
       color: "bg-blue-100 text-blue-800",
       skills: [
@@ -1320,7 +1320,7 @@ export default function DigitalSkills() {
                             </li>
                             <li className="flex items-center gap-2">
                               <CheckCircle className="h-4 w-4 text-green-500" />
-                              Học về bảo mật và quyền ri��ng tư
+                              Học về bảo mật và quyền riêng tư
                             </li>
                           </>
                         )}
