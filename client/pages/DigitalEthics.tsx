@@ -76,6 +76,8 @@ export default function DigitalEthics() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState<boolean>(false);
   const [showFloatingNav, setShowFloatingNav] = useState<boolean>(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const toggleBookmark = (ethicsId: string) => {
     setBookmarkedEthics((prev) =>
@@ -307,7 +309,7 @@ export default function DigitalEthics() {
       ],
       donts: [
         "Chia sẻ tin giả, tin đồn",
-        "Spam hay flood tin nh���n",
+        "Spam hay flood tin nh�����n",
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
@@ -339,7 +341,7 @@ export default function DigitalEthics() {
         "Tạo drama hay xung đột",
         "Phân chia cộng đồng",
         "Né tránh trách nhiệm",
-        "Làm tổn hại danh tiếng nhóm",
+        "Làm tổn hại danh ti���ng nhóm",
         "Tạo các nhóm độc hại",
         "Khuyến khích hành vi tiêu cực",
       ],
@@ -398,7 +400,7 @@ export default function DigitalEthics() {
       donts: [
         "Lan truyền tin giả, thông tin sai lệch",
         "Tham gia các hoạt động bất hợp pháp online",
-        "Lạm dụng quyền tự do ngôn luận",
+        "Lạm dụng quyền t�� do ngôn luận",
         "Phá hoại hay tấn công hệ thống",
         "Tạo tài khoản giả",
         "Thao túng dư luận",
@@ -805,7 +807,7 @@ export default function DigitalEthics() {
                 },
                 {
                   icon: "📚",
-                  title: "Học hỏi liên tục",
+                  title: "H��c hỏi liên tục",
                   description: "Sử dụng internet để phát triển bản thân",
                   tips: [
                     "Theo dõi kênh giáo dục",
