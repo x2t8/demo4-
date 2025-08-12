@@ -198,7 +198,7 @@ export default function ScamTypes() {
 
   return (
     <CaringToastProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-fade-in">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white page-scale-in">
         <Header />
         <DisclaimerBanner />
 
@@ -231,7 +231,7 @@ export default function ScamTypes() {
                     <div className="text-3xl font-bold text-yellow-300">
                       15K+
                     </div>
-                    <div className="text-sm opacity-80">Vụ lừa đảo online</div>
+                    <div className="text-sm opacity-80">Vụ l��a đảo online</div>
                   </div>
                   <div className="w-px h-12 bg-white/30"></div>
                   <div className="text-center">
