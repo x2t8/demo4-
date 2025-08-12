@@ -115,6 +115,15 @@ export default function DigitalSkills() {
   const [fontSize, setFontSize] = useState("normal");
   const [highContrast, setHighContrast] = useState(false);
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   // Sample quiz questions (in real app, would fetch from API)
   const quizQuestions: QuizQuestion[] = [
     {
@@ -1487,7 +1496,7 @@ export default function DigitalSkills() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    Tham gia cộng đồng và diễn đàn thảo luận
+                    Tham gia cộng đồng v�� diễn đàn thảo luận
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
