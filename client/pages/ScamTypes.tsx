@@ -48,7 +48,7 @@ import ReportGuideModal from "@/components/ReportGuideModal";
 export default function ScamTypes() {
   const [selectedScams, setSelectedScams] = useState<string[]>([]);
   const [bookmarkedScams, setBookmarkedScams] = useState<string[]>([]);
-  const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
 
   // Initialize protective animations
   useScrollReveal();
