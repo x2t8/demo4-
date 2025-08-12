@@ -214,7 +214,7 @@ export default function DigitalLaw() {
         "Tôn trọng các giá trị xã hội",
         "Tuân thủ quy định nền tảng",
         "Khai báo hợp tác th��ơng mại",
-        "B���o vệ danh tiếng người khác",
+        "Bảo vệ danh tiếng người khác",
         "Sử dụng ngôn ngữ văn minh",
       ],
       donts: [
@@ -245,7 +245,7 @@ export default function DigitalLaw() {
         "Bảo vệ tài khoản bằng 2FA",
         "Khai báo quảng cáo có trả tiền",
         "Tôn trọng quyền riêng tư người khác",
-        "Sử dụng real name trên nền tảng yêu cầu",
+        "Sử dụng real name trên nền t��ng yêu cầu",
       ],
       donts: [
         "Tạo tài khoản giả mạo",
@@ -634,7 +634,7 @@ export default function DigitalLaw() {
                     company: "Creator Việt Nam",
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
-                    penalty: "50 tri���u VNĐ",
+                    penalty: "50 triệu VNĐ",
                     lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
                     color: "from-red-500 to-pink-500",
                     icon: Music
@@ -1013,7 +1013,7 @@ export default function DigitalLaw() {
                     },
                     {
                       year: "2015",
-                      title: "Nghị định 15 về xử phạt vi ph���m bản quyền",
+                      title: "Nghị định 15 về xử phạt vi phạm bản quyền",
                       desc: "Quy định cụ thể mức phạt vi phạm IP",
                       impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
                       side: "right",
@@ -1414,7 +1414,7 @@ export default function DigitalLaw() {
               ⚖️ Quy định pháp lý chi tiết
             </h2>
             <p className="text-gray-600 text-base leading-relaxed">
-              6 lĩnh v����c pháp lý quan trọng khi hoạt động số
+              6 lĩnh vực pháp lý quan trọng khi hoạt động số
             </p>
           </div>
 
