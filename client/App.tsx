@@ -1,5 +1,5 @@
 import "./global.css";
-import React from "react";
+import React, { Suspense } from "react";
 
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
@@ -8,13 +8,25 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "@/components/DarkModeProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import ScamTypes from "./pages/ScamTypes";
-import DigitalEthics from "./pages/DigitalEthics";
-import AISafety from "./pages/AISafety";
-import DigitalLaw from "./pages/DigitalLaw";
-import DigitalSkills from "./pages/DigitalSkills";
-import NotFound from "./pages/NotFound";
+
+// Lazy load pages for better performance
+const Index = React.lazy(() => import("./pages/Index"));
+const ScamTypes = React.lazy(() => import("./pages/ScamTypes"));
+const DigitalEthics = React.lazy(() => import("./pages/DigitalEthics"));
+const AISafety = React.lazy(() => import("./pages/AISafety"));
+const DigitalLaw = React.lazy(() => import("./pages/DigitalLaw"));
+const DigitalSkills = React.lazy(() => import("./pages/DigitalSkills"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+      <p className="text-gray-600">Đang tải trang...</p>
+    </div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
