@@ -48,6 +48,7 @@ import ReportGuideModal from "@/components/ReportGuideModal";
 export default function ScamTypes() {
   const [selectedScams, setSelectedScams] = useState<string[]>([]);
   const [bookmarkedScams, setBookmarkedScams] = useState<string[]>([]);
+  const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
 
   // Initialize protective animations
   useScrollReveal();
@@ -97,7 +98,7 @@ export default function ScamTypes() {
       dangerLevel: 92,
       color: "text-red-600 bg-red-100",
       gradient: "from-red-500 to-red-600",
-      shortDesc: "Giả danh cơ quan, yêu cầu chuyển tiền",
+      shortDesc: "Giả danh cơ quan, yêu cầu chuyển ti���n",
       popularity: "92%",
       avgLoss: "45 triệu VNĐ",
       description:
@@ -136,7 +137,7 @@ export default function ScamTypes() {
       ],
       prevention: [
         "Không click link lạ",
-        "Kiểm tra s�� điện thoại gửi",
+        "Kiểm tra số điện thoại gửi",
         "Không chia sẻ mã OTP",
         "Xác minh qua kênh chính thức",
       ],
@@ -836,7 +837,7 @@ export default function ScamTypes() {
                   damage: "100 triệu VNĐ",
                   redFlags: [
                     "Lãi suất quá cao (30%/tháng)",
-                    "Không có giấy phép",
+                    "Kh��ng có giấy phép",
                     "Khuyến khích nạp tiền liên tục",
                   ],
                   prevention: [
