@@ -419,7 +419,7 @@ export default function DigitalSkills() {
       id: "business",
       title: "Kinh doanh",
       icon: BarChart3,
-      description: "Kỹ n��ng số cho doanh nghiệp và marketing",
+      description: "Kỹ năng số cho doanh nghiệp và marketing",
       skills: [
         "Social media marketing",
         "E-commerce platforms",
@@ -506,7 +506,7 @@ export default function DigitalSkills() {
         },
         {
           name: "Notion AI",
-          purpose: "AI tích hợp trong quản lý công việc",
+          purpose: "AI tích hợp trong qu���n lý công việc",
           level: "Trung bình",
           practical: "Tự động hóa ghi chú, tổ chức thông tin",
         },
@@ -864,7 +864,7 @@ export default function DigitalSkills() {
     },
     {
       level: "Advanced",
-      title: "Tr��nh độ nâng cao",
+      title: "Trình độ nâng cao",
       percentage: "80%",
       description: "Làm việc hiệu quả với công nghệ số",
       skills: [
@@ -1320,7 +1320,7 @@ export default function DigitalSkills() {
                             </li>
                             <li className="flex items-center gap-2">
                               <CheckCircle className="h-4 w-4 text-green-500" />
-                              Học về bảo mật và quyền riêng tư
+                              Học về bảo mật và quyền ri��ng tư
                             </li>
                           </>
                         )}
@@ -1418,7 +1418,7 @@ export default function DigitalSkills() {
                   {level.description}
                 </p>
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-sm">Kỹ năng chủ ch���t:</h4>
+                  <h4 className="font-semibold text-sm">Kỹ năng chủ chốt:</h4>
                   <ul className="text-xs text-gray-500 space-y-1">
                     {level.skills.slice(0, 3).map((skill, idx) => (
                       <li key={idx}>• {skill}</li>
@@ -1623,7 +1623,7 @@ export default function DigitalSkills() {
       {/* Call to Action */}
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Bắt Đ���u Hành Trình Digital Literacy
+          Bắt Đầu Hành Trình Digital Literacy
         </h2>
         <p className="text-xl text-gray-600 mb-8">
           Kỹ năng số không chỉ là xu hướng - đó là yêu cầu thiết yếu của tương
