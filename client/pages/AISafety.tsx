@@ -35,7 +35,6 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { useState } from "react";
 
 export default function AISafety() {
   const [selectedApplication, setSelectedApplication] = useState<string | null>(null);
@@ -180,7 +179,7 @@ export default function AISafety() {
       ],
       risks: [
         "Bias trong kết quả tìm kiếm",
-        "Thông tin thiên lệch",
+        "Thông tin thiên l��ch",
         "Filter bubble effect",
         "M��t khả năng tư duy độc lập",
       ],
