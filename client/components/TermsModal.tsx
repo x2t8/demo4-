@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X, AlertCircle, Info, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -56,7 +57,7 @@ export default function TermsModal({
 
   if (!modalVisible) return null;
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4" style={{ zIndex: 9999 }}>
       {/* Overlay */}
       <div
@@ -186,4 +187,6 @@ export default function TermsModal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
