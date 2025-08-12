@@ -164,7 +164,7 @@ export default function DigitalSkills() {
         "In tài liệu",
       ],
       correctAnswer: 1,
-      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã chọn.",
+      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch��n.",
       category: "Kỹ năng cơ bản",
     },
     {
@@ -192,7 +192,7 @@ export default function DigitalSkills() {
       correctAnswer: 1,
       explanation:
         "Cloud storage cho phép truy cập và đồng bộ dữ liệu từ nhiều thiết bị qua internet.",
-      category: "Công ngh�� đám mây",
+      category: "Công nghệ đám mây",
     },
     {
       id: 6,
@@ -864,7 +864,7 @@ export default function DigitalSkills() {
     },
     {
       level: "Advanced",
-      title: "Trình độ nâng cao",
+      title: "Trình đ��� nâng cao",
       percentage: "80%",
       description: "Làm việc hiệu quả với công nghệ số",
       skills: [
@@ -1352,7 +1352,7 @@ export default function DigitalSkills() {
                             ?.scrollIntoView({ behavior: "smooth" });
                         }}
                       >
-                        Xem kỹ năng c���t lõi
+                        Xem kỹ năng cốt lõi
                       </Button>
                     </div>
                   </div>
