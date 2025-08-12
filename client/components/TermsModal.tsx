@@ -13,22 +13,6 @@ export default function TermsModal({
 }: TermsModalProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
-  const modalVisible = externalVisible !== undefined ? externalVisible : isVisible;
-
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (modalVisible) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [modalVisible]);
-
   useEffect(() => {
     // Auto-show only if not manually controlled
     if (externalVisible === undefined) {
