@@ -186,7 +186,7 @@ export default function AISafety() {
       tips: [
         "So sánh nhiều nguồn thông tin",
         "Tìm hiểu cách AI hoạt động",
-        "Đặt c��u hỏi phản biện",
+        "Đặt câu hỏi phản biện",
         "Giữ thói quen suy nghĩ độc lập",
       ],
     },
@@ -444,7 +444,7 @@ export default function AISafety() {
                   principles: [
                     "Minh bạch về việc sử dụng AI",
                     "Không tạo nội dung có hại",
-                    "Tôn tr��ng quyền riêng tư",
+                    "Tôn trọng quyền riêng tư",
                     "Không phân biệt đối xử",
                   ],
                 },
@@ -706,7 +706,7 @@ export default function AISafety() {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {[
-                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chi��u sâu" },
+                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chiều sâu" },
                       { title: "Chi tiết cá nhân", desc: "Có trải nghiệm và câu chuyện riêng" },
                       { title: "Lỗi nhỏ bình thường", desc: "Có thể có lỗi chính tả, ngữ pháp nhỏ" },
                       { title: "Phong cách nhất quán", desc: "Giữ được tính cách và style riêng" },
