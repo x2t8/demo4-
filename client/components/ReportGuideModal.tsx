@@ -33,6 +33,63 @@ export default function ReportGuideModal({
 
   if (!isOpen) return null;
 
+  const reportSteps = [
+    {
+      icon: Users,
+      title: "1. Nhờ Người Thân Hỗ Trợ",
+      description: "Không đi một mình, hãy nhờ gia đình hoặc bạn bè đi cùng",
+      details: [
+        "Kể lại chi tiết sự việc với người thân",
+        "Nhờ họ đi cùng đến cơ quan chức năng",
+        "Có người làm chứng sẽ có lợi cho việc điều tra",
+      ],
+      color: "bg-blue-100 text-blue-700 border-blue-200",
+    },
+    {
+      icon: Phone,
+      title: "2. Gọi Hotline Khẩn Cấp",
+      description: "Gọi ngay để được hướng dẫn chi tiết",
+      details: [
+        "📞 Công an: 113 (miễn phí, 24/7)",
+        "🏛️ Số điện thoại đồn công an địa phương",
+        "💰 Ngân hàng (nếu liên quan đến tài khoản)",
+        "📱 Nhà mạng (nếu bị lừa qua tin nhắn/cuộc gọi)",
+      ],
+      color: "bg-red-100 text-red-700 border-red-200",
+    },
+    {
+      icon: Building,
+      title: "3. Đến Đồn Công An",
+      description: "Trình báo trực tiếp tại cơ quan công an gần nhất",
+      details: [
+        "Mang theo CMND/CCCD và các giấy tờ liên quan",
+        "Chuẩn bị sẵn các bằng chứng (tin nhắn, cuộc gọi, chuyển khoản)",
+        "Kể lại sự việc một cách chi tiết và trung thực",
+        "Yêu cầu biên bản và số hồ sơ vụ việc",
+      ],
+      color: "bg-green-100 text-green-700 border-green-200",
+    },
+  ];
+
+  const importantNotes = [
+    {
+      icon: Clock,
+      title: "Thời Gian Vàng",
+      content:
+        "Báo cáo càng sớm càng tốt, trong vòng 24h đầu để tăng khả năng truy tìm",
+    },
+    {
+      icon: FileText,
+      title: "Bằng Chứng",
+      content: "Lưu giữ tất cả tin nhắn, cuộc gọi, email, và lịch sử giao dịch",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Không Tự Ý",
+      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi vụ việc một mình",
+    },
+  ];
+
   const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4" style={{ zIndex: 9999 }}>
       {/* Overlay */}
@@ -174,63 +231,6 @@ export default function ReportGuideModal({
       </div>
     </div>
   );
-
-  const reportSteps = [
-    {
-      icon: Users,
-      title: "1. Nhờ Người Thân Hỗ Trợ",
-      description: "Không đi một mình, hãy nhờ gia đình hoặc bạn bè đi cùng",
-      details: [
-        "Kể lại chi tiết sự việc với người thân",
-        "Nhờ họ đi cùng đến cơ quan chức năng",
-        "Có người làm chứng sẽ có lợi cho việc điều tra",
-      ],
-      color: "bg-blue-100 text-blue-700 border-blue-200",
-    },
-    {
-      icon: Phone,
-      title: "2. Gọi Hotline Khẩn Cấp",
-      description: "Gọi ngay để được hướng dẫn chi tiết",
-      details: [
-        "📞 Công an: 113 (miễn phí, 24/7)",
-        "🏛️ Số điện thoại đồn công an địa phương",
-        "💰 Ngân hàng (nếu liên quan đến tài khoản)",
-        "📱 Nhà mạng (nếu bị lừa qua tin nhắn/cuộc gọi)",
-      ],
-      color: "bg-red-100 text-red-700 border-red-200",
-    },
-    {
-      icon: Building,
-      title: "3. Đến Đồn Công An",
-      description: "Trình báo trực tiếp tại cơ quan công an gần nhất",
-      details: [
-        "Mang theo CMND/CCCD và các giấy tờ liên quan",
-        "Chuẩn bị sẵn các bằng chứng (tin nhắn, cuộc gọi, chuyển khoản)",
-        "Kể lại sự việc một cách chi tiết và trung thực",
-        "Yêu cầu biên bản và số hồ sơ vụ việc",
-      ],
-      color: "bg-green-100 text-green-700 border-green-200",
-    },
-  ];
-
-  const importantNotes = [
-    {
-      icon: Clock,
-      title: "Thời Gian Vàng",
-      content:
-        "Báo cáo càng sớm càng tốt, trong vòng 24h đầu để tăng khả năng truy tìm",
-    },
-    {
-      icon: FileText,
-      title: "Bằng Chứng",
-      content: "Lưu giữ tất cả tin nhắn, cuộc gọi, email, và lịch sử giao dịch",
-    },
-    {
-      icon: AlertTriangle,
-      title: "Không Tự Ý",
-      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi vụ việc một mình",
-    },
-  ];
 
   return createPortal(modalContent, document.body);
 }
