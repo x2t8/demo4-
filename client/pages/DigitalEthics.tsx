@@ -270,7 +270,7 @@ export default function DigitalEthics() {
       description:
         "Đối xử với người khác trên mạng như ngoài đời thực với sự tôn trọng và lịch sự.",
       dos: [
-        "S�� dụng ngôn ngữ lịch sự, tôn trọng",
+        "Sử dụng ngôn ngữ lịch sự, tôn trọng",
         "Lắng nghe ý kiến khác biệt",
         "Thể hiện sự đồng cảm",
         "Ghi nhận đóng góp của người khác",
@@ -2142,7 +2142,7 @@ export default function DigitalEthics() {
                     <CardHeader>
                       <CardTitle className="flex items-center text-green-700">
                         <CheckCircle className="h-5 w-5 mr-2" />
-                        Giáo dục cộng đồng
+                        Gi��o dục cộng đồng
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
