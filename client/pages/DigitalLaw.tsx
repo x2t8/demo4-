@@ -148,7 +148,7 @@ export default function DigitalLaw() {
       impact: "Bảo vệ sáng tạo",
       usage: "Mọi tác phẩm số",
       description:
-        "Bản quyền bảo vệ quyền của tác giả đối với tác phẩm sáng tạo, bao gồm văn bản, h��nh ảnh, âm nhạc và video.",
+        "Bản quyền bảo vệ quyền của tác giả đối với tác phẩm sáng tạo, bao gồm văn bản, hình ảnh, âm nhạc và video.",
       dos: [
         "Xin phép tác giả trước khi sử dụng",
         "Sử dụng tài nguyên Creative Commons",
@@ -178,7 +178,7 @@ export default function DigitalLaw() {
       impact: "An toàn thông tin",
       usage: "Mọi hoạt động số",
       description:
-        "Luật Bảo vệ dữ liệu cá nhân quy định nghiêm ngặt về việc thu thập, xử lý và s�� dụng thông tin cá nhân.",
+        "Luật Bảo vệ dữ liệu cá nhân quy định nghiêm ngặt về việc thu thập, xử lý và sử dụng thông tin cá nhân.",
       dos: [
         "Xin đồng ý trước khi thu thập dữ liệu",
         "Giải thích rõ mục đích sử dụng",
@@ -208,7 +208,7 @@ export default function DigitalLaw() {
       impact: "Môi trường lành mạnh",
       usage: "Mạng xã hội, website",
       description:
-        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo ��ức xã hội và quy định nền tảng.",
+        "Nội dung đăng tải phải tuân thủ luật pháp Việt Nam, không vi phạm đạo đức xã hội và quy định nền tảng.",
       dos: [
         "Kiểm tra tính chính xác thông tin",
         "Tôn trọng các giá trị xã hội",
@@ -281,7 +281,7 @@ export default function DigitalLaw() {
         "Bán hàng giả, hàng nhái",
         "Quảng cáo gian dối, thổi phồng",
         "Trốn thuế, không khai báo doanh thu",
-        "Lừa đảo, chiếm đoạt tài sản",
+        "L���a đảo, chiếm đoạt tài sản",
         "Bán hàng cấm, hạn chế",
         "Vi phạm quyền lợi người tiêu dùng",
       ],
@@ -312,7 +312,7 @@ export default function DigitalLaw() {
         "Tạo và phát tán malware",
         "DDoS các website",
         "Hack tài khoản người khác",
-        "Bán thông tin cá nhân trái phép",
+        "Bán thông tin c�� nhân trái phép",
         "Sử dụng công cụ hack",
       ],
     },
@@ -389,7 +389,7 @@ export default function DigitalLaw() {
                   <div className="relative inline-block">
                     <Scale className="h-48 w-48 mx-auto text-yellow-300 drop-shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300" />
 
-                    {/* Bên trái cân: Pháp luật số - TO H��N */}
+                    {/* Bên trái cân: Pháp luật số - TO HƠN */}
                     <div className="absolute -left-24 top-12">
                       <Button
                         className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:bg-white/30 transition-all duration-300 h-auto flex-col"
@@ -450,7 +450,7 @@ export default function DigitalLaw() {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Khái Niệm Pháp Lý Cơ Bản
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -552,7 +552,7 @@ export default function DigitalLaw() {
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 ⚖️ Hệ Thống Pháp Luật Số
-                <span className="block text-3xl md:text-4xl text-indigo-600 mt-2">Việt Nam 2024</span>
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-indigo-600 mt-2">Việt Nam 2024</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Hiểu rõ và tuân thủ 6 lĩnh vực pháp lý quan trọng nhất trong hoạt động số
@@ -635,7 +635,7 @@ export default function DigitalLaw() {
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
                     penalty: "50 triệu VNĐ",
-                    lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
+                    lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương m���i",
                     color: "from-red-500 to-pink-500",
                     icon: Music
                   },
@@ -779,7 +779,7 @@ export default function DigitalLaw() {
                     tips: [
                       "✅ YouTube Audio Library",
                       "✅ Epidemic Sound (trả phí)",
-                      "✅ T��� sáng tác",
+                      "✅ Tự sáng tác",
                       "❌ Nhạc từ Spotify",
                       "❌ Nhạc từ YouTube"
                     ]
@@ -1269,7 +1269,7 @@ export default function DigitalLaw() {
         <div className="bg-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 🎯 Tác Động Pháp Lý Trong Thời Đại Số
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -1320,7 +1320,7 @@ export default function DigitalLaw() {
           <Card className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-0">
             <CardContent className="p-12">
               <Scale className="h-16 w-16 mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                 Cùng Xây Dựng Không Gian Số Hợp Pháp!
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
