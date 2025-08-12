@@ -17,7 +17,7 @@ export default function DisclaimerBanner() {
           <div className="flex-1 min-w-0">
             <div className="text-sm text-yellow-800">
               <strong>Tuyên bố miễn trách:</strong> Website này chỉ cung cấp
-              thông tin giáo dục về an toàn số. T��t cả số liệu, ví dụ và tình
+              thông tin giáo dục về an toàn số. Tất cả số liệu, ví dụ và tình
               huống đều mang tính minh họa, không phải dữ liệu thực tế.
               <br className="hidden sm:block mt-1" />
               <div className="mt-2 space-y-1 sm:space-y-0 sm:space-x-4 sm:flex items-center">
