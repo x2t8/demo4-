@@ -54,15 +54,28 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
 
   const handleLogin = async (data: LoginForm) => {
     setIsLoading(true);
-    // Mockup authentication - replace with real API
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-      // Login API call would be implemented here
-      // Mock success
-      alert("Đăng nhập thành công! (Mockup)");
-      onClose();
+      let success = false;
+
+      if (adminMode) {
+        // Admin login - use username field instead of email
+        // For admin, we use the email field as username input
+        success = await login(data.email, data.password);
+        if (success) {
+          alert("Đăng nhập admin thành công!");
+          onClose();
+        } else {
+          alert("Tài khoản hoặc mật khẩu admin không đúng!\n\nThử: admin / admin123");
+        }
+      } else {
+        // Regular user login - would connect to real API later
+        await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+        alert("Đăng nhập người dùng thành công! (Mockup)");
+        onClose();
+      }
     } catch (error) {
       console.error("Login error:", error);
+      alert("Đã xảy ra lỗi khi đăng nhập");
     } finally {
       setIsLoading(false);
     }
