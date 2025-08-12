@@ -313,7 +313,7 @@ export default function DigitalEthics() {
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
-        "Lan truyền thông tin chưa kiểm chứng",
+        "Lan truy���n thông tin chưa kiểm chứng",
       ],
     },
     {
@@ -465,7 +465,7 @@ export default function DigitalEthics() {
                 </h1>
                 <p className="text-xl opacity-90 mb-8 leading-relaxed">
                   Học cách ứng xử văn minh, tôn trọng và xây dựng cộng đồng mạng
-                  tích cực trong thời đại số hiện đại.
+                  tích c���c trong thời đại số hiện đại.
                 </p>
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
@@ -810,7 +810,7 @@ export default function DigitalEthics() {
                   title: "H��c hỏi liên tục",
                   description: "Sử dụng internet để phát triển bản thân",
                   tips: [
-                    "Theo dõi kênh giáo dục",
+                    "Theo dõi kênh giáo d��c",
                     "Tham gia khóa học online",
                     "Đọc nội dung chất lượng",
                   ],
@@ -1775,7 +1775,7 @@ export default function DigitalEthics() {
                     📊 Đạo đức số trên thế giới
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Những con s��� cho thấy tầm quan tr��ng của đạo đ��c trong không
+                    Những con số cho thấy tầm quan trọng của đạo đức trong không
                     gian số
                   </p>
                 </div>
