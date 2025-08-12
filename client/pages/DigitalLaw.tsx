@@ -184,7 +184,7 @@ export default function DigitalLaw() {
         "Giải thích rõ mục đích sử dụng",
         "Bảo mật dữ liệu thu thập được",
         "Cho phép người dùng chỉnh sửa/xóa",
-        "Thông b��o khi có rò rỉ dữ li��u",
+        "Thông báo khi có rò rỉ dữ li��u",
         "Tuân thủ quyền được quên",
       ],
       donts: [
@@ -454,7 +454,7 @@ export default function DigitalLaw() {
               Khái Niệm Pháp Lý Cơ Bản
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Những kiến thức nền tảng về luật sở hữu trí tuệ trong thời đ����i
+              Những kiến th��c nền tảng về luật sở hữu trí tuệ trong thời đ����i
               số
             </p>
           </div>
@@ -1039,7 +1039,7 @@ export default function DigitalLaw() {
                       year: "2024",
                       title: "Nghị định về AI và Deepfake",
                       desc: "Quy định mới về trí tuệ nhân tạo",
-                      impact: "Kiểm soát việc sử dụng AI tạo nội dung",
+                      impact: "Kiểm soát việc sử d���ng AI tạo nội dung",
                       side: "left",
                       color: "from-cyan-500 to-blue-500"
                     }
@@ -1105,7 +1105,7 @@ export default function DigitalLaw() {
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
-                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần điều ki���n cụ thể",
                             level: "Nâng cao"
                           }
                         ].map((quiz, idx) => (
@@ -1308,7 +1308,7 @@ export default function DigitalLaw() {
                 <span className="font-semibold">Thông tin quan trọng</span>
               </div>
               <p className="text-indigo-100">
-                89% vi phạm bản quyền xảy ra do thiếu hiểu biết pháp luật, không
+                89% vi phạm bản quyền x��y ra do thiếu hiểu biết pháp luật, không
                 phải cố ý làm sai
               </p>
             </div>
@@ -1325,7 +1325,7 @@ export default function DigitalLaw() {
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
                 Hiểu biết pháp luật giúp bạn sáng tạo tự do và bảo vệ quyền lợi
-                của bản thân cũng như ng����i khác
+                của bản thân cũng như người khác
               </p>
               <div className="flex justify-center">
                 <Button
