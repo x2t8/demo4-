@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Bot,
   Brain,
@@ -172,7 +173,7 @@ export default function AISafety() {
         "Bias trong kết quả tìm kiếm",
         "Thông tin thiên lệch",
         "Filter bubble effect",
-        "Mất khả năng tư duy độc lập",
+        "M��t khả năng tư duy độc lập",
       ],
       tips: [
         "So sánh nhiều nguồn thông tin",
