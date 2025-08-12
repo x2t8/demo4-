@@ -40,6 +40,15 @@ export default function Index() {
   // Modal states
   const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
 
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
+
   // Module tracking
   const [currentModuleIndex, setCurrentModuleIndex] = React.useState(2); // Start with AI module
   const digitalModules = [
