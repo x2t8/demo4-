@@ -30,12 +30,16 @@ import { CaringToastProvider } from "@/components/CaringToast";
 import ReportGuideModal from "@/components/ReportGuideModal";
 import FloatingActionButton from "@/components/FloatingActionButton";
 import Carousel3D from "@/components/Carousel3D";
+import { useDisclaimerBanner } from "@/hooks/useDisclaimerBanner";
 import { digitalModules } from "./IndexModules";
 
 export default function Index() {
   // Initialize scroll-based animations
   useScrollReveal();
   useStaggeredReveal();
+
+  // Shared banner state
+  const { dismissBanner } = useDisclaimerBanner();
 
   // Modal states
   const [isReportModalOpen, setIsReportModalOpen] = React.useState(false);
@@ -355,7 +359,10 @@ export default function Index() {
             <Button
               size="lg"
               variant="secondary"
-              onClick={() => setIsReportModalOpen(true)}
+              onClick={() => {
+                dismissBanner();
+                setIsReportModalOpen(true);
+              }}
             >
               <AlertTriangle className="h-5 w-5 mr-2" />
               Xem hướng dẫn báo cáo
