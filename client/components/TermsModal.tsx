@@ -61,18 +61,15 @@ export default function TermsModal({
   if (!modalVisible) return null;
 
   return (
-    <div
-      className="fixed bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4"
-      style={{
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto modal-center">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black bg-opacity-50"
+        onClick={externalOnClose || (() => setIsVisible(false))}
+      ></div>
+
+      {/* Nội dung modal */}
+      <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto modal-center">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center space-x-3">
