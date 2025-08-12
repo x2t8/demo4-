@@ -252,10 +252,16 @@ export default function Index() {
               </p>
             </div>
 
-            <Carousel3D
-              modules={digitalModules}
-              onModuleChange={setCurrentModuleIndex}
-            />
+            <React.Suspense fallback={
+              <div className="h-64 flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+              </div>
+            }>
+              <Carousel3D
+                modules={digitalModules}
+                onModuleChange={setCurrentModuleIndex}
+              />
+            </React.Suspense>
 
 
             {/* Call to Action */}
