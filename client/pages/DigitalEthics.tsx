@@ -426,7 +426,7 @@ export default function DigitalEthics() {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 page-fade-in">
+    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 page-bounce-in">
       <Header />
       <DisclaimerBanner />
 
@@ -1023,7 +1023,7 @@ export default function DigitalEthics() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Hướng dẫn người thân cách kiểm tra</span>
+                      <span>Hư���ng dẫn người thân cách kiểm tra</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
