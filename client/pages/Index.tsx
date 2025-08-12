@@ -240,7 +240,7 @@ export default function Index() {
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 animate-slide-up">
-                5 Mô-đun Học Tập Thiết Yếu
+                5 Mô-đun Học Tập Thi��t Yếu
               </h2>
               <p
                 className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto animate-fade-in"
@@ -280,7 +280,7 @@ export default function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                   5 Nguyên Tắc Vàng
                   <span className="text-green-600 block">Bảo Vệ Bản Thân</span>
                 </h2>
@@ -328,7 +328,7 @@ export default function Index() {
           className="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
               Đã Bị Lừa Đảo? Báo Cáo Ngay!
             </h2>
             <p className="text-xl mb-8 opacity-90">
