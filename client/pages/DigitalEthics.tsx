@@ -63,6 +63,15 @@ export default function DigitalEthics() {
   const [bookmarkedItems, setBookmarkedItems] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState<boolean>(false);
@@ -326,7 +335,7 @@ export default function DigitalEthics() {
         "Báo cáo hành vi không phù hợp",
         "Tham gia các hoạt động tích cực",
         "Tạo nội dung giáo dục",
-        "Kết nối những người có cùng sở thích",
+        "Kết nối những người có cùng s��� thích",
       ],
       donts: [
         "Tạo drama hay xung đột",
@@ -1580,7 +1589,7 @@ export default function DigitalEthics() {
                       {/* Clear Learning Message */}
                       <div className="space-y-4">
                         <h3 className="font-bold text-purple-800 text-xl leading-tight">
-                          🌟 Sẵn sàng bắt đầu hành trình học?
+                          ���� Sẵn sàng bắt đầu hành trình học?
                         </h3>
                         <p className="text-purple-700 text-base leading-relaxed px-4">
                           Cam kết thực hành những nguyên tắc đạo đức số và trở
@@ -1983,7 +1992,7 @@ export default function DigitalEthics() {
                         "Chuyển sang chat riêng nếu cần",
                         "Biết khi nào nên dừng cuộc tranh luận",
                         "Xin lỗi khi mắc lỗi",
-                        "Tập trung vào giải pháp",
+                        "T���p trung vào giải pháp",
                       ],
                     },
                     {
