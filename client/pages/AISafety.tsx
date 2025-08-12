@@ -102,7 +102,7 @@ export default function AISafety() {
       tips: [
         "Luôn kiểm tra thông tin từ AI",
         "Sử dụng AI như công cụ hỗ trợ, không thay thế",
-        "Không chia sẻ thông tin nhạy cảm",
+        "Không chia sẻ thông tin nhạy c��m",
         "Ghi nhận nguồn khi sử dụng AI",
       ],
     },
@@ -464,7 +464,7 @@ export default function AISafety() {
                   title: "Giữ tư duy phản biện",
                   color: "green",
                   principles: [
-                    "Đặt câu hỏi về thông tin AI",
+                    "Đặt câu hỏi v�� thông tin AI",
                     "So sánh nhiều nguồn",
                     "Phát triển critical thinking",
                     "Không phụ thuộc hoàn toàn vào AI",
@@ -570,7 +570,7 @@ export default function AISafety() {
           <div className="container mx-auto max-w-6xl px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                🎓 AI trong Học t��p & Công việc
+                🎓 AI trong Học tập & Công việc
               </h2>
               <p className="text-lg text-gray-600">Hướng dẫn sử dụng AI hiệu quả và có trách nhiệm</p>
             </div>
@@ -706,7 +706,7 @@ export default function AISafety() {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {[
-                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, có chiều sâu" },
+                      { title: "Cảm xúc tự nhiên", desc: "Thể hiện cảm xúc chân thực, c�� chiều sâu" },
                       { title: "Chi tiết cá nhân", desc: "Có trải nghiệm và câu chuyện riêng" },
                       { title: "Lỗi nhỏ bình thường", desc: "Có thể có lỗi chính tả, ngữ pháp nhỏ" },
                       { title: "Phong cách nhất quán", desc: "Giữ được tính cách và style riêng" },
