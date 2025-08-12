@@ -98,7 +98,7 @@ export default function ScamTypes() {
       dangerLevel: 92,
       color: "text-red-600 bg-red-100",
       gradient: "from-red-500 to-red-600",
-      shortDesc: "Giả danh cơ quan, yêu cầu chuyển ti���n",
+      shortDesc: "Giả danh cơ quan, yêu cầu chuyển tiền",
       popularity: "92%",
       avgLoss: "45 triệu VNĐ",
       description:
@@ -106,7 +106,7 @@ export default function ScamTypes() {
       techniques: [
         "Giả danh công an, ngân hàng",
         "Tạo áp lực tâm lý",
-        "Yêu cầu chuyển ti��n khẩn cấp",
+        "Yêu cầu chuyển tiền khẩn cấp",
         "Đe dọa bắt giữ, phạt tiền",
       ],
       prevention: [
@@ -837,7 +837,7 @@ export default function ScamTypes() {
                   damage: "100 triệu VNĐ",
                   redFlags: [
                     "Lãi suất quá cao (30%/tháng)",
-                    "Kh��ng có giấy phép",
+                    "Không có giấy phép",
                     "Khuyến khích nạp tiền liên tục",
                   ],
                   prevention: [
