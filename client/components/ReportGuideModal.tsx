@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   X,
   Phone,
@@ -19,6 +19,18 @@ export default function ReportGuideModal({
   isOpen,
   onClose,
 }: ReportGuideModalProps) {
+  // Khóa scroll khi mở modal
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const reportSteps = [
@@ -79,18 +91,15 @@ export default function ReportGuideModal({
   ];
 
   return (
-    <div
-      className="fixed bg-black bg-opacity-50 z-[200] flex items-center justify-center p-2 sm:p-4"
-      style={{
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto modal-center">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black bg-opacity-50"
+        onClick={onClose}
+      ></div>
+
+      {/* Modal */}
+      <div className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
@@ -135,7 +144,6 @@ export default function ReportGuideModal({
             <h3 className="text-xl font-bold text-gray-800 text-center">
               3 Bước Báo Cáo Lừa Đảo Hiệu Quả
             </h3>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {reportSteps.map((step, index) => (
                 <div
