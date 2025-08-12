@@ -67,6 +67,32 @@ export default function Header() {
             </Link>
           </nav>
 
+          {/* Auth buttons - Desktop */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                setAuthMode("login");
+                setIsAuthModalOpen(true);
+              }}
+              className="text-gray-700 hover:text-blue-600"
+            >
+              Đăng nhập
+            </Button>
+            <Button
+              size="sm"
+              onClick={() => {
+                setAuthMode("register");
+                setIsAuthModalOpen(true);
+              }}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+            >
+              <User className="h-4 w-4 mr-2" />
+              Đăng ký
+            </Button>
+          </div>
+
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
