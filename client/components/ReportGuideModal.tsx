@@ -74,13 +74,13 @@ export default function ReportGuideModal({
     {
       icon: AlertTriangle,
       title: "Không Tự Ý",
-      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi vụ việc một mình",
+      content: "Không tự liên hệ với kẻ lừa đảo hay theo đuổi v��� việc một mình",
     },
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[200] p-2 sm:p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-slide-up">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center justify-between">
