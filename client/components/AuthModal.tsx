@@ -54,7 +54,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login" }: Au
     // Mockup authentication - replace with real API
     try {
       await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-      console.log("Login attempt:", data);
+      // Login API call would be implemented here
       // Mock success
       alert("Đăng nhập thành công! (Mockup)");
       onClose();
