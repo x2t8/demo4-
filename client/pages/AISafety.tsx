@@ -39,6 +39,15 @@ import { useState } from "react";
 
 export default function AISafety() {
   const [selectedApplication, setSelectedApplication] = useState<string | null>(null);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
   const [activeDemo, setActiveDemo] = useState<string | null>(null);
   const [showAIToolsModal, setShowAIToolsModal] = useState<boolean>(false);
 
@@ -86,7 +95,7 @@ export default function AISafety() {
         "Brainstorming ý tưởng",
       ],
       risks: [
-        "Thông tin có thể không chính xác",
+        "Thông tin có thể không ch��nh xác",
         "Thiếu suy nghĩ phản biện",
         "Phụ thuộc quá mức vào AI",
         "Vi phạm bản quyền nếu sao chép",
