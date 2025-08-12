@@ -183,8 +183,8 @@ export default function DigitalLaw() {
         "Xin đồng ý trước khi thu thập dữ liệu",
         "Giải thích rõ mục đích sử dụng",
         "Bảo mật dữ liệu thu thập được",
-        "Cho phép người dùng chỉnh sửa/x��a",
-        "Thông báo khi có rò rỉ dữ li��u",
+        "Cho phép người dùng chỉnh sửa/xóa",
+        "Thông b��o khi có rò rỉ dữ li��u",
         "Tuân thủ quyền được quên",
       ],
       donts: [
@@ -1013,7 +1013,7 @@ export default function DigitalLaw() {
                     },
                     {
                       year: "2015",
-                      title: "Nghị định 15 về xử phạt vi phạm bản quy��n",
+                      title: "Nghị định 15 về xử phạt vi phạm bản quyền",
                       desc: "Quy định cụ thể mức phạt vi phạm IP",
                       impact: "Mức phạt 75 triệu VNĐ cho cá nhân",
                       side: "right",
@@ -1038,7 +1038,7 @@ export default function DigitalLaw() {
                     {
                       year: "2024",
                       title: "Nghị định về AI và Deepfake",
-                      desc: "Quy định mới về trí tuệ nhân t��o",
+                      desc: "Quy định mới về trí tuệ nhân tạo",
                       impact: "Kiểm soát việc sử dụng AI tạo nội dung",
                       side: "left",
                       color: "from-cyan-500 to-blue-500"
@@ -1246,7 +1246,7 @@ export default function DigitalLaw() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl">
-                  <div className="text-3xl font-bold text-red-600 mb-2">75 tri���u VNĐ</div>
+                  <div className="text-3xl font-bold text-red-600 mb-2">75 triệu VNĐ</div>
                   <div className="text-sm text-gray-700 font-medium">Mức phạt tối đa cá nhân</div>
                   <div className="text-xs text-gray-500 mt-1">Theo luật Việt Nam</div>
                 </div>
