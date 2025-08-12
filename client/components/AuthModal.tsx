@@ -331,19 +331,21 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login", admi
             </form>
           )}
 
-          {/* Mode switch */}
-          <div className="mt-6 text-center">
-            <p className="text-gray-600 text-sm">
-              {mode === "login" ? "Chưa có tài khoản?" : "Đã có tài khoản?"}
-              <button
-                type="button"
-                onClick={() => setMode(mode === "login" ? "register" : "login")}
-                className="ml-1 text-blue-600 hover:text-blue-800 font-medium"
-              >
-                {mode === "login" ? "Đăng ký ngay" : "Đăng nhập"}
-              </button>
-            </p>
-          </div>
+          {/* Mode switch - Hide in admin mode */}
+          {!adminMode && (
+            <div className="mt-6 text-center">
+              <p className="text-gray-600 text-sm">
+                {mode === "login" ? "Chưa có tài khoản?" : "Đã có tài khoản?"}
+                <button
+                  type="button"
+                  onClick={() => setMode(mode === "login" ? "register" : "login")}
+                  className="ml-1 text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  {mode === "login" ? "Đăng ký ngay" : "Đăng nhập"}
+                </button>
+              </p>
+            </div>
+          )}
 
           {/* Mockup notice */}
           <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
