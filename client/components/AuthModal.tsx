@@ -70,7 +70,7 @@ export default function AuthModal({ isOpen, onClose, defaultMode = "login" }: Au
     // Mockup registration - replace with real API
     try {
       await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-      console.log("Register attempt:", data);
+      // Registration API call would be implemented here
       // Mock success
       alert("Đăng ký thành công! (Mockup)");
       onClose();
