@@ -69,6 +69,15 @@ export default function Header() {
 
           {/* Auth buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-3">
+            <Link to="/admin">
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-gray-700 hover:text-purple-600 border-purple-200"
+              >
+                Admin
+              </Button>
+            </Link>
             <Button
               variant="ghost"
               size="sm"
