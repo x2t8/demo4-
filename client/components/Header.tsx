@@ -76,37 +76,59 @@ export default function Header() {
 
           {/* Auth buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link to="/admin">
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-gray-700 hover:text-purple-600 border-purple-200"
-              >
-                Admin
-              </Button>
-            </Link>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                setAuthMode("login");
-                setIsAuthModalOpen(true);
-              }}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Đăng nhập
-            </Button>
-            <Button
-              size="sm"
-              onClick={() => {
-                setAuthMode("register");
-                setIsAuthModalOpen(true);
-              }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-            >
-              <User className="h-4 w-4 mr-2" />
-              Đăng ký
-            </Button>
+            {isAuthenticated ? (
+              <>
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-purple-700 hover:text-purple-600 border-purple-200 hover:bg-purple-50"
+                    >
+                      Admin Panel
+                    </Button>
+                  </Link>
+                )}
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <User className="h-4 w-4" />
+                  <span>Xin chào, {user?.username}</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleLogout}
+                  className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Đăng xuất
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setAuthMode("login");
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="text-gray-700 hover:text-blue-600"
+                >
+                  Đăng nhập
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    setAuthMode("register");
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                >
+                  <User className="h-4 w-4 mr-2" />
+                  Đăng ký
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
