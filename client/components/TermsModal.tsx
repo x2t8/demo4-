@@ -13,6 +13,19 @@ export default function TermsModal({
 }: TermsModalProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
+  const modalVisible = externalVisible !== undefined ? externalVisible : isVisible;
+
+  useEffect(() => {
+    if (modalVisible) {
+      // Khóa scroll
+      document.body.style.overflow = "hidden";
+      // Kéo viewport lên đầu ngay lập tức
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [modalVisible]);
+
   useEffect(() => {
     // Auto-show only if not manually controlled
     if (externalVisible === undefined) {
@@ -41,14 +54,18 @@ export default function TermsModal({
     }
   };
 
-  const modalVisible =
-    externalVisible !== undefined ? externalVisible : isVisible;
-
   if (!modalVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black bg-opacity-50"
+        onClick={externalOnClose || (() => setIsVisible(false))}
+      ></div>
+
+      {/* Nội dung modal */}
+      <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto modal-center">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center space-x-3">
@@ -96,7 +113,7 @@ export default function TermsModal({
                 <ul className="text-blue-700 text-sm space-y-1">
                   <li>• Nâng cao nhận thức về an toàn số</li>
                   <li>• Giáo dục kỹ năng phòng chống lừa đảo</li>
-                  <li>• Chia sẻ kiến thức bảo vệ thông tin cá nhân</li>
+                  <li>• Chia sẻ ki��n thức bảo vệ thông tin cá nhân</li>
                   <li>• Hướng dẫn sử dụng công nghệ an toàn</li>
                 </ul>
               </div>

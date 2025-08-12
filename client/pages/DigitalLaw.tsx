@@ -111,7 +111,7 @@ export default function DigitalLaw() {
   const digitalLawStats = [
     {
       value: "89%",
-      label: "Vi ph��m bản quyền không cố ý",
+      label: "Vi phạm bản quyền không cố ý",
       color: "from-purple-500 to-purple-600",
       description: "Do thiếu hiểu biết",
     },
@@ -238,7 +238,7 @@ export default function DigitalLaw() {
       impact: "Sử dụng an toàn",
       usage: "Các nền tảng MXH",
       description:
-        "Mỗi nền tảng mạng xã hội có quy đ���nh riêng, song song với luật pháp Việt Nam về an toàn thông tin mạng.",
+        "Mỗi nền tảng mạng xã hội có quy đ���nh riêng, song song v���i luật pháp Việt Nam về an toàn thông tin mạng.",
       dos: [
         "Đọc và tuân thủ Community Guidelines",
         "Báo cáo nội dung vi phạm",
@@ -300,7 +300,7 @@ export default function DigitalLaw() {
       description:
         "Luật An toàn thông tin mạng quy định về bảo vệ hệ thống thông tin quan trọng và phòng chống tấn công mạng.",
       dos: [
-        "Cập nhật ph���n mềm bảo mật định kỳ",
+        "Cập nhật ph���n mềm bảo m��t định kỳ",
         "Sử dụng mật khẩu mạnh, unique",
         "Backup dữ liệu quan trọng",
         "Báo cáo sự cố an ninh mạng",
@@ -635,7 +635,7 @@ export default function DigitalLaw() {
                     year: "2023",
                     violation: "Vi phạm bản quyền âm nhạc",
                     penalty: "50 triệu VNĐ",
-                    lesson: "Luôn kiểm tra license nhạc trước khi sử dụng trong video thương mại",
+                    lesson: "Luôn kiểm tra license nh���c trước khi sử dụng trong video thương mại",
                     color: "from-red-500 to-pink-500",
                     icon: Music
                   },
@@ -755,7 +755,7 @@ export default function DigitalLaw() {
             <div className="mb-16">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">🚀 Quick Reference Cards</h3>
-                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình huống cụ thể</p>
+                <p className="text-lg text-gray-600">Cheat sheet pháp lý cho từng tình hu��ng cụ thể</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1105,7 +1105,7 @@ export default function DigitalLaw() {
                           },
                           {
                             q: "Fair Use có áp dụng tại Việt Nam không?",
-                            a: "⚖️ Có, nhưng rất hạn chế và cần điều kiện cụ thể",
+                            a: "⚖️ Có, nhưng rất hạn chế và cần đi���u kiện cụ thể",
                             level: "Nâng cao"
                           }
                         ].map((quiz, idx) => (
@@ -1198,7 +1198,7 @@ export default function DigitalLaw() {
                     ]
                   },
                   {
-                    title: "Nguồn ảnh/nhạc miễn phí",
+                    title: "Ngu��n ảnh/nhạc miễn phí",
                     icon: Heart,
                     color: "from-orange-500 to-red-500",
                     resources: [
@@ -1414,7 +1414,7 @@ export default function DigitalLaw() {
               ⚖️ Quy định pháp lý chi tiết
             </h2>
             <p className="text-gray-600 text-base leading-relaxed">
-              6 lĩnh v���c pháp lý quan trọng khi hoạt động số
+              6 lĩnh v����c pháp lý quan trọng khi hoạt động số
             </p>
           </div>
 

@@ -63,10 +63,21 @@ export default function DigitalEthics() {
   const [bookmarkedItems, setBookmarkedItems] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState<boolean>(false);
   const [showFloatingNav, setShowFloatingNav] = useState<boolean>(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const toggleBookmark = (ethicsId: string) => {
     setBookmarkedEthics((prev) =>
@@ -140,9 +151,7 @@ export default function DigitalEthics() {
     // Add search logic here
   };
 
-  // Swipe gesture handling
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  // Swipe gesture handling is handled by existing state above
 
   const minSwipeDistance = 50;
 
@@ -300,7 +309,7 @@ export default function DigitalEthics() {
       ],
       donts: [
         "Chia sẻ tin giả, tin đồn",
-        "Spam hay flood tin nhắn",
+        "Spam hay flood tin nh�����n",
         "Clickbait gây hiểu lầm",
         "Đăng nội dung không phù hợp",
         "Tạo panic không cần thiết",
@@ -332,7 +341,7 @@ export default function DigitalEthics() {
         "Tạo drama hay xung đột",
         "Phân chia cộng đồng",
         "Né tránh trách nhiệm",
-        "Làm tổn hại danh tiếng nhóm",
+        "Làm tổn hại danh ti���ng nhóm",
         "Tạo các nhóm độc hại",
         "Khuyến khích hành vi tiêu cực",
       ],
@@ -391,7 +400,7 @@ export default function DigitalEthics() {
       donts: [
         "Lan truyền tin giả, thông tin sai lệch",
         "Tham gia các hoạt động bất hợp pháp online",
-        "Lạm dụng quyền tự do ngôn luận",
+        "Lạm dụng quyền t�� do ngôn luận",
         "Phá hoại hay tấn công hệ thống",
         "Tạo tài khoản giả",
         "Thao túng dư luận",
@@ -426,7 +435,9 @@ export default function DigitalEthics() {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100">
+    <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 ${
+      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}>
       <Header />
       <DisclaimerBanner />
 
@@ -679,7 +690,7 @@ export default function DigitalEthics() {
                         {/* Progress indicator */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-600">Tầm quan trọng</span>
+                            <span className="text-gray-600">T���m quan trọng</span>
                             <span className="font-semibold text-purple-600">
                               {ethics.importanceLevel}%
                             </span>
@@ -796,7 +807,7 @@ export default function DigitalEthics() {
                 },
                 {
                   icon: "📚",
-                  title: "Học hỏi liên tục",
+                  title: "H��c hỏi liên tục",
                   description: "Sử dụng internet để phát triển bản thân",
                   tips: [
                     "Theo dõi kênh giáo dục",
@@ -860,7 +871,7 @@ export default function DigitalEthics() {
                 💬 Kỹ Năng Giao Tiếp Online Hiệu Quả
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Những mẹo thực tế để giao tiếp hiệu quả và xây dựng mối quan hệ
+                Những mẹo th��c tế để giao tiếp hiệu quả và xây dựng mối quan hệ
                 tích cực
               </p>
             </div>
@@ -944,7 +955,7 @@ export default function DigitalEthics() {
                 🛡️ Chống Tin Giả & Thông Tin Sai Lệch
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Làm thế nào để nhận biết và ngăn chặn sự lan truyền thông tin
+                Làm thế n��o để nhận biết và ngăn chặn sự lan truyền thông tin
                 sai lệch
               </p>
             </div>
@@ -1023,7 +1034,7 @@ export default function DigitalEthics() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                      <span>Hướng dẫn người thân cách kiểm tra</span>
+                      <span>Hư���ng dẫn người thân cách kiểm tra</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
@@ -1824,7 +1835,7 @@ export default function DigitalEthics() {
                   {[
                     {
                       icon: "⏰",
-                      title: "Cân bằng thời gian online",
+                      title: "C��n bằng thời gian online",
                       description: "Sử dụng công nghệ một cách có ý thức",
                       tips: [
                         "Đặt giới hạn thời gian",

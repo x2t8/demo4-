@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Home, Search, ArrowLeft, Shield, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,15 @@ import Footer from "@/components/Footer";
 
 export default function NotFound() {
   const navigate = useNavigate();
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
 
   const quickLinks = [
     {
@@ -34,7 +43,9 @@ export default function NotFound() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100">
+    <div className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-blue-100 via-purple-50 to-cyan-100 ${
+      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}>
       <Header />
 
       <div className="flex items-center justify-center min-h-[80vh] px-4 sm:px-6 lg:px-8">

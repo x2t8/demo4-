@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   Phone,
@@ -42,10 +42,22 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 import Statistics from "@/components/Statistics";
 import SocialShare from "@/components/SocialShare";
 import RealWorldExamples from "@/components/RealWorldExamples";
+import { CaringToastProvider } from "@/components/CaringToast";
+import ReportGuideModal from "@/components/ReportGuideModal";
 
 export default function ScamTypes() {
   const [selectedScams, setSelectedScams] = useState<string[]>([]);
   const [bookmarkedScams, setBookmarkedScams] = useState<string[]>([]);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
 
   // Initialize protective animations
   useScrollReveal();
@@ -103,7 +115,7 @@ export default function ScamTypes() {
       techniques: [
         "Giả danh công an, ngân hàng",
         "Tạo áp lực tâm lý",
-        "Yêu cầu chuyển ti��n khẩn cấp",
+        "Yêu cầu chuyển tiền khẩn cấp",
         "Đe dọa bắt giữ, phạt tiền",
       ],
       prevention: [
@@ -125,9 +137,9 @@ export default function ScamTypes() {
       popularity: "78%",
       avgLoss: "12 triệu VNĐ",
       description:
-        "Tin nhắn chứa link đ��c hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
+        "Tin nhắn chứa link độc hại hoặc yêu cầu cung cấp mã OTP, thông tin thẻ ngân hàng.",
       techniques: [
-        "Gửi link đ��c hại",
+        "Gửi link độc hại",
         "Giả mạo thông báo ngân hàng",
         "Yêu cầu mã OTP",
         "Khuyến mại giả",
@@ -177,7 +189,7 @@ export default function ScamTypes() {
       popularity: "45%",
       avgLoss: "35 triệu VNĐ",
       description:
-        "Sử dụng thiết b��� sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
+        "Sử dụng thiết bị sao chép thẻ tại ATM hoặc cửa hàng để đánh cắp thông tin thẻ.",
       techniques: [
         "Lắp thiết bị sao chép tại ATM",
         "Camera quay lén mã PIN",
@@ -185,7 +197,7 @@ export default function ScamTypes() {
         "Máy POS giả",
       ],
       prevention: [
-        "Che tay khi nhập m�� PIN",
+        "Che tay khi nhập mã PIN",
         "Kiểm tra ATM trước khi sử dụng",
         "Theo dõi giao dịch thường xuyên",
         "Báo ngay khi phát hiện bất thường",
@@ -194,9 +206,12 @@ export default function ScamTypes() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
-      <Header />
-      <DisclaimerBanner />
+    <CaringToastProvider>
+      <div className={`min-h-screen transition-all duration-1000 bg-gray-50 dark:bg-gray-900 md:bg-white ${
+        isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}>
+        <Header />
+        <DisclaimerBanner />
 
       {/* Desktop/Tablet: New Layout theo hình */}
       <div className="hidden md:block">
@@ -222,7 +237,7 @@ export default function ScamTypes() {
                   Học cách nhận biết, phòng tránh và bảo vệ bản thân khỏi các
                   hình thức lừa đảo trực tuyến trong thời đại số hiện đại.
                 </p>
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-6 mb-8">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-yellow-300">
                       15K+
@@ -241,9 +256,19 @@ export default function ScamTypes() {
                     <div className="text-3xl font-bold text-yellow-300">
                       68%
                     </div>
-                    <div className="text-sm opacity-80">Qua đi��n thoại</div>
+                    <div className="text-sm opacity-80">Qua điện thoại</div>
                   </div>
                 </div>
+
+                {/* Báo cáo lừa đảo button */}
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all emergency-pulse group"
+                  onClick={() => setIsReportModalOpen(true)}
+                >
+                  <Siren className="h-5 w-5 mr-2 group-hover:animate-heartbeat" />
+                  Báo cáo lừa đảo ngay
+                </Button>
               </div>
 
               {/* Right side - Cards (DigitalEthics style - Simple Grid 2x2) */}
@@ -809,7 +834,7 @@ export default function ScamTypes() {
               {[
                 {
                   title: "Lừa đảo 'Công an gọi điện'",
-                  type: "Đi���n thoại",
+                  type: "Điện thoại",
                   icon: Phone,
                   story:
                     "Một người nhận cuộc gọi từ số lạ tự xưng là Công an, nói tài khoản liên quan đến vụ rửa tiền. Kẻ lừa đảo yêu cầu chuyển tiền để 'bảo toàn tài sản'.",
@@ -1010,6 +1035,14 @@ export default function ScamTypes() {
           </div>
         </section>
       </div>
-    </div>
+
+      {/* Modal báo cáo */}
+      <ReportGuideModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
+      />
+
+      </div>
+    </CaringToastProvider>
   );
 }

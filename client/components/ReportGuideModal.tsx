@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   X,
   Phone,
@@ -19,6 +19,17 @@ export default function ReportGuideModal({
   isOpen,
   onClose,
 }: ReportGuideModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      // Khóa scroll
+      document.body.style.overflow = "hidden";
+      // Kéo viewport lên đầu ngay lập tức
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const reportSteps = [
@@ -79,8 +90,15 @@ export default function ReportGuideModal({
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4">
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black bg-opacity-50"
+        onClick={onClose}
+      ></div>
+
+      {/* Nội dung modal */}
+      <div className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[85vh] overflow-y-auto modal-center">
         {/* Header */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center justify-between">

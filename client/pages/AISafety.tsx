@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Bot,
   Brain,
@@ -34,10 +35,18 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import Header from "@/components/Header";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { useState } from "react";
 
 export default function AISafety() {
   const [selectedApplication, setSelectedApplication] = useState<string | null>(null);
+
+  // Page loading animation (same as DigitalLaw)
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 100);
+  }, []);
   const [activeDemo, setActiveDemo] = useState<string | null>(null);
   const [showAIToolsModal, setShowAIToolsModal] = useState<boolean>(false);
 
@@ -184,7 +193,9 @@ export default function AISafety() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 md:bg-white">
+    <div className={`min-h-screen transition-all duration-1000 bg-gray-50 dark:bg-gray-900 md:bg-white ${
+      isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}>
       <Header />
       <DisclaimerBanner />
 
@@ -201,7 +212,7 @@ export default function AISafety() {
                 <div className="flex items-center mb-6">
                   <Bot className="h-12 w-12 mr-4 animate-pulse" />
                   <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    TR��Í TUỆ NHÂN TẠO AN TOÀN
+                    TRÍ TUỆ NHÂN TẠO AN TOÀN
                   </span>
                 </div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -433,7 +444,7 @@ export default function AISafety() {
                   principles: [
                     "Minh bạch về việc sử dụng AI",
                     "Không tạo nội dung có hại",
-                    "Tôn tr��ng quyền riêng tư",
+                    "Tôn trọng quyền riêng tư",
                     "Không phân biệt đối xử",
                   ],
                 },
@@ -690,7 +701,7 @@ export default function AISafety() {
                     <span className="text-3xl">👤</span>
                   </div>
                   <CardTitle className="text-2xl text-green-800">HUMAN CONTENT</CardTitle>
-                  <p className="text-green-600">N���i dung do con người tạo</p>
+                  <p className="text-green-600">Nội dung do con người tạo</p>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-4">
@@ -780,7 +791,7 @@ export default function AISafety() {
               Sẵn Sàng Sử Dụng AI An Toàn?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              AI là công cụ mạnh mẽ - hãy sử dụng một cách thông minh, có trách nhiệm và an toàn
+              AI là công cụ mạnh mẽ - h��y sử dụng một cách thông minh, có trách nhiệm và an toàn
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -810,7 +821,7 @@ export default function AISafety() {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold mb-2">🤖 Bộ Sưu Tập AI Tools Chuyên Nghiệp</h2>
-                  <p className="opacity-90">40+ công cụ AI ��ược chọn lọc kỹ càng cho từng mục đích sử dụng cụ thể</p>
+                  <p className="opacity-90">40+ công cụ AI được chọn lọc kỹ càng cho từng mục đích sử dụng cụ thể</p>
                 </div>
                 <Button
                   onClick={() => setShowAIToolsModal(false)}
