@@ -426,7 +426,7 @@ export default function DigitalEthics() {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100">
+    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 page-fade-in">
       <Header />
       <DisclaimerBanner />
 
