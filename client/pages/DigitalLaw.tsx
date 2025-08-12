@@ -320,7 +320,7 @@ export default function DigitalLaw() {
 
   return (
     <div
-      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 ${
+      className={`min-h-screen transition-all duration-1000 bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 page-fade-in ${
         isPageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
