@@ -1514,7 +1514,7 @@ export default function DigitalEthics() {
                         </div>
                         <div className="flex-1">
                           <h3 className="font-bold text-gray-900 text-lg leading-tight mb-2">
-                            K�� năng giao tiếp
+                            Kỹ năng giao tiếp
                           </h3>
                           <p className="text-gray-600 text-base leading-relaxed mb-3">
                             Cách giao tiếp hiệu quả và xây dựng mối quan hệ tích
@@ -1840,7 +1840,7 @@ export default function DigitalEthics() {
                       tips: [
                         "Đặt giới hạn thời gian",
                         "Tạo thói quen offline",
-                        "Sử dụng digital wellness apps",
+                        "Sử d���ng digital wellness apps",
                       ],
                     },
                     {
@@ -1868,7 +1868,7 @@ export default function DigitalEthics() {
                       title: "Học hỏi liên tục",
                       description: "Sử dụng internet để phát triển bản thân",
                       tips: [
-                        "Theo dõi kênh giáo dục",
+                        "Theo d��i kênh giáo dục",
                         "Tham gia khóa học online",
                         "Đọc nội dung chất lượng",
                       ],
