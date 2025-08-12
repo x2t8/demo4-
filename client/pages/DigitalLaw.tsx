@@ -190,7 +190,7 @@ export default function DigitalLaw() {
       donts: [
         "Thu thập d��� liệu không cần thiết",
         "Chia sẻ thông tin cho bên thứ ba",
-        "S��� dụng sai mục đích đã khai báo",
+        "Sử dụng sai mục đích đã khai báo",
         "Lưu trữ dữ liệu quá thời hạn",
         "Không bảo mật d��� liệu đúng cách",
         "Từ chối quyền truy cập dữ liệu",
@@ -245,7 +245,7 @@ export default function DigitalLaw() {
         "Bảo vệ tài khoản bằng 2FA",
         "Khai báo quảng cáo có trả tiền",
         "Tôn trọng quyền riêng tư người khác",
-        "Sử dụng real name trên nền t��ng yêu cầu",
+        "Sử dụng real name trên nền tảng yêu cầu",
       ],
       donts: [
         "Tạo tài khoản giả mạo",
