@@ -164,7 +164,7 @@ export default function DigitalSkills() {
         "In tài liệu",
       ],
       correctAnswer: 1,
-      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã ch��n.",
+      explanation: "Ctrl+C là phím tắt để sao chép (copy) nội dung đã chọn.",
       category: "Kỹ năng cơ bản",
     },
     {
@@ -228,7 +228,7 @@ export default function DigitalSkills() {
         "Một loại phần mềm văn phòng",
         "Hình thức lừa đảo qua email hoặc website giả mạo",
         "Cách thức sao lưu dữ liệu",
-        "Phương pháp tìm ki��m thông tin",
+        "Phương pháp tìm kiếm thông tin",
       ],
       correctAnswer: 1,
       explanation:
@@ -864,7 +864,7 @@ export default function DigitalSkills() {
     },
     {
       level: "Advanced",
-      title: "Trình đ��� nâng cao",
+      title: "Tr��nh độ nâng cao",
       percentage: "80%",
       description: "Làm việc hiệu quả với công nghệ số",
       skills: [
@@ -1418,7 +1418,7 @@ export default function DigitalSkills() {
                   {level.description}
                 </p>
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-sm">Kỹ năng chủ chốt:</h4>
+                  <h4 className="font-semibold text-sm">Kỹ năng chủ ch���t:</h4>
                   <ul className="text-xs text-gray-500 space-y-1">
                     {level.skills.slice(0, 3).map((skill, idx) => (
                       <li key={idx}>• {skill}</li>
@@ -1623,7 +1623,7 @@ export default function DigitalSkills() {
       {/* Call to Action */}
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Bắt Đầu Hành Trình Digital Literacy
+          Bắt Đ���u Hành Trình Digital Literacy
         </h2>
         <p className="text-xl text-gray-600 mb-8">
           Kỹ năng số không chỉ là xu hướng - đó là yêu cầu thiết yếu của tương
