@@ -161,32 +161,47 @@
 
   .animate-text-breathe {
     animation: text-breathe 3s ease-in-out infinite;
-    will-change: transform, opacity;
     transform: translateZ(0); /* GPU acceleration */
+  }
+
+  .animate-text-breathe:hover {
+    will-change: transform, opacity; /* Only set will-change on interaction */
   }
 
   .animate-protective-pulse {
     animation: protective-pulse 2s ease-in-out infinite;
-    will-change: transform, opacity;
     transform: translateZ(0);
+  }
+
+  .animate-protective-pulse:hover {
+    will-change: transform, opacity;
   }
 
   .animate-warning-glow {
     animation: warning-glow 2s ease-in-out infinite;
-    will-change: filter;
     transform: translateZ(0);
+  }
+
+  .animate-warning-glow:hover {
+    will-change: filter;
   }
 
   .animate-heartbeat {
     animation: heartbeat 1.5s ease-in-out infinite;
-    will-change: transform;
     transform: translateZ(0);
+  }
+
+  .animate-heartbeat:hover {
+    will-change: transform;
   }
 
   .animate-gentle-wave {
     animation: gentle-wave 2s ease-in-out infinite;
-    will-change: transform;
     transform: translateZ(0);
+  }
+
+  .animate-gentle-wave:hover {
+    will-change: transform;
   }
 
   .hover-caring-lift {
