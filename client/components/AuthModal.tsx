@@ -32,6 +32,7 @@ interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
   defaultMode?: "login" | "register";
+  adminMode?: boolean;
 }
 
 export default function AuthModal({ isOpen, onClose, defaultMode = "login" }: AuthModalProps) {
