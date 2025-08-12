@@ -144,7 +144,7 @@ export default function Carousel3D({ modules, onModuleChange }: Carousel3DProps)
   const visibleModules = getVisibleModules();
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" style={{ contain: 'layout style paint' }}>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-xl animate-pulse" />
