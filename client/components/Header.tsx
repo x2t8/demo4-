@@ -19,7 +19,7 @@ export default function Header() {
             >
               <img
                 src="/favicon.ico"
-                alt="Logo"
+                alt="Công Dân Số An Toàn - Logo"
                 className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
               />
               <span className="text-lg sm:text-xl font-bold text-gray-900">
