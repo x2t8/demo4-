@@ -47,7 +47,7 @@ export default function Index() {
       icon: Shield,
       title: "An Toàn Số",
       description:
-        "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân", // Sửa "bảo v��" thành "bảo vệ"
+        "Nhận biết và phòng tránh lừa đảo, bảo vệ thông tin cá nhân",
       color: "text-red-600 bg-red-200",
       link: "/scam-types",
     },
@@ -60,7 +60,7 @@ export default function Index() {
     },
     {
       icon: Bot,
-      title: "AI An Toàn", // Sửa "AI An To��n" thành "AI An Toàn"
+      title: "AI An Toàn",
       description: "Sử dụng AI thông minh, nhận biết deepfake và nội dung giả",
       color: "text-blue-600 bg-blue-200",
       link: "/ai-safety",
@@ -82,7 +82,7 @@ export default function Index() {
   ];
 
   const protectionTips = [
-    "Không cung cấp thông tin cá nhân qua điện thoại", // Sửa "đi���n" thành "điện"
+    "Không cung cấp thông tin cá nhân qua điện thoại",
     "Kiểm tra kỹ nguồn gốc tin nhắn, email",
     "Không click vào link lạ trong tin nhắn",
     "Xác minh thông tin qua kênh chính thức",
@@ -121,17 +121,15 @@ export default function Index() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift group"
+                onClick={() => {
+                  const modulesSection = document.getElementById('modules');
+                  if (modulesSection) {
+                    modulesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 <BookOpen className="h-5 w-5 mr-2 group-hover:animate-gentle-wave" />
                 Tìm hiểu ngay
-              </Button>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto hover-caring-lift emergency-pulse group"
-                onClick={() => setIsReportModalOpen(true)}
-              >
-                <Phone className="h-5 w-5 mr-2 group-hover:animate-heartbeat" />
-                Báo cáo lừa đảo
               </Button>
             </div>
           </div>
@@ -320,7 +318,6 @@ export default function Index() {
             </h2>
             <p className="text-xl mb-8 opacity-90">
               Hãy liên hệ ngay với cơ quan chức năng để được hỗ trợ kịp thời
-              {/* Sửa "đ��" thành "để" */}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <Card className="bg-white text-gray-900 hover-caring-lift">
