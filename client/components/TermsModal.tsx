@@ -106,7 +106,7 @@ export default function TermsModal({
                 </h3>
                 <ul className="text-blue-700 text-sm space-y-1">
                   <li>• Nâng cao nhận thức về an toàn số</li>
-                  <li>• Giáo dục kỹ năng phòng chống lừa ��ảo</li>
+                  <li>• Giáo dục kỹ năng phòng chống lừa đảo</li>
                   <li>• Chia sẻ kiến thức bảo vệ thông tin cá nhân</li>
                   <li>• Hướng dẫn sử dụng công nghệ an toàn</li>
                 </ul>
